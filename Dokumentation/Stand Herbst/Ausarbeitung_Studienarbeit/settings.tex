@@ -1,0 +1,19 @@
+
+% % % % % % % % Maße und Abstände
+\usepackage[a4paper]{geometry}
+	\geometry{a4paper, top=25mm, left=25mm, right=25mm, bottom=25mm, headsep=10mm, footskip=8mm} % geometry for scientific article
+	\setlength{\parindent}{0cm}
+
+% % % % % % % % Headline and Footline
+\usepackage{fancyhdr}
+	\fancyhf{}
+	\pagestyle{fancy}
+	\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+	\lhead{\MakeUppercase{\leftmark}} % Headline left
+	\chead{}                          % Headline center
+	\rhead{\thepage}                  % Headline right
+	\lfoot{}                          % Footline left
+	\cfoot{}                          % Footline center
+	\rfoot{}                          % Footline right
+	\renewcommand{\headrulewidth}{0.4pt}
+	%\renewcommand{\footrulewidth}{0.4pt}
