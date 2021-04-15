@@ -48,17 +48,15 @@ PORT
 end entity ISOLATED_POINT_PAINTER;
 
 architecture a of ISOLATED_POINT_PAINTER is
-	SIGNAL x_pos_in		: unsigned (9 downto 0);			-- x-pos (column) of the pixel
-	SIGNAL reset			: std_logic;							-- reset
-	SIGNAL pixel_clk		: STD_LOGIC;	--pixel clock at frequency of VGA mode being used
-	SIGNAL vga_data_in	: STD_LOGIC_VECTOR (7 downto 0);	-- pixel data (intensity)
-	SIGNAL h_sync_in		: STD_LOGIC;	--horiztonal sync pulse
-	SIGNAL v_sync_in		: STD_LOGIC;	--vertical sync pulse
-	SIGNAL disp_ena_in	: STD_LOGIC;	--display enable ('1' = display time, '0' = blanking time)
-	SIGNAL column_in		: INTEGER;		--horizontal pixel coordinate
-	SIGNAL row_in			: INTEGER;		--vertical pixel coordinate
-	SIGNAL n_blank_in		: STD_LOGIC;	--direct blacking output to DAC
-	SIGNAL n_sync_in		: STD_LOGIC; --sync-on-green output to DAC
+	SIGNAL x_pos_ff		: unsigned (9 downto 0);			-- x-pos (column) of the pixel
+	SIGNAL vga_data_ff	: STD_LOGIC_VECTOR (7 downto 0);	-- pixel data (intensity)
+	SIGNAL h_sync_ff		: STD_LOGIC;	--horiztonal sync pulse
+	SIGNAL v_sync_ff		: STD_LOGIC;	--vertical sync pulse
+	SIGNAL disp_ena_ff	: STD_LOGIC;	--display enable ('1' = display time, '0' = blanking time)
+	SIGNAL column_ff		: INTEGER;		--horizontal pixel coordinate
+	SIGNAL row_ff			: INTEGER;		--vertical pixel coordinate
+	SIGNAL n_blank_ff		: STD_LOGIC;	--direct blacking output to DAC
+	SIGNAL n_sync_ff		: STD_LOGIC; --sync-on-green output to DAC
 begin
 	
 	
@@ -67,19 +65,28 @@ process (reset, pixel_clk) is
 	
 begin
 	if reset = '1' then	-- reset all values
-		h_sync		<= (others => '0');
-		v_sync		<= (others => '0');
-		disp_ena		<= (others => '0');
-		column		<= '0';
-		row			<= '0';
-		n_blank		<= (others => '0');
-		n_sync		<= (others => '0');
+		h_sync		<= '0';
+		v_sync		<= '0';
+		disp_ena		<= '0';
+		column		<= 0;
+		row			<= 0;
+		n_blank		<= '0';
+		n_sync		<= '0';
 		vgb_r			<= (others => '0');
 		vgb_g			<= (others => '0');
 		vgb_b			<= (others => '0');
 		
-	elsif rising_edge(clk) then
-	
+	elsif rising_edge(pixel_clk) then
+		-- sync
+		x_pos_ff		<= x_pos_in;
+		vga_data_ff	<= vga_data_in;
+		h_sync_ff	<= h_sync_in;
+		v_sync_ff	<= v_sync_ff;
+		disp_ena_ff	<= disp_ena_in;
+		column_ff	<= column_in;
+		row_ff		<= row_in;
+		n_blank_ff	<= n_blank_in;
+		n_sync_ff	<= n_sync_in;
 		
 	end if;
 end process;
