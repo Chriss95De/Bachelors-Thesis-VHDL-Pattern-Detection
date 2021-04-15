@@ -7213,7 +7213,7 @@ refer to the applicable agreement for further details.
 (symbol
 	(rect 8304 -48 8520 96)
 	(text "ISOLATED_POINT_PAINTER" (rect 5 0 150 12)(font "Arial" ))
-	(text "inst42" (rect 8 128 37 140)(font "Arial" ))
+	(text "inst53" (rect 8 128 36 145)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -7260,21 +7260,21 @@ refer to the applicable agreement for further details.
 		(pt 216 32)
 		(output)
 		(text "vgb_r[7..0]" (rect 0 0 54 12)(font "Arial" ))
-		(text "vgb_r[7..0]" (rect 150 27 195 39)(font "Arial" ))
+		(text "vgb_r[7..0]" (rect 150 27 204 39)(font "Arial" ))
 		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(port
 		(pt 216 48)
 		(output)
 		(text "vgb_g[7..0]" (rect 0 0 56 12)(font "Arial" ))
-		(text "vgb_g[7..0]" (rect 148 43 195 55)(font "Arial" ))
+		(text "vgb_g[7..0]" (rect 148 43 204 55)(font "Arial" ))
 		(line (pt 216 48)(pt 200 48)(line_width 3))
 	)
 	(port
 		(pt 216 64)
 		(output)
 		(text "vgb_b[7..0]" (rect 0 0 56 12)(font "Arial" ))
-		(text "vgb_b[7..0]" (rect 148 59 195 71)(font "Arial" ))
+		(text "vgb_b[7..0]" (rect 148 59 204 71)(font "Arial" ))
 		(line (pt 216 64)(pt 200 64)(line_width 3))
 	)
 	(drawing

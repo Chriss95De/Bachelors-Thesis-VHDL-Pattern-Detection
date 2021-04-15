@@ -589,22 +589,17 @@ set_global_assignment -name VHDL_FILE xy_to_address.vhd
 set_global_assignment -name VHDL_FILE sdram_write_buffer_gen.vhd
 set_global_assignment -name VHDL_FILE camera_data_mux_gen.vhd
 set_global_assignment -name BDF_FILE "sdram-mac.bdf"
-set_global_assignment -name VHDL_FILE one_line_read_buffer.vhd
 set_global_assignment -name VHDL_FILE color_generator.vhd
 set_global_assignment -name VHDL_FILE ctu.vhd
 set_global_assignment -name VHDL_FILE comparator.vhd
 set_global_assignment -name VHDL_FILE CTU_VGA.vhd
-set_global_assignment -name VHDL_FILE SYNCHRONISATION.vhd
-set_global_assignment -name VHDL_FILE colour_generator.vhd
 set_global_assignment -name VHDL_FILE SYNCHRONIZATION.vhd
 set_global_assignment -name VHDL_FILE CTU_VGA_V2.vhd
 set_global_assignment -name VHDL_FILE CTU_VGA_V3_state_machine.vhd
-set_global_assignment -name VHDL_FILE GRAYSCALE_CONTRAST_GENERATOR.vhd
 set_global_assignment -name VHDL_FILE GREY_LEVEL_GENERATOR_GENERATOR.vhd
 set_global_assignment -name VHDL_FILE CTU_RD_LINE.vhd
 set_global_assignment -name VHDL_FILE COMPARATOR.vhd
 set_global_assignment -name VHDL_FILE SINGLE_LINE_READ_BUFFER.vhd
-set_global_assignment -name VHDL_FILE SINGLE_LINE_READ_BUFFER_test.vhd
 set_global_assignment -name VHDL_FILE comparator_x_pos_test.vhd
 set_global_assignment -name VHDL_FILE isolated_point_detection.vhd
 set_global_assignment -name VHDL_FILE ISOLATED_POINT_GENERATOR.vhd
@@ -613,7 +608,6 @@ set_global_assignment -name VHDL_FILE ISOLATED_POINT_GENERATOR_2.vhd
 set_global_assignment -name VHDL_FILE FUNCTIONS.vhd
 set_global_assignment -name VHDL_FILE LINE_DETECTION.vhd
 set_global_assignment -name VHDL_FILE LINE_DETECTION_2.vhd
-set_global_assignment -name VHDL_FILE camera_data_mux_gen_2.vhd
 set_global_assignment -name SEARCH_PATH output_files/ -tag from_archive
 set_global_assignment -name VHDL_FILE isolated_point_painter.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
