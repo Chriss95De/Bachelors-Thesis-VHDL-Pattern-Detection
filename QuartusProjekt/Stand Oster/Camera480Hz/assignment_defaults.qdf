@@ -41,7 +41,7 @@
 # In 5.0, the default value of assignment SIMULATION_WITH_GLITCH_FILTERING_WHEN_GENERATING_SAF has changed to "On"
 # In 4.1, the default value of assignment FITTER_EFFORT has changed to "Auto Fit"
 
-
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name PROJECT_SHOW_ENTITY_NAME On
 set_global_assignment -name PROJECT_USE_SIMPLIFIED_NAMES Off
 set_global_assignment -name VER_COMPATIBLE_DB_DIR export_db
