@@ -57,7 +57,20 @@ architecture a of ISOLATED_POINT_PAINTER is
 	SIGNAL row_ff			: INTEGER;		--vertical pixel coordinate
 	SIGNAL n_blank_ff		: STD_LOGIC;	--direct blacking output to DAC
 	SIGNAL n_sync_ff		: STD_LOGIC; --sync-on-green output to DAC
+	
 begin
+
+	--output
+	h_sync		<= h_sync_ff;
+	v_sync		<= v_sync_ff;
+	disp_ena		<= disp_ena_ff;
+	column		<= column_ff;
+	row			<= row_ff;
+	n_blank		<= n_blank_ff;
+	n_sync		<= n_sync_ff;
+	vgb_r			<= vga_data_ff;
+	vgb_g			<= vga_data_ff;
+	vgb_b			<= vga_data_ff;
 	
 	
 process (reset, pixel_clk) is
@@ -65,16 +78,17 @@ process (reset, pixel_clk) is
 	
 begin
 	if reset = '1' then	-- reset all values
-		h_sync		<= '0';
-		v_sync		<= '0';
-		disp_ena		<= '0';
-		column		<= 0;
-		row			<= 0;
-		n_blank		<= '0';
-		n_sync		<= '0';
-		vgb_r			<= (others => '0');
-		vgb_g			<= (others => '0');
-		vgb_b			<= (others => '0');
+		h_sync_ff		<= '0';
+		v_sync_ff		<= '0';
+		disp_ena_ff		<= '0';
+		column_ff		<= 0;
+		row_ff			<= 0;
+		n_blank_ff		<= '0';
+		n_sync_ff		<= '0';
+		vga_data_ff		<= (others => '0');
+		--vgb_r			<= (others => '0');
+		--vgb_g			<= (others => '0');
+		--vgb_b			<= (others => '0');
 		
 	elsif rising_edge(pixel_clk) then
 		-- sync
