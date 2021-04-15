@@ -8,7 +8,7 @@
 [ ] Softwarestand pflegen und einheitlich zugänglich machen -> GIT Repo    
 [ ] letzte Version Perske und Version Herbst finden und zugänglich machen  
 [ ] Eleminierung/Unterscheidung der Revisionen. Festlegung auf eine Revision -> Vermutlich sdram-mac  
-[ ] Reduzierung Warnings -> Vorher x aktuell 31
+[ ] Reduzierung Warnings -> Vorher x aktuell 26
 
 ### Prio 2:
 [ ] Robuste Erkennung ein dimensionale Erkennung eines Punktes oder Linie  
