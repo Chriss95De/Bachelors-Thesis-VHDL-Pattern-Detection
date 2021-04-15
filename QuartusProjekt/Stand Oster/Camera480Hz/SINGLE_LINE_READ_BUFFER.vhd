@@ -3,6 +3,10 @@
 -- Function		: Extract a line of a imagine
 -- Coder			: Lukas Herbst
 
+/*
+ 2021-04-15 removed unused signals
+*/
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -93,12 +97,6 @@ architecture a of SINGLE_LINE_READ_BUFFER is
 	signal buffer_wrempty	: std_logic;	-- write state machine empty signal -> FIFO_Buffer is empty
 	signal buffer_rdempty	: std_logic;	-- read state machine empty signal -> FIFO_Buffer is empty
 	signal buffer_q			: std_logic_vector(DATA_BYTES_IN*8-1 downto 0);	   -- Output_Data from buffer to write them on data_out
-	
-	
-	-- line number for current buffer_data
-	signal buffer_line			: unsigned(ADDR_Y_WIDTH-1 downto 0);		-- contains line numbers of the current buffer data
-	signal buffer_line_ff1		: unsigned(ADDR_Y_WIDTH-1 downto 0);		-- synchronize line data from read state machine to calculate SDRAM address
-	signal buffer_line_ff2		: unsigned(ADDR_Y_WIDTH-1 downto 0);		-- synchronize line data from read state machine to calculate SDRAM address
 	
 	
 	-- buffer valid handshake signals
@@ -235,8 +233,6 @@ begin
 		buffer_valid_ff1 <= '0';
 		buffer_valid_ff2 <= '0';		
 		buffer_rdreq <= '0';	
-		buffer_line_ff1 <= (others => '0');		
-		buffer_line_ff2 <= (others => '0');		
 		
 		for I in 0 to 7 loop	
 			wr_line_buffer(I) 	<= (others => '0');
@@ -252,9 +248,6 @@ begin
 		-- Handshake to reset bufferI_valid
 		buffer_valid_ff1 <= buffer_valid;
 		buffer_valid_ff2 <= buffer_valid_ff1;
-		-- synchronize line number from read data state machine
-		buffer_line_ff1 <= buffer_line;
-		buffer_line_ff2 <= buffer_line_ff1;	
 		-- Preset signals			
 		buffer_rdreq <= '0';		
 		-- stored line in FIFO
@@ -424,7 +417,6 @@ process(sdram_clk_rd, reset) is
 		buffer_valid <= '0';
 		buffer_reset_ff1 <= '0';
 		buffer_reset_ff2 <= '0';
-		buffer_line <= (others => '0');
 		-- Reset FIFO
 		buffer_data <= (others => '0');
 		buffer_wrreq <= '0';

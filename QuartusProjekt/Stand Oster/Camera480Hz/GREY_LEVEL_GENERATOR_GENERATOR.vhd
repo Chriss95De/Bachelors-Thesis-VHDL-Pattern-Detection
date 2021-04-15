@@ -35,8 +35,7 @@ process (reset, clk) is
 begin
 
 	if reset = '1' then													-- reset stored values						
-		data_next_uint <= (others => '0');
-
+		data_next_uint <= (others => '0');	
 	elsif rising_edge (clk) then
 		increment_ff <= increment;										-- generate a flip-flop
 		data_next <= std_logic_vector(data_next_uint);			-- convert data_next_uint to std_logic_vector

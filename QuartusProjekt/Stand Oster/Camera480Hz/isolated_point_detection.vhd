@@ -47,7 +47,6 @@ architecture a of ISOLATED_POINT_DETECTION is
 	signal data_in_valid_ff_2 	: std_logic;
 	signal x_pos_in_ff_1			: unsigned (9 downto 0);
 	signal x_pos_in_ff_2			: unsigned (9 downto 0);
-	signal x_pos_in_ff_3			: unsigned (9 downto 0);
 	signal conv_result			: signed (9 downto 0);
 	signal det_obj_pos_x			: unsigned (9 downto 0);			-- x-position of detected object
 	signal det_obj_conv_value	: signed (9 downto 0);				-- convolution value of detected objects
@@ -79,14 +78,11 @@ begin
 		data_in_valid_ff_2	<= '0';
 		x_pos_in_ff_1 			<= (others => '0');
 		x_pos_in_ff_2 			<= (others => '0');
-		x_pos_in_ff_3 			<= (others => '0');
 		conv_result 			<= (others => '0');
 		det_obj_pos_x 			<= (others => '0');
 		det_obj_conv_value 	<= (others => '0');
 		det_obj 					<= '0';
 		det_obj_data			<= (others => '0');
-		-- det_obj_data_front	<= (others => '0');
-		-- det_obj_data_back		<= (others => '0');
 		
 	elsif rising_edge(clk) then
 		-- synchronize data_in_valid
@@ -102,16 +98,12 @@ begin
 					data_in_ff_3		<= data_in_ff_2;
 					x_pos_in_ff_1		<= x_pos_in;
 					x_pos_in_ff_2		<= x_pos_in_ff_1;
-					x_pos_in_ff_3		<= x_pos_in_ff_2;
 					
 					conv_result 			<= (others => '0');
 					det_obj_pos_x 			<= (others => '0');
 					det_obj_conv_value 	<= (others => '0');
 					det_obj 					<= '0';
-					det_obj_data			<= (others => '0');
-					-- det_obj_data_front	<= (others => '0');
-					-- det_obj_data_back		<= (others => '0');
-					
+					det_obj_data			<= (others => '0');	
 					detection_state 	<= wait_for_second_pixel_state;
 				end if;
 			
@@ -121,7 +113,6 @@ begin
 					data_in_ff_3		<= data_in_ff_2;
 					x_pos_in_ff_1		<= x_pos_in;
 					x_pos_in_ff_2		<= x_pos_in_ff_1;
-					x_pos_in_ff_3		<= x_pos_in_ff_2;
 					detection_state 	<= wait_for_third_pixel_state;
 			
 			when wait_for_third_pixel_state => -- read the third pixel and it's x-position
@@ -130,7 +121,6 @@ begin
 					data_in_ff_3		<= data_in_ff_2;
 					x_pos_in_ff_1		<= x_pos_in;
 					x_pos_in_ff_2		<= x_pos_in_ff_1;
-					x_pos_in_ff_3		<= x_pos_in_ff_2;
 					detection_state 	<= conv_state;
 					
 			when conv_state => 
@@ -141,7 +131,6 @@ begin
 					data_in_ff_3 		<= (others => '0');
 					x_pos_in_ff_1 		<= (others => '0');
 					x_pos_in_ff_2 		<= (others => '0');
-					x_pos_in_ff_3 		<= (others => '0');
 					detection_state 	<= wait_for_first_pixel_state;
 					
 				else  -- compute convolution of the last 3 pixel (use 2nd derivative)
@@ -157,8 +146,6 @@ begin
 						det_obj_pos_x 			<= x_pos_in_ff_2;
 						det_obj					<= '1';
 						det_obj_data			<= data_in_ff_2; -- f(x) -> detected point
-						-- det_obj_data_front	<= data_in_ff_3; -- f(x-1)
-						-- det_obj_data_back		<= data_in_ff_1; -- f(x+1)
 					
 						-- reset old Flipflop values
 						data_in_ff_1 		<= (others => '0');
@@ -166,7 +153,6 @@ begin
 						data_in_ff_3 		<= (others => '0');
 						x_pos_in_ff_1 		<= (others => '0');
 						x_pos_in_ff_2 		<= (others => '0');
-						x_pos_in_ff_3 		<= (others => '0');
 						detection_state 	<= wait_for_first_pixel_state;
 				
 					else	-- read the next pixel
@@ -175,7 +161,6 @@ begin
 						data_in_ff_3	<= data_in_ff_2;
 						x_pos_in_ff_1	<= x_pos_in;
 						x_pos_in_ff_2	<= x_pos_in_ff_1;
-						x_pos_in_ff_3	<= x_pos_in_ff_2;
 					end if;
 				end if;
 		end case;

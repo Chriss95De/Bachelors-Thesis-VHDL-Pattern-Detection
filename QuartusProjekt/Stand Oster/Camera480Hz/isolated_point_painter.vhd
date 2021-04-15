@@ -33,7 +33,6 @@ end entity ISOLATED_POINT_PAINTER;
 
 architecture a of ISOLATED_POINT_PAINTER is
 	SIGNAL x_pos_ff		: unsigned (9 downto 0);			-- x-pos (column) of the pixel
-	SIGNAL vga_data_ff	: STD_LOGIC_VECTOR (7 downto 0);	-- pixel data (intensity)
 	SIGNAL column_ff		: INTEGER;		--horizontal pixel coordinate
 	SIGNAL row_ff			: INTEGER;		--vertical pixel coordinate
 	
@@ -48,7 +47,7 @@ begin
 process (reset, pixel_clk_in) is
 begin
 	if reset = '1' then	-- reset all values
-		vga_data_ff		<= (others => '0');
+		--continue
 		
 	elsif rising_edge(pixel_clk_in) then
 		
