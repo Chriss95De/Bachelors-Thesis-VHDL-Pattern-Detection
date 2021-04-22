@@ -50,7 +50,7 @@ port (
 	-- Debugging signals
 	dbg_rd_state				: out unsigned(7 downto 0); 				-- Current rd_state
 	dbg_wr_state				: out unsigned(7 downto 0); 				-- Current wr_state
-	dbg_err_code				: out std_logic_vector(15 downto 0);	-- Some debug information
+--gi 2021-04-22 dbg_err_code				: out std_logic_vector(15 downto 0);	-- Some debug information
 	dbg_rd						: out unsigned(7 downto 0);	 			-- Some debug information
 	dbg_wr						: out unsigned(7 downto 0)	 				-- Some debug information
 		
@@ -103,7 +103,7 @@ architecture a of SDRAM_Write_Buffer_gen is
 	signal buffer_rdreq		: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read request
 	signal buffer_aclr		: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- async clear
 	signal buffer_wrempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- write state machine empty signal
-	signal buffer_rdempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read state machine empty signal
+-- signal buffer_rdempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read state machine empty signal
 	signal buffer_q			: t_buffer_data;											-- Data from buffer
 	
 	-- line number for current buffer data
@@ -164,7 +164,7 @@ architecture a of SDRAM_Write_Buffer_gen is
 	signal wr_addr				: std_logic_vector(ADDR_WIDTH-1 downto 0);
 	
 	-- Save last sent data to resend if a waitstate occurs
-	type t_wr_buffer_data is array (0 to 7) of std_logic_vector(DATA_BYTES*8-1 downto 0);
+	type t_wr_buffer_data is array (0 to 7) of std_logic_vector(DATA_BYTES*8-1 downto 0); 
 	type t_wr_buffer_addr is array (0 to 7) of std_logic_vector(ADDR_WIDTH-1 DOWNTO 0);
 	type t_wr_buffer_addr_x is array (0 to 7) of unsigned(ADDR_X_WIDTH-1 DOWNTO 0);
 	type t_wr_buffer_addr_y is array (0 to 7) of unsigned(ADDR_Y_WIDTH-1 DOWNTO 0);
@@ -187,7 +187,7 @@ architecture a of SDRAM_Write_Buffer_gen is
 	signal rd_active_buffer 	: t_active_buffer;
 	
 	signal cam_data_valid_ff	: std_logic; 	-- to detect rising edge
-	signal cam_line_active_ff	: std_logic; 	-- to detect rising edge
+--	signal cam_line_active_ff	: std_logic; 	-- to detect rising edge
 	
 	
 	
@@ -220,7 +220,7 @@ dcfifo_gen: for I in 0 to (LINE_BUFFER_N-1) generate
 		rdreq						=> buffer_rdreq(I),
 		aclr						=> buffer_aclr(I),
 		wrempty					=> buffer_wrempty(I),
-		rdempty					=> buffer_rdempty(I),	
+--rdempty					=> buffer_rdempty(I),	
 		q							=> buffer_q(I)
 	);
 
@@ -581,7 +581,7 @@ begin
 		rd_state <= RD_WAITDATA_STATE;
 		rd_active_buffer <= 0;				-- Start with buffer 0
 		cam_data_valid_ff <= '0';
-		cam_line_active_ff <= '0';
+--		cam_line_active_ff <= '0';
 		
 		
 		for I in 0 to LINE_BUFFER_N-1 loop	
@@ -621,7 +621,7 @@ begin
 		-- FF to detect rising edge of cam_data_valid
 		cam_data_valid_ff <= cam_data_valid;
 		-- FF to detect rising edge of cam_line_active
-		cam_line_active_ff <= cam_line_active;
+--		cam_line_active_ff <= cam_line_active;
 	
 
 		-- CAM read state machine
