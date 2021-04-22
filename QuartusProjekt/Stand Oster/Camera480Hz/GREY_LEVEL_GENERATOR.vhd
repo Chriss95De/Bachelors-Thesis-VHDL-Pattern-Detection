@@ -23,28 +23,30 @@ port(
 end entity GREY_LEVEL_GENERATOR;
 
 architecture a of GREY_LEVEL_GENERATOR is
-	signal data_next  		: std_logic_vector(7 downto 0);	-- next value of data_out (std_logic_vector)
 	signal data_next_uint 	: unsigned (7 downto 0);			-- next value of data_out (unsigned)
 	signal increment_ff 		: std_logic; 							-- synchronized incrementation signal
 
 	
 begin																			-- begin description
-	data_out <= data_next;												-- send data_next to output
+	data_out <= std_logic_vector(data_next_uint);			-- convert data_next_uint to std_logic_vector
 
 process (reset, clk) is
 begin
 
 	if reset = '1' then													-- reset stored values						
-		data_next_uint <= (others => '0');
-
+		data_next_uint <= (others => '0');	
+		
 	elsif rising_edge (clk) then
 		increment_ff <= increment;										-- generate a flip-flop
-		data_next <= std_logic_vector(data_next_uint);			-- convert data_next_uint to std_logic_vector
 	
-		if increment_ff = '1' and increment = '0' then			-- increment data_next_uint, if 
-			data_next_uint <= data_next_uint + INCREMENT_STEP;	-- increment data_next_uint by INCREMENT_STEP
+		if increment_ff and not increment then       			-- increment data_next_uint, if 
+		   if data_next_uint > 255 - INCREMENT_STEP then
+			  data_next_uint <= (others => '0');
+			else
+   		  data_next_uint <= data_next_uint + INCREMENT_STEP;	-- increment data_next_uint by INCREMENT_STEP
+			end if;
 		end if;	
-	
+
 	end if;
  
 end process;

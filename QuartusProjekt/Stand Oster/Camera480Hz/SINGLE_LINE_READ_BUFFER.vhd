@@ -3,6 +3,10 @@
 -- Function		: Extract a line of a imagine
 -- Coder			: Lukas Herbst
 
+/*
+ 2021-04-15 removed unused signals
+*/
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
@@ -51,7 +55,7 @@ port (
 	-- signal output for debugging
 	dbg_rd_state				: out unsigned(7 downto 0);				-- current read state
 	dbg_wr_state				: out unsigned(7 downto 0);				-- current write state
-	dbg_err_code				: out std_logic_vector(15 downto 0);	-- some debug info
+	dbg_err_code				: out std_logic_vector(3 downto 0);	-- some debug info
 	dbg_rcv						: out unsigned(15 downto 0);	
 	dbg_req						: out unsigned(15 downto 0)	
 	);
@@ -95,12 +99,6 @@ architecture a of SINGLE_LINE_READ_BUFFER is
 	signal buffer_q			: std_logic_vector(DATA_BYTES_IN*8-1 downto 0);	   -- Output_Data from buffer to write them on data_out
 	
 	
-	-- line number for current buffer_data
-	signal buffer_line			: unsigned(ADDR_Y_WIDTH-1 downto 0);		-- contains line numbers of the current buffer data
-	signal buffer_line_ff1		: unsigned(ADDR_Y_WIDTH-1 downto 0);		-- synchronize line data from read state machine to calculate SDRAM address
-	signal buffer_line_ff2		: unsigned(ADDR_Y_WIDTH-1 downto 0);		-- synchronize line data from read state machine to calculate SDRAM address
-	
-	
 	-- buffer valid handshake signals
 	signal buffer_valid		: std_logic;		-- Synchronized with cam_clk, Buffer is filled with valid data for the next line
 	signal buffer_valid_ff1	: std_logic;		-- Synchronized with sdram_clk																								
@@ -123,7 +121,6 @@ architecture a of SINGLE_LINE_READ_BUFFER is
 	type wr_state_type is (WR_WAITBUFFER_STATE, WR_BUF_REQ_DATA_1,WR_BUF_REQ_DATA_2,WR_BUF_DATA_1,WR_BUF_DATA_2, WR_WAIT_ENA, WR_DATA_STATE, WR_WAITRESET_STATE);
 	signal wr_state					: wr_state_type;	
 	signal wr_en_ff					: std_logic;
-	signal output_byte_n				: integer;	
 	signal data_out_ff				: std_logic_vector(7 downto 0);	-- Current output data
 	signal data_out_pos_y_ff		: unsigned(ADDR_Y_WIDTH-1 downto 0);
 	signal data_out_pos_x_ff		: unsigned(ADDR_X_WIDTH-1 downto 0);
@@ -228,15 +225,12 @@ begin
 		data_out_pos_y_ff <= (others => '0');
 		data_out_ff <= (others => '0');
 		data_out_valid <= '0';
-		output_byte_n <= 0;
 		wr_en_ff <= '0';
 
 		buffer_reset <= '0';
 		buffer_valid_ff1 <= '0';
 		buffer_valid_ff2 <= '0';		
 		buffer_rdreq <= '0';	
-		buffer_line_ff1 <= (others => '0');		
-		buffer_line_ff2 <= (others => '0');		
 		
 		for I in 0 to 7 loop	
 			wr_line_buffer(I) 	<= (others => '0');
@@ -252,9 +246,6 @@ begin
 		-- Handshake to reset bufferI_valid
 		buffer_valid_ff1 <= buffer_valid;
 		buffer_valid_ff2 <= buffer_valid_ff1;
-		-- synchronize line number from read data state machine
-		buffer_line_ff1 <= buffer_line;
-		buffer_line_ff2 <= buffer_line_ff1;	
 		-- Preset signals			
 		buffer_rdreq <= '0';		
 		-- stored line in FIFO
@@ -276,7 +267,6 @@ begin
 			dbg_wr_state <= to_unsigned(1,8);
 			if buffer_valid_ff2 = '1' then	-- next line is ready to write
 				-- Start buffering data from FIFO
-				output_byte_n	<= 0;
 				wr_line_buffer_pos	<= 0;
 		
 				wr_state <= WR_BUF_REQ_DATA_1;	
@@ -424,7 +414,6 @@ process(sdram_clk_rd, reset) is
 		buffer_valid <= '0';
 		buffer_reset_ff1 <= '0';
 		buffer_reset_ff2 <= '0';
-		buffer_line <= (others => '0');
 		-- Reset FIFO
 		buffer_data <= (others => '0');
 		buffer_wrreq <= '0';
@@ -437,9 +426,9 @@ process(sdram_clk_rd, reset) is
 	elsif rising_edge(sdram_clk_rd) then
 		-- debug status
 		dbg_rd_state <= to_unsigned(0,8);
-		dbg_err_code(2) <= buffer_valid;
-		dbg_err_code(3) <= buffer_wrempty;
-		dbg_err_code(4) <= rd_req_in;
+		dbg_err_code(1) <= buffer_valid;
+		dbg_err_code(2) <= buffer_wrempty;
+		dbg_err_code(3) <= rd_req_in;
 		dbg_rcv <= sdram_rd_rcv_n;
 		dbg_req <= sdram_rd_req_n;
 		-- FIFO signals		

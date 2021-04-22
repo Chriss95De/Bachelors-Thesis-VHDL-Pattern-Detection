@@ -50,7 +50,6 @@ architecture a of ISOLATED_POINT_DETECTION_2 is
 	signal det_obj_cnt			: unsigned (1 downto 0); 				-- count detected object
 	signal x_pos_in_ff_1			: unsigned (9 downto 0);
 	signal x_pos_in_ff_2			: unsigned (9 downto 0);
-	signal x_pos_in_ff_3			: unsigned (9 downto 0);
 	signal conv_result			: signed (9 downto 0);
 	-- implemented arrays for detected objects
 	type det_obj_pos_x_type 		is array (0 to NUMBERS_OF_OBJECTS-1) of unsigned (9 downto 0);
@@ -83,7 +82,6 @@ begin
 		data_in_valid_ff_2	<= '0';
 		x_pos_in_ff_1 			<= (others => '0');
 		x_pos_in_ff_2 			<= (others => '0');
-		x_pos_in_ff_3 			<= (others => '0');
 		conv_result 			<= (others => '0');
 		det_obj_cnt				<= (others => '0');
 		
@@ -107,7 +105,6 @@ begin
 					data_in_ff_3		<= data_in_ff_2;
 					x_pos_in_ff_1		<= x_pos_in;
 					x_pos_in_ff_2		<= x_pos_in_ff_1;
-					x_pos_in_ff_3		<= x_pos_in_ff_2;
 					conv_result 		<= (others => '0');
 					det_obj_cnt			<= (others => '0');
 					
@@ -126,7 +123,6 @@ begin
 					data_in_ff_3		<= data_in_ff_2;
 					x_pos_in_ff_1		<= x_pos_in;
 					x_pos_in_ff_2		<= x_pos_in_ff_1;
-					x_pos_in_ff_3		<= x_pos_in_ff_2;
 					detection_state 	<= wait_for_third_pixel_state;
 			
 			when wait_for_third_pixel_state => -- read the third pixel and it's x-position
@@ -135,7 +131,6 @@ begin
 					data_in_ff_3		<= data_in_ff_2;
 					x_pos_in_ff_1		<= x_pos_in;
 					x_pos_in_ff_2		<= x_pos_in_ff_1;
-					x_pos_in_ff_3		<= x_pos_in_ff_2;
 					detection_state 	<= conv_state;
 					
 			when conv_state => 
@@ -146,7 +141,6 @@ begin
 					data_in_ff_3 		<= (others => '0');
 					x_pos_in_ff_1 		<= (others => '0');
 					x_pos_in_ff_2 		<= (others => '0');
-					x_pos_in_ff_3 		<= (others => '0');
 					detection_state 	<= wait_for_first_pixel_state;
 				
 				elsif det_obj_cnt < NUMBERS_OF_OBJECTS then -- check, whether maximum numbers of objects are found
@@ -178,7 +172,6 @@ begin
 					data_in_ff_3	<= data_in_ff_2;
 					x_pos_in_ff_1	<= x_pos_in;
 					x_pos_in_ff_2	<= x_pos_in_ff_1;
-					x_pos_in_ff_3	<= x_pos_in_ff_2;
 				else -- maximum number of objects are found
 					-- reset old Flipflop values
 					data_in_ff_1 		<= (others => '0');
@@ -186,7 +179,6 @@ begin
 					data_in_ff_3 		<= (others => '0');
 					x_pos_in_ff_1 		<= (others => '0');
 					x_pos_in_ff_2 		<= (others => '0');
-					x_pos_in_ff_3 		<= (others => '0');
 					detection_state 	<= wait_for_first_pixel_state;
 				end if;
 				

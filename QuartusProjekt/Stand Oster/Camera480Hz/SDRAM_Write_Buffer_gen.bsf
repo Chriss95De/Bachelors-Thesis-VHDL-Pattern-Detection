@@ -138,23 +138,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 328 144)
 		(output)
-		(text "dbg_err_code[15..0]" (rect 0 0 80 12)(font "Arial" ))
-		(text "dbg_err_code[15..0]" (rect 227 139 307 151)(font "Arial" ))
+		(text "dbg_rd[7..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "dbg_rd[7..0]" (rect 259 139 307 151)(font "Arial" ))
 		(line (pt 328 144)(pt 312 144)(line_width 3))
 	)
 	(port
 		(pt 328 160)
 		(output)
-		(text "dbg_rd[7..0]" (rect 0 0 48 12)(font "Arial" ))
-		(text "dbg_rd[7..0]" (rect 259 155 307 167)(font "Arial" ))
-		(line (pt 328 160)(pt 312 160)(line_width 3))
-	)
-	(port
-		(pt 328 176)
-		(output)
 		(text "dbg_wr[7..0]" (rect 0 0 49 12)(font "Arial" ))
-		(text "dbg_wr[7..0]" (rect 258 171 307 183)(font "Arial" ))
-		(line (pt 328 176)(pt 312 176)(line_width 3))
+		(text "dbg_wr[7..0]" (rect 258 155 307 167)(font "Arial" ))
+		(line (pt 328 160)(pt 312 160)(line_width 3))
 	)
 	(parameter
 		"LINE_BUFFER_N"
