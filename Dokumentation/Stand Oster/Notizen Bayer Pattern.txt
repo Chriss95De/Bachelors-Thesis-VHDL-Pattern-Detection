@@ -1,0 +1,10 @@
+Camera Output Timing -> 2 Taps
+-LVAL 69 Takte low = neue Zeile
+-LVAL 321 Takte high = 642 pixel auf TAP1(DA) und TAP2(DB)
+-FVAL 14 Takte low = ende FRAME
+-TAP1(DA) erstes Byte und TAP2(DB) zweites Byte
+
+ROI = Region of interest
+
+Bayer Pattern format type -> bggr
+Bayer Pattern in RGB Pixel heißt "demosaicing"
