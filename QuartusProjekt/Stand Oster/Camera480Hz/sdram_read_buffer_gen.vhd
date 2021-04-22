@@ -80,8 +80,6 @@ port (
 	sdram_data					: in std_logic_vector(DATA_BYTES_IN*8-1 downto 0);	-- data from SDRAM
 	sdram_data_valid			: in std_logic;							-- Indicates valid data from SDRAM
 	sdram_wait					: in std_logic;							-- SDRAM is busy	
-	sdram_addr_x				: out unsigned(ADDR_X_WIDTH-1 downto 0);			-- Current x position to read
-	sdram_addr_y				: out unsigned(ADDR_Y_WIDTH-1 downto 0); 			-- Current y position to read
 	sdram_addr					: out std_logic_vector(ADDR_WIDTH-1 downto 0);			-- Current memory position to read
 	sdram_rd						: out std_logic;							-- SDRAM read command
 	
@@ -155,13 +153,6 @@ architecture a of SDRAM_Read_Buffer_gen is
 	signal buffer_wrempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- write state machine empty signal
 	signal buffer_rdempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read state machine empty signal
 	signal buffer_q			: t_buffer_data;											-- Data from buffer
-	
-	-- line number for current buffer data
-		
-	type t_buffer_line is array (0 to LINE_BUFFER_N-1) of unsigned(ADDR_Y_WIDTH-1 downto 0);
-	signal buffer_line			: t_buffer_line;	-- contains line number of the current buffer data
-	signal buffer_line_ff1		: t_buffer_line;	-- synchronize line data from read state machine to calculate SDRAM address
-	signal buffer_line_ff2		: t_buffer_line;	-- synchronize line data from read state machine to calculate SDRAM address
 
 	-- buffer valid handshake signals
 	
@@ -321,10 +312,7 @@ begin
 			buffer_reset(I) <= '0';
 			buffer_valid_ff1(I) <= '0';
 			buffer_valid_ff2(I) <= '0';		
-			buffer_rdreq(I) <= '0';
-			
-			buffer_line_ff1(I) <= (others => '0');		
-			buffer_line_ff2(I) <= (others => '0');	
+			buffer_rdreq(I) <= '0';	
 		end loop;	
 		
 		
@@ -358,10 +346,6 @@ begin
 			-- Handshake to reset bufferI_valid
 			buffer_valid_ff1(I) <= buffer_valid(I);
 			buffer_valid_ff2(I) <= buffer_valid_ff1(I);
-			
-			-- synchronize line number from read data state machine
-			buffer_line_ff1(I) <= buffer_line(I);
-			buffer_line_ff2(I) <= buffer_line_ff1(I);
 				
 			-- Preset signals			
 			buffer_rdreq(I) <= '0';
@@ -586,8 +570,6 @@ begin
 		-- Reset
 		rd_state <= RD_WAITFRAME_STATE;
 		sdram_addr <= (others => '0');
-		sdram_addr_x <= (others => '0');
-		sdram_addr_y <= (others => '0');
 		sdram_rd <= '0';
 		rd_active <= '0';
 		rd_req <= '0';
@@ -600,7 +582,6 @@ begin
 			buffer_valid(I) <= '0';
 			buffer_reset_ff1(I) <= '0';
 			buffer_reset_ff2(I) <= '0';
-			buffer_line(I) <= (others => '0');
 			
 			-- Reset FIFO
 			buffer_data(I) <= (others => '0');
