@@ -18,13 +18,14 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 13:57:46  April 22, 2021
+# Date created = 14:09:47  April 22, 2021
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "18.1"
-DATE = "13:57:46  April 22, 2021"
+DATE = "14:09:47  April 22, 2021"
 
 # Revisions
 
+PROJECT_REVISION = "bayer-pattern"
 PROJECT_REVISION = "sdram-mac"
