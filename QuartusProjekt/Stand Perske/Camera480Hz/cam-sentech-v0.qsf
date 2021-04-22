@@ -398,9 +398,9 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_RXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART_TXD
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to vga_b[0] -disable
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to X3 -disable
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name CDF_FILE camera.cdf
 set_global_assignment -name VHDL_FILE cameralink_capture_dbg.vhd
 set_global_assignment -name BDF_FILE camera_sentech_v0.bdf
 set_global_assignment -name SDC_FILE camera_sentech_v0.sdc
 set_global_assignment -name SEARCH_PATH output_files/ -tag from_archive
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
