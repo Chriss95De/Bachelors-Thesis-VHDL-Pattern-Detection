@@ -7012,6 +7012,48 @@ refer to the applicable agreement for further details.
 	(annotation_block (parameter)(rect 4352 16 4567 187))
 )
 (symbol
+	(rect 6704 -168 6896 -56)
+	(text "GREY_LEVEL_GENERATOR" (rect 5 0 150 12)(font "Arial" ))
+	(text "inst24" (rect 8 96 36 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "increment" (rect 0 0 48 12)(font "Arial" ))
+		(text "increment" (rect 21 43 69 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 59 45 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "data_out[7..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "data_out[7..0]" (rect 114 27 182 39)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32)(line_width 3))
+	)
+	(parameter
+		"INCREMENT_STEP"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 176 96))
+	)
+	(annotation_block (parameter)(rect 6704 -40 6920 0))
+)
+(symbol
 	(rect 4584 248 4968 520)
 	(text "SINGLE_LINE_READ_BUFFER" (rect 5 0 163 12)(font "Arial" ))
 	(text "inst82" (rect 8 256 37 268)(font "Arial" ))
@@ -7165,8 +7207,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 384 208)
 		(output)
-		(text "dbg_err_code[4..0]" (rect 0 0 92 12)(font "Arial" ))
-		(text "dbg_err_code[4..0]" (rect 286 203 363 215)(font "Arial" ))
+		(text "dbg_err_code[3..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "dbg_err_code[3..0]" (rect 286 203 363 215)(font "Arial" ))
 		(line (pt 384 208)(pt 368 208)(line_width 3))
 	)
 	(port
@@ -7217,48 +7259,6 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 368 256))
 	)
 	(annotation_block (parameter)(rect 4880 72 5083 205))
-)
-(symbol
-	(rect 6704 -168 6896 -56)
-	(text "GREY_LEVEL_GENERATOR" (rect 5 0 150 12)(font "Arial" ))
-	(text "inst24" (rect 8 96 36 113)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "increment" (rect 0 0 48 12)(font "Arial" ))
-		(text "increment" (rect 21 43 69 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "reset" (rect 0 0 24 12)(font "Arial" ))
-		(text "reset" (rect 21 59 45 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 192 32)
-		(output)
-		(text "data_out[7..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "data_out[7..0]" (rect 114 27 182 39)(font "Arial" ))
-		(line (pt 192 32)(pt 176 32)(line_width 3))
-	)
-	(parameter
-		"INCREMENT_STEP"
-		"10"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 176 96))
-	)
-	(annotation_block (parameter)(rect 6704 -40 6920 0))
 )
 (connector
 	(text "gnd" (rect 250 56 267 68)(font "Arial" ))

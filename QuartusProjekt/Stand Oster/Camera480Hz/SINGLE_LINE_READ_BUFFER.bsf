@@ -173,8 +173,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 384 208)
 		(output)
-		(text "dbg_err_code[4..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "dbg_err_code[4..0]" (rect 286 203 363 215)(font "Arial" ))
+		(text "dbg_err_code[3..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "dbg_err_code[3..0]" (rect 287 203 363 215)(font "Arial" ))
 		(line (pt 384 208)(pt 368 208)(line_width 3))
 	)
 	(port

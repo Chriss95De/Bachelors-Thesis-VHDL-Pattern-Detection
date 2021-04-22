@@ -55,7 +55,7 @@ port (
 	-- signal output for debugging
 	dbg_rd_state				: out unsigned(7 downto 0);				-- current read state
 	dbg_wr_state				: out unsigned(7 downto 0);				-- current write state
-	dbg_err_code				: out std_logic_vector(4 downto 0);	-- some debug info
+	dbg_err_code				: out std_logic_vector(3 downto 0);	-- some debug info
 	dbg_rcv						: out unsigned(15 downto 0);	
 	dbg_req						: out unsigned(15 downto 0)	
 	);
@@ -426,9 +426,9 @@ process(sdram_clk_rd, reset) is
 	elsif rising_edge(sdram_clk_rd) then
 		-- debug status
 		dbg_rd_state <= to_unsigned(0,8);
-		dbg_err_code(2) <= buffer_valid;
-		dbg_err_code(3) <= buffer_wrempty;
-		dbg_err_code(4) <= rd_req_in;
+		dbg_err_code(1) <= buffer_valid;
+		dbg_err_code(2) <= buffer_wrempty;
+		dbg_err_code(3) <= rd_req_in;
 		dbg_rcv <= sdram_rd_rcv_n;
 		dbg_req <= sdram_rd_req_n;
 		-- FIFO signals		
