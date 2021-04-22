@@ -684,7 +684,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 5720 328 5896 344)
+	(rect 5648 -176 5824 -160)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_r[7..0]" (rect 90 0 144 12)(font "Arial" ))
 	(pt 0 8)
@@ -697,11 +697,11 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 5744 288 5816 320))
+	(annotation_block (location)(rect 5672 -216 5744 -184))
 )
 (pin
 	(output)
-	(rect 5720 376 5896 392)
+	(rect 5648 -128 5824 -112)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_g[7..0]" (rect 90 0 146 12)(font "Arial" ))
 	(pt 0 8)
@@ -714,11 +714,11 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 5752 344 5824 376))
+	(annotation_block (location)(rect 5680 -160 5752 -128))
 )
 (pin
 	(output)
-	(rect 5720 424 5896 440)
+	(rect 5648 -80 5824 -64)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_b[7..0]" (rect 90 0 146 12)(font "Arial" ))
 	(pt 0 8)
@@ -731,7 +731,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 5752 392 5824 424))
+	(annotation_block (location)(rect 5680 -112 5752 -80))
 )
 (pin
 	(bidir)
@@ -4148,7 +4148,7 @@ refer to the applicable agreement for further details.
 	(annotation_block (parameter)(rect 4880 72 5083 205))
 )
 (symbol
-	(rect 5656 312 5720 360)
+	(rect 5584 -192 5648 -144)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst47" (rect 3 37 32 49)(font "Arial" ))
 	(port
@@ -4180,7 +4180,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 5656 360 5720 408)
+	(rect 5584 -144 5648 -96)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst48" (rect 3 37 32 49)(font "Arial" ))
 	(port
@@ -4212,7 +4212,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 5656 408 5720 456)
+	(rect 5584 -96 5648 -48)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst50" (rect 3 37 32 49)(font "Arial" ))
 	(port
@@ -4244,7 +4244,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 5312 280 5544 424)
+	(rect 5240 -224 5472 -80)
 	(text "BAYER_PATTERN_VGAOUT" (rect 5 0 148 12)(font "Arial" ))
 	(text "inst10" (rect 8 128 37 140)(font "Arial" ))
 	(port
@@ -5980,130 +5980,102 @@ refer to the applicable agreement for further details.
 	(pt 7424 424)
 )
 (connector
-	(text "SLRB_data_out[7..0]" (rect 4978 328 5075 345)(font "Intel Clear" ))
-	(pt 4968 344)
-	(pt 5312 344)
-	(bus)
-)
-(connector
-	(pt 5240 392)
-	(pt 5240 376)
-	(bus)
-)
-(connector
-	(text "SLRB_data_out_x_pos[9..0]" (rect 4978 376 5108 393)(font "Intel Clear" ))
-	(pt 4968 392)
-	(pt 5240 392)
-	(bus)
-)
-(connector
-	(pt 5240 376)
-	(pt 5312 376)
-	(bus)
-)
-(connector
-	(text "SLRB_data_out_y_pos[8..0]" (rect 4978 392 5110 409)(font "Intel Clear" ))
-	(pt 4968 408)
-	(pt 5248 408)
-	(bus)
-)
-(connector
-	(pt 5248 408)
-	(pt 5248 392)
-	(bus)
-)
-(connector
-	(pt 5248 392)
-	(pt 5312 392)
-	(bus)
-)
-(connector
-	(text "vga_disp_ena" (rect 5592 328 5658 345)(font "Intel Clear" ))
-	(pt 5592 344)
-	(pt 5656 344)
-)
-(connector
-	(text "vga_disp_ena" (rect 5594 376 5660 393)(font "Intel Clear" ))
-	(pt 5592 392)
-	(pt 5656 392)
-)
-(connector
-	(text "vga_disp_ena" (rect 5594 424 5660 441)(font "Intel Clear" ))
-	(pt 5592 440)
-	(pt 5656 440)
-)
-(connector
-	(pt 5656 328)
-	(pt 5648 328)
-	(bus)
-)
-(connector
-	(pt 5576 424)
-	(pt 5656 424)
-	(bus)
-)
-(connector
-	(pt 5576 424)
-	(pt 5576 344)
-	(bus)
-)
-(connector
-	(pt 5648 328)
-	(pt 5648 312)
-	(bus)
-)
-(connector
-	(pt 5584 376)
-	(pt 5656 376)
-	(bus)
-)
-(connector
-	(pt 5584 376)
-	(pt 5584 328)
-	(bus)
-)
-(connector
-	(pt 5648 312)
-	(pt 5544 312)
-	(bus)
-)
-(connector
-	(pt 5584 328)
-	(pt 5544 328)
-	(bus)
-)
-(connector
-	(pt 5576 344)
-	(pt 5544 344)
-	(bus)
-)
-(connector
-	(text "RESET" (rect 5258 312 5288 329)(font "Intel Clear" ))
-	(pt 5248 328)
-	(pt 5312 328)
-)
-(connector
-	(text "clk_pll" (rect 5258 296 5291 313)(font "Intel Clear" ))
-	(pt 5312 312)
-	(pt 5248 312)
-)
-(connector
 	(text "SLRB_data_valid" (rect 4978 344 5060 361)(font "Intel Clear" ))
 	(pt 5112 360)
 	(pt 4968 360)
 )
 (connector
-	(pt 5208 376)
-	(pt 5208 360)
+	(text "SLRB_data_out[7..0]" (rect 4978 328 5075 345)(font "Intel Clear" ))
+	(pt 5112 344)
+	(pt 4968 344)
+	(bus)
 )
 (connector
 	(text "SLRB_data_rdy" (rect 4978 360 5052 377)(font "Intel Clear" ))
+	(pt 5112 376)
 	(pt 4968 376)
-	(pt 5208 376)
 )
 (connector
-	(pt 5208 360)
-	(pt 5312 360)
+	(text "SLRB_data_out_x_pos[9..0]" (rect 4978 376 5108 393)(font "Intel Clear" ))
+	(pt 5112 392)
+	(pt 4968 392)
+	(bus)
+)
+(connector
+	(text "SLRB_data_out_y_pos[8..0]" (rect 4978 392 5110 409)(font "Intel Clear" ))
+	(pt 5112 408)
+	(pt 4968 408)
+	(bus)
+)
+(connector
+	(text "vga_disp_ena" (rect 5520 -176 5586 -159)(font "Intel Clear" ))
+	(pt 5520 -160)
+	(pt 5584 -160)
+)
+(connector
+	(text "vga_disp_ena" (rect 5522 -128 5588 -111)(font "Intel Clear" ))
+	(pt 5520 -112)
+	(pt 5584 -112)
+)
+(connector
+	(text "vga_disp_ena" (rect 5522 -80 5588 -63)(font "Intel Clear" ))
+	(pt 5520 -64)
+	(pt 5584 -64)
+)
+(connector
+	(pt 5584 -176)
+	(pt 5576 -176)
+	(bus)
+)
+(connector
+	(pt 5504 -80)
+	(pt 5584 -80)
+	(bus)
+)
+(connector
+	(pt 5504 -80)
+	(pt 5504 -160)
+	(bus)
+)
+(connector
+	(pt 5576 -176)
+	(pt 5576 -192)
+	(bus)
+)
+(connector
+	(pt 5512 -128)
+	(pt 5584 -128)
+	(bus)
+)
+(connector
+	(pt 5512 -128)
+	(pt 5512 -176)
+	(bus)
+)
+(connector
+	(pt 5576 -192)
+	(pt 5472 -192)
+	(bus)
+)
+(connector
+	(pt 5512 -176)
+	(pt 5472 -176)
+	(bus)
+)
+(connector
+	(pt 5504 -160)
+	(pt 5472 -160)
+	(bus)
+)
+(connector
+	(text "RESET" (rect 5186 -192 5216 -175)(font "Intel Clear" ))
+	(pt 5176 -176)
+	(pt 5240 -176)
+)
+(connector
+	(text "clk_pll" (rect 5186 -208 5219 -191)(font "Intel Clear" ))
+	(pt 5240 -192)
+	(pt 5176 -192)
 )
 (junction (pt 520 640))
 (junction (pt 4032 192))
