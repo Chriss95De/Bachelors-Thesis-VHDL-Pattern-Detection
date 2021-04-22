@@ -18,19 +18,19 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 13:15:50  April 22, 2021
+# Date created = 13:17:18  April 22, 2021
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "18.1"
-DATE = "13:15:50  April 22, 2021"
+DATE = "13:17:18  April 22, 2021"
 
 # Revisions
 
 PROJECT_REVISION = "cam-sentech-v0"
+PROJECT_REVISION = "cam-sentech-tap2-v0"
 PROJECT_REVISION = "camera"
 PROJECT_REVISION = "cam-sentech-tap2-dram-controller-v0"
-PROJECT_REVISION = "cam-sentech-tap2-v0"
 PROJECT_REVISION = "sdram-ext-read-write-buffer-generic"
 PROJECT_REVISION = "sdram-read-buffer-fifo-test"
 PROJECT_REVISION = "sdram-read-write-buffer-generic"
