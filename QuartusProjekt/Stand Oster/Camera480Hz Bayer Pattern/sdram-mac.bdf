@@ -446,7 +446,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 8008 0 8184 16)
+	(rect 6880 0 7056 16)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_hs" (rect 90 0 126 12)(font "Arial" ))
 	(pt 0 8)
@@ -459,11 +459,11 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 8176 -16 8240 8))
+	(annotation_block (location)(rect 7048 -16 7112 8))
 )
 (pin
 	(output)
-	(rect 8008 16 8184 32)
+	(rect 6880 16 7056 32)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_vs" (rect 90 0 127 12)(font "Arial" ))
 	(pt 0 8)
@@ -476,11 +476,11 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 8176 8 8240 32))
+	(annotation_block (location)(rect 7048 8 7112 32))
 )
 (pin
 	(output)
-	(rect 7984 88 8160 104)
+	(rect 6856 88 7032 104)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_blank_n" (rect 90 0 152 12)(font "Arial" ))
 	(pt 0 8)
@@ -493,11 +493,11 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 8160 104 8224 128))
+	(annotation_block (location)(rect 7032 104 7096 128))
 )
 (pin
 	(output)
-	(rect 7984 104 8160 120)
+	(rect 6856 104 7032 120)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_sync_n" (rect 90 0 151 12)(font "Arial" ))
 	(pt 0 8)
@@ -510,7 +510,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 8160 120 8224 144))
+	(annotation_block (location)(rect 7032 120 7096 144))
 )
 (pin
 	(output)
@@ -667,7 +667,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 7992 -32 8168 -16)
+	(rect 6864 -32 7040 -16)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_clk" (rect 90 0 128 12)(font "Arial" ))
 	(pt 0 8)
@@ -680,11 +680,11 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 8184 -64 8248 -40))
+	(annotation_block (location)(rect 7056 -64 7120 -40))
 )
 (pin
 	(output)
-	(rect 7392 416 7568 432)
+	(rect 5720 328 5896 344)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_r[7..0]" (rect 90 0 144 12)(font "Arial" ))
 	(pt 0 8)
@@ -697,11 +697,11 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 7416 376 7488 408))
+	(annotation_block (location)(rect 5744 288 5816 320))
 )
 (pin
 	(output)
-	(rect 7392 464 7568 480)
+	(rect 5720 376 5896 392)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_g[7..0]" (rect 90 0 146 12)(font "Arial" ))
 	(pt 0 8)
@@ -714,11 +714,11 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 7424 432 7496 464))
+	(annotation_block (location)(rect 5752 344 5824 376))
 )
 (pin
 	(output)
-	(rect 7392 512 7568 528)
+	(rect 5720 424 5896 440)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "vga_b[7..0]" (rect 90 0 146 12)(font "Arial" ))
 	(pt 0 8)
@@ -731,7 +731,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 7424 480 7496 512))
+	(annotation_block (location)(rect 5752 392 5824 424))
 )
 (pin
 	(bidir)
@@ -820,7 +820,7 @@ refer to the applicable agreement for further details.
 	(annotation_block (parameter)(rect 920 256 1104 304))
 )
 (symbol
-	(rect 9280 496 9464 576)
+	(rect 8152 496 8336 576)
 	(text "seg7dec" (rect 5 0 46 12)(font "Arial" ))
 	(text "inst9" (rect 8 64 31 76)(font "Arial" ))
 	(port
@@ -843,7 +843,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 9280 408 9464 488)
+	(rect 8152 408 8336 488)
 	(text "seg7dec" (rect 5 0 46 12)(font "Arial" ))
 	(text "inst18" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -866,7 +866,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 9280 320 9464 400)
+	(rect 8152 320 8336 400)
 	(text "seg7dec" (rect 5 0 46 12)(font "Arial" ))
 	(text "inst22" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -889,7 +889,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 9280 232 9464 312)
+	(rect 8152 232 8336 312)
 	(text "seg7dec" (rect 5 0 46 12)(font "Arial" ))
 	(text "inst23" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -912,7 +912,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8888 496 9072 576)
+	(rect 7760 496 7944 576)
 	(text "seg7dec" (rect 5 0 46 12)(font "Arial" ))
 	(text "inst14" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -935,7 +935,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8888 408 9072 488)
+	(rect 7760 408 7944 488)
 	(text "seg7dec" (rect 5 0 46 12)(font "Arial" ))
 	(text "inst19" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -958,7 +958,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8888 320 9072 400)
+	(rect 7760 320 7944 400)
 	(text "seg7dec" (rect 5 0 46 12)(font "Arial" ))
 	(text "inst30" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -981,7 +981,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8888 232 9072 312)
+	(rect 7760 232 7944 312)
 	(text "seg7dec" (rect 5 0 46 12)(font "Arial" ))
 	(text "inst49" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -1804,7 +1804,7 @@ refer to the applicable agreement for further details.
 	(annotation_block (parameter)(rect 4584 920 4768 1016))
 )
 (symbol
-	(rect 7920 368 7968 400)
+	(rect 6792 368 6840 400)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst84" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -1828,7 +1828,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7920 408 7968 440)
+	(rect 6792 408 6840 440)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst86" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -1852,7 +1852,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7920 448 7968 480)
+	(rect 6792 448 6840 480)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst98" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -1876,7 +1876,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7920 248 7968 280)
+	(rect 6792 248 6840 280)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst101" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -1900,7 +1900,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7920 288 7968 320)
+	(rect 6792 288 6840 320)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst102" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -1924,7 +1924,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7920 328 7968 360)
+	(rect 6792 328 6840 360)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst103" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -1948,7 +1948,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7920 488 7968 520)
+	(rect 6792 488 6840 520)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst104" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -1972,7 +1972,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7920 528 7968 560)
+	(rect 6792 528 6840 560)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst105" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -1996,7 +1996,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8552 248 8600 280)
+	(rect 7424 248 7472 280)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst73" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -2020,7 +2020,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8552 288 8600 320)
+	(rect 7424 288 7472 320)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst81" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -2044,7 +2044,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8552 328 8600 360)
+	(rect 7424 328 7472 360)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst83" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -2068,7 +2068,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8552 408 8600 440)
+	(rect 7424 408 7472 440)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst106" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2092,7 +2092,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8552 448 8600 480)
+	(rect 7424 448 7472 480)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst107" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2116,7 +2116,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8552 488 8600 520)
+	(rect 7424 488 7472 520)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst108" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2140,7 +2140,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 248 8288 280)
+	(rect 7112 248 7160 280)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst31" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -2164,7 +2164,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 288 8288 320)
+	(rect 7112 288 7160 320)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst35" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -2188,7 +2188,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 328 8288 360)
+	(rect 7112 328 7160 360)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst36" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -2212,7 +2212,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 368 8288 400)
+	(rect 7112 368 7160 400)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst109" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2236,7 +2236,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 408 8288 440)
+	(rect 7112 408 7160 440)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst110" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2260,7 +2260,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 448 8288 480)
+	(rect 7112 448 7160 480)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst111" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2284,7 +2284,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 488 8288 520)
+	(rect 7112 488 7160 520)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst112" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2308,7 +2308,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 528 8288 560)
+	(rect 7112 528 7160 560)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst113" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2332,7 +2332,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 568 8288 600)
+	(rect 7112 568 7160 600)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst114" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2356,7 +2356,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 608 8288 640)
+	(rect 7112 608 7160 640)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst115" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2380,7 +2380,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 648 8288 680)
+	(rect 7112 648 7160 680)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst116" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2404,7 +2404,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8240 688 8288 720)
+	(rect 7112 688 7160 720)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst117" (rect 3 21 38 33)(font "Arial" ))
 	(port
@@ -2428,7 +2428,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 8552 368 8600 400)
+	(rect 7424 368 7472 400)
 	(text "LCELL" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst99" (rect 3 21 32 33)(font "Arial" ))
 	(port
@@ -2452,7 +2452,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7800 -16 7984 160)
+	(rect 6672 -16 6856 160)
 	(text "vga_controller" (rect 5 0 74 12)(font "Arial" ))
 	(text "inst26" (rect 8 160 37 172)(font "Arial" ))
 	(port
@@ -2571,7 +2571,7 @@ refer to the applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 168 160))
 	)
-	(annotation_block (parameter)(rect 7704 -248 7873 -39))
+	(annotation_block (parameter)(rect 6576 -248 6745 -39))
 )
 (symbol
 	(rect 1808 -232 1856 -200)
@@ -4148,7 +4148,7 @@ refer to the applicable agreement for further details.
 	(annotation_block (parameter)(rect 4880 72 5083 205))
 )
 (symbol
-	(rect 7328 400 7392 448)
+	(rect 5656 312 5720 360)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst47" (rect 3 37 32 49)(font "Arial" ))
 	(port
@@ -4180,7 +4180,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7328 448 7392 496)
+	(rect 5656 360 5720 408)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst48" (rect 3 37 32 49)(font "Arial" ))
 	(port
@@ -4212,7 +4212,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 7328 496 7392 544)
+	(rect 5656 408 5720 456)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "inst50" (rect 3 37 32 49)(font "Arial" ))
 	(port
@@ -4241,6 +4241,77 @@ refer to the applicable agreement for further details.
 		(line (pt 14 37)(pt 31 37))
 		(line (pt 14 12)(pt 14 37))
 		(arc (pt 31 37)(pt 30 12)(rect 18 12 43 37))
+	)
+)
+(symbol
+	(rect 5312 280 5544 424)
+	(text "BAYER_PATTERN_VGAOUT" (rect 5 0 148 12)(font "Arial" ))
+	(text "inst10" (rect 8 128 37 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "data[7..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "data[7..0]" (rect 21 59 68 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "data_valid" (rect 0 0 50 12)(font "Arial" ))
+		(text "data_valid" (rect 21 75 71 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "data_in_pos_x[9..0]" (rect 0 0 96 12)(font "Arial" ))
+		(text "data_in_pos_x[9..0]" (rect 21 91 117 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "data_in_pos_y[8..0]" (rect 0 0 97 12)(font "Arial" ))
+		(text "data_in_pos_y[8..0]" (rect 21 107 118 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "vga_r[7..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "vga_r[7..0]" (rect 166 27 211 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "vga_g[7..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "vga_g[7..0]" (rect 164 43 211 55)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48)(line_width 3))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "vga_b[7..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "vga_b[7..0]" (rect 164 59 211 71)(font "Arial" ))
+		(line (pt 232 64)(pt 216 64)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 216 128))
 	)
 )
 (connector
@@ -4292,54 +4363,6 @@ refer to the applicable agreement for further details.
 	(text "gnd,gnd,gnd,gnd" (rect 202 120 283 132)(font "Arial" ))
 	(pt 200 136)
 	(pt 280 136)
-	(bus)
-)
-(connector
-	(text "HEX7[0..6]" (rect 9474 512 9527 524)(font "Arial" ))
-	(pt 9464 528)
-	(pt 9560 528)
-	(bus)
-)
-(connector
-	(text "HEX6[0..6]" (rect 9474 424 9527 436)(font "Arial" ))
-	(pt 9464 440)
-	(pt 9560 440)
-	(bus)
-)
-(connector
-	(text "HEX5[0..6]" (rect 9474 336 9527 348)(font "Arial" ))
-	(pt 9464 352)
-	(pt 9560 352)
-	(bus)
-)
-(connector
-	(text "HEX4[0..6]" (rect 9474 248 9527 260)(font "Arial" ))
-	(pt 9464 264)
-	(pt 9560 264)
-	(bus)
-)
-(connector
-	(text "HEX3[0..6]" (rect 9082 512 9135 524)(font "Arial" ))
-	(pt 9072 528)
-	(pt 9168 528)
-	(bus)
-)
-(connector
-	(text "HEX2[0..6]" (rect 9082 424 9135 436)(font "Arial" ))
-	(pt 9072 440)
-	(pt 9168 440)
-	(bus)
-)
-(connector
-	(text "HEX1[0..6]" (rect 9082 336 9135 348)(font "Arial" ))
-	(pt 9072 352)
-	(pt 9168 352)
-	(bus)
-)
-(connector
-	(text "HEX0[0..6]" (rect 9082 248 9135 260)(font "Arial" ))
-	(pt 9072 264)
-	(pt 9168 264)
 	(bus)
 )
 (connector
@@ -4834,242 +4857,6 @@ refer to the applicable agreement for further details.
 	(pt 632 448)
 )
 (connector
-	(text "mac_rdy" (rect 7858 248 7899 265)(font "Intel Clear" ))
-	(pt 7848 264)
-	(pt 7920 264)
-)
-(connector
-	(text "gnd" (rect 7858 408 7875 425)(font "Intel Clear" ))
-	(pt 7848 424)
-	(pt 7920 424)
-)
-(connector
-	(text "gnd" (rect 7858 448 7875 465)(font "Intel Clear" ))
-	(pt 7848 464)
-	(pt 7920 464)
-)
-(connector
-	(text "gnd" (rect 7858 488 7875 505)(font "Intel Clear" ))
-	(pt 7848 504)
-	(pt 7920 504)
-)
-(connector
-	(text "gnd" (rect 7858 528 7875 545)(font "Intel Clear" ))
-	(pt 7848 544)
-	(pt 7920 544)
-)
-(connector
-	(text "EX_IO[0]" (rect 8610 248 8653 260)(font "Arial" ))
-	(pt 8600 264)
-	(pt 8680 264)
-)
-(connector
-	(text "EX_IO[1]" (rect 8610 288 8653 300)(font "Arial" ))
-	(pt 8600 304)
-	(pt 8680 304)
-)
-(connector
-	(text "EX_IO[2]" (rect 8610 328 8653 340)(font "Arial" ))
-	(pt 8600 344)
-	(pt 8680 344)
-)
-(connector
-	(text "EX_IO[4]" (rect 8610 408 8653 420)(font "Arial" ))
-	(pt 8600 424)
-	(pt 8680 424)
-)
-(connector
-	(text "gnd" (rect 8498 408 8515 425)(font "Intel Clear" ))
-	(pt 8552 424)
-	(pt 8488 424)
-)
-(connector
-	(text "gnd" (rect 8498 448 8515 465)(font "Intel Clear" ))
-	(pt 8552 464)
-	(pt 8488 464)
-)
-(connector
-	(text "EX_IO[5]" (rect 8610 448 8653 460)(font "Arial" ))
-	(pt 8600 464)
-	(pt 8680 464)
-)
-(connector
-	(text "gnd" (rect 8498 488 8515 505)(font "Intel Clear" ))
-	(pt 8552 504)
-	(pt 8488 504)
-)
-(connector
-	(text "EX_IO[6]" (rect 8610 488 8653 500)(font "Arial" ))
-	(pt 8600 504)
-	(pt 8680 504)
-)
-(connector
-	(text "mac_ena[2..0]" (rect 8178 248 8245 265)(font "Intel Clear" ))
-	(pt 8168 264)
-	(pt 8240 264)
-	(bus)
-)
-(connector
-	(text "LEDR[2..0]" (rect 8298 248 8353 260)(font "Arial" ))
-	(pt 8288 264)
-	(pt 8368 264)
-	(bus)
-)
-(connector
-	(text "mac_req[2..0]" (rect 8178 288 8242 305)(font "Intel Clear" ))
-	(pt 8168 304)
-	(pt 8240 304)
-	(bus)
-)
-(connector
-	(text "mac_act[2..0]" (rect 8178 328 8241 345)(font "Intel Clear" ))
-	(pt 8168 344)
-	(pt 8240 344)
-	(bus)
-)
-(connector
-	(text "LEDR[5..3]" (rect 8298 288 8353 300)(font "Arial" ))
-	(pt 8288 304)
-	(pt 8368 304)
-	(bus)
-)
-(connector
-	(text "LEDR[8..6]" (rect 8298 328 8353 340)(font "Arial" ))
-	(pt 8288 344)
-	(pt 8368 344)
-	(bus)
-)
-(connector
-	(text "gnd" (rect 8178 368 8195 385)(font "Intel Clear" ))
-	(pt 8168 384)
-	(pt 8240 384)
-)
-(connector
-	(text "LEDR[9]" (rect 8298 368 8336 385)(font "Intel Clear" ))
-	(pt 8368 384)
-	(pt 8288 384)
-)
-(connector
-	(text "gnd" (rect 8178 408 8195 425)(font "Intel Clear" ))
-	(pt 8168 424)
-	(pt 8240 424)
-)
-(connector
-	(text "gnd" (rect 8178 448 8195 465)(font "Intel Clear" ))
-	(pt 8168 464)
-	(pt 8240 464)
-)
-(connector
-	(text "gnd" (rect 8178 488 8195 505)(font "Intel Clear" ))
-	(pt 8168 504)
-	(pt 8240 504)
-)
-(connector
-	(text "gnd" (rect 8178 528 8195 545)(font "Intel Clear" ))
-	(pt 8168 544)
-	(pt 8240 544)
-)
-(connector
-	(text "gnd" (rect 8178 568 8195 585)(font "Intel Clear" ))
-	(pt 8168 584)
-	(pt 8240 584)
-)
-(connector
-	(text "gnd" (rect 8178 608 8195 625)(font "Intel Clear" ))
-	(pt 8168 624)
-	(pt 8240 624)
-)
-(connector
-	(text "gnd" (rect 8178 648 8195 665)(font "Intel Clear" ))
-	(pt 8168 664)
-	(pt 8240 664)
-)
-(connector
-	(text "LEDR[10]" (rect 8298 408 8342 425)(font "Intel Clear" ))
-	(pt 8368 424)
-	(pt 8288 424)
-)
-(connector
-	(text "LEDR[11]" (rect 8298 448 8342 465)(font "Intel Clear" ))
-	(pt 8368 464)
-	(pt 8288 464)
-)
-(connector
-	(text "LEDR[12]" (rect 8298 488 8342 505)(font "Intel Clear" ))
-	(pt 8368 504)
-	(pt 8288 504)
-)
-(connector
-	(text "LEDR[13]" (rect 8298 528 8342 545)(font "Intel Clear" ))
-	(pt 8368 544)
-	(pt 8288 544)
-)
-(connector
-	(text "LEDR[14]" (rect 8298 568 8342 585)(font "Intel Clear" ))
-	(pt 8368 584)
-	(pt 8288 584)
-)
-(connector
-	(text "LEDR[15]" (rect 8298 608 8342 625)(font "Intel Clear" ))
-	(pt 8368 624)
-	(pt 8288 624)
-)
-(connector
-	(text "LEDR[16]" (rect 8298 648 8342 665)(font "Intel Clear" ))
-	(pt 8368 664)
-	(pt 8288 664)
-)
-(connector
-	(text "gnd" (rect 8178 688 8195 705)(font "Intel Clear" ))
-	(pt 8168 704)
-	(pt 8240 704)
-)
-(connector
-	(text "LEDR[17]" (rect 8298 688 8342 705)(font "Intel Clear" ))
-	(pt 8368 704)
-	(pt 8288 704)
-)
-(connector
-	(text "LEDG[7]" (rect 7978 528 8016 545)(font "Intel Clear" ))
-	(pt 8048 544)
-	(pt 7968 544)
-)
-(connector
-	(text "LEDG[6]" (rect 7978 488 8016 505)(font "Intel Clear" ))
-	(pt 8048 504)
-	(pt 7968 504)
-)
-(connector
-	(text "LEDG[5]" (rect 7978 448 8016 465)(font "Intel Clear" ))
-	(pt 8048 464)
-	(pt 7968 464)
-)
-(connector
-	(text "LEDG[4]" (rect 7978 408 8016 425)(font "Intel Clear" ))
-	(pt 8048 424)
-	(pt 7968 424)
-)
-(connector
-	(text "LEDG[3]" (rect 7978 368 8016 385)(font "Intel Clear" ))
-	(pt 8048 384)
-	(pt 7968 384)
-)
-(connector
-	(text "LEDG[2]" (rect 7978 328 8016 345)(font "Intel Clear" ))
-	(pt 8048 344)
-	(pt 7968 344)
-)
-(connector
-	(text "LEDG[1]" (rect 7978 288 8016 305)(font "Intel Clear" ))
-	(pt 8048 304)
-	(pt 7968 304)
-)
-(connector
-	(text "LEDG[0]" (rect 7978 248 8016 265)(font "Intel Clear" ))
-	(pt 8048 264)
-	(pt 7968 264)
-)
-(connector
 	(text "SLRB_rd_active" (rect 4978 280 5053 297)(font "Intel Clear" ))
 	(pt 4968 296)
 	(pt 5112 296)
@@ -5086,26 +4873,9 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "SLRB_data_out[7..0]" (rect 4978 328 5075 345)(font "Intel Clear" ))
-	(pt 4968 344)
-	(pt 5112 344)
-	(bus)
-)
-(connector
 	(text "SLRB_sdram_rd" (rect 4978 264 5054 281)(font "Intel Clear" ))
 	(pt 4968 280)
 	(pt 5112 280)
-)
-(connector
-	(text "SLRB_data_rdy" (rect 4978 360 5052 377)(font "Intel Clear" ))
-	(pt 5112 376)
-	(pt 4968 376)
-)
-(connector
-	(text "SLRB_data_out_y_pos[8..0]" (rect 4978 392 5110 409)(font "Intel Clear" ))
-	(pt 4968 408)
-	(pt 5112 408)
-	(bus)
 )
 (connector
 	(text "SLRB_dbg_rd_state[7..0]" (rect 4978 408 5096 425)(font "Intel Clear" ))
@@ -5202,31 +4972,6 @@ refer to the applicable agreement for further details.
 	(text "clk_pll" (rect 4482 264 4515 281)(font "Intel Clear" ))
 	(pt 4584 280)
 	(pt 4472 280)
-)
-(connector
-	(text "CLR_FVAL" (rect 8482 288 8537 300)(font "Arial" ))
-	(pt 8472 304)
-	(pt 8552 304)
-)
-(connector
-	(text "CLR_LVAL" (rect 8482 248 8536 260)(font "Arial" ))
-	(pt 8472 264)
-	(pt 8552 264)
-)
-(connector
-	(text "CLR_DVAL" (rect 8482 328 8538 340)(font "Arial" ))
-	(pt 8552 344)
-	(pt 8472 344)
-)
-(connector
-	(text "EX_IO[3]" (rect 8610 368 8653 380)(font "Arial" ))
-	(pt 8600 384)
-	(pt 8680 384)
-)
-(connector
-	(text "gnd" (rect 8498 368 8515 385)(font "Intel Clear" ))
-	(pt 8488 384)
-	(pt 8552 384)
 )
 (connector
 	(text "ZA_VALID" (rect 4482 296 4530 313)(font "Intel Clear" ))
@@ -5797,85 +5542,6 @@ refer to the applicable agreement for further details.
 	(pt 5200 784)
 )
 (connector
-	(text "RESET_N" (rect 7714 16 7763 28)(font "Arial" ))
-	(pt 7704 32)
-	(pt 7800 32)
-)
-(connector
-	(text "vga_disp_ena" (rect 8040 32 8106 49)(font "Intel Clear" ))
-	(pt 8152 48)
-	(pt 7984 48)
-)
-(connector
-	(pt 7984 16)
-	(pt 7992 16)
-)
-(connector
-	(pt 7992 16)
-	(pt 7992 8)
-)
-(connector
-	(pt 7992 8)
-	(pt 8008 8)
-)
-(connector
-	(pt 7992 32)
-	(pt 7992 24)
-)
-(connector
-	(pt 7984 32)
-	(pt 7992 32)
-)
-(connector
-	(pt 7992 24)
-	(pt 8008 24)
-)
-(connector
-	(pt 7776 -24)
-	(pt 7776 16)
-)
-(connector
-	(text "vga_pixel_clk" (rect 7706 0 7773 12)(font "Arial" ))
-	(pt 7704 16)
-	(pt 7776 16)
-)
-(connector
-	(pt 7776 16)
-	(pt 7800 16)
-)
-(connector
-	(text "VGA_CONTROLLER_X[31..0]" (rect 8026 48 8172 60)(font "Arial" ))
-	(pt 7984 64)
-	(pt 8216 64)
-	(bus)
-)
-(connector
-	(pt 8216 48)
-	(pt 8216 64)
-	(bus)
-)
-(connector
-	(text "VGA_CONTROLLER_Y[31..0]" (rect 8026 64 8174 76)(font "Arial" ))
-	(pt 7984 80)
-	(pt 8224 80)
-	(bus)
-)
-(connector
-	(pt 8224 80)
-	(pt 8224 64)
-	(bus)
-)
-(connector
-	(pt 8224 64)
-	(pt 8304 64)
-	(bus)
-)
-(connector
-	(pt 8216 48)
-	(pt 8304 48)
-	(bus)
-)
-(connector
 	(pt 4928 -112)
 	(pt 5104 -112)
 )
@@ -5907,43 +5573,519 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 7776 -24)
-	(pt 7992 -24)
-)
-(connector
-	(text "vga_disp_ena" (rect 7264 416 7330 433)(font "Intel Clear" ))
-	(pt 7264 432)
-	(pt 7328 432)
-)
-(connector
-	(text "vga_disp_ena" (rect 7266 464 7332 481)(font "Intel Clear" ))
-	(pt 7264 480)
-	(pt 7328 480)
-)
-(connector
-	(text "vga_disp_ena" (rect 7266 512 7332 529)(font "Intel Clear" ))
-	(pt 7264 528)
-	(pt 7328 528)
-)
-(connector
-	(pt 7328 416)
-	(pt 7320 416)
+	(text "HEX7[0..6]" (rect 8346 512 8399 524)(font "Arial" ))
+	(pt 8336 528)
+	(pt 8432 528)
 	(bus)
 )
 (connector
-	(pt 7248 512)
-	(pt 7328 512)
+	(text "HEX6[0..6]" (rect 8346 424 8399 436)(font "Arial" ))
+	(pt 8336 440)
+	(pt 8432 440)
 	(bus)
 )
 (connector
-	(pt 7248 512)
-	(pt 7248 432)
+	(text "HEX5[0..6]" (rect 8346 336 8399 348)(font "Arial" ))
+	(pt 8336 352)
+	(pt 8432 352)
 	(bus)
 )
 (connector
-	(pt 7320 416)
-	(pt 7320 400)
+	(text "HEX4[0..6]" (rect 8346 248 8399 260)(font "Arial" ))
+	(pt 8336 264)
+	(pt 8432 264)
 	(bus)
+)
+(connector
+	(text "HEX3[0..6]" (rect 7954 512 8007 524)(font "Arial" ))
+	(pt 7944 528)
+	(pt 8040 528)
+	(bus)
+)
+(connector
+	(text "HEX2[0..6]" (rect 7954 424 8007 436)(font "Arial" ))
+	(pt 7944 440)
+	(pt 8040 440)
+	(bus)
+)
+(connector
+	(text "HEX1[0..6]" (rect 7954 336 8007 348)(font "Arial" ))
+	(pt 7944 352)
+	(pt 8040 352)
+	(bus)
+)
+(connector
+	(text "mac_rdy" (rect 6730 248 6771 265)(font "Intel Clear" ))
+	(pt 6720 264)
+	(pt 6792 264)
+)
+(connector
+	(text "gnd" (rect 6730 408 6747 425)(font "Intel Clear" ))
+	(pt 6720 424)
+	(pt 6792 424)
+)
+(connector
+	(text "gnd" (rect 6730 448 6747 465)(font "Intel Clear" ))
+	(pt 6720 464)
+	(pt 6792 464)
+)
+(connector
+	(text "gnd" (rect 6730 488 6747 505)(font "Intel Clear" ))
+	(pt 6720 504)
+	(pt 6792 504)
+)
+(connector
+	(text "gnd" (rect 6730 528 6747 545)(font "Intel Clear" ))
+	(pt 6720 544)
+	(pt 6792 544)
+)
+(connector
+	(text "EX_IO[0]" (rect 7482 248 7525 260)(font "Arial" ))
+	(pt 7472 264)
+	(pt 7552 264)
+)
+(connector
+	(text "EX_IO[1]" (rect 7482 288 7525 300)(font "Arial" ))
+	(pt 7472 304)
+	(pt 7552 304)
+)
+(connector
+	(text "EX_IO[2]" (rect 7482 328 7525 340)(font "Arial" ))
+	(pt 7472 344)
+	(pt 7552 344)
+)
+(connector
+	(text "EX_IO[4]" (rect 7482 408 7525 420)(font "Arial" ))
+	(pt 7472 424)
+	(pt 7552 424)
+)
+(connector
+	(text "gnd" (rect 7370 448 7387 465)(font "Intel Clear" ))
+	(pt 7424 464)
+	(pt 7360 464)
+)
+(connector
+	(text "EX_IO[5]" (rect 7482 448 7525 460)(font "Arial" ))
+	(pt 7472 464)
+	(pt 7552 464)
+)
+(connector
+	(text "gnd" (rect 7370 488 7387 505)(font "Intel Clear" ))
+	(pt 7424 504)
+	(pt 7360 504)
+)
+(connector
+	(text "EX_IO[6]" (rect 7482 488 7525 500)(font "Arial" ))
+	(pt 7472 504)
+	(pt 7552 504)
+)
+(connector
+	(text "mac_ena[2..0]" (rect 7050 248 7117 265)(font "Intel Clear" ))
+	(pt 7040 264)
+	(pt 7112 264)
+	(bus)
+)
+(connector
+	(text "LEDR[2..0]" (rect 7170 248 7225 260)(font "Arial" ))
+	(pt 7160 264)
+	(pt 7240 264)
+	(bus)
+)
+(connector
+	(text "mac_req[2..0]" (rect 7050 288 7114 305)(font "Intel Clear" ))
+	(pt 7040 304)
+	(pt 7112 304)
+	(bus)
+)
+(connector
+	(text "mac_act[2..0]" (rect 7050 328 7113 345)(font "Intel Clear" ))
+	(pt 7040 344)
+	(pt 7112 344)
+	(bus)
+)
+(connector
+	(text "LEDR[5..3]" (rect 7170 288 7225 300)(font "Arial" ))
+	(pt 7160 304)
+	(pt 7240 304)
+	(bus)
+)
+(connector
+	(text "LEDR[8..6]" (rect 7170 328 7225 340)(font "Arial" ))
+	(pt 7160 344)
+	(pt 7240 344)
+	(bus)
+)
+(connector
+	(text "gnd" (rect 7050 368 7067 385)(font "Intel Clear" ))
+	(pt 7040 384)
+	(pt 7112 384)
+)
+(connector
+	(text "LEDR[9]" (rect 7170 368 7208 385)(font "Intel Clear" ))
+	(pt 7240 384)
+	(pt 7160 384)
+)
+(connector
+	(text "gnd" (rect 7050 408 7067 425)(font "Intel Clear" ))
+	(pt 7040 424)
+	(pt 7112 424)
+)
+(connector
+	(text "gnd" (rect 7050 448 7067 465)(font "Intel Clear" ))
+	(pt 7040 464)
+	(pt 7112 464)
+)
+(connector
+	(text "gnd" (rect 7050 488 7067 505)(font "Intel Clear" ))
+	(pt 7040 504)
+	(pt 7112 504)
+)
+(connector
+	(text "gnd" (rect 7050 528 7067 545)(font "Intel Clear" ))
+	(pt 7040 544)
+	(pt 7112 544)
+)
+(connector
+	(text "gnd" (rect 7050 568 7067 585)(font "Intel Clear" ))
+	(pt 7040 584)
+	(pt 7112 584)
+)
+(connector
+	(text "gnd" (rect 7050 608 7067 625)(font "Intel Clear" ))
+	(pt 7040 624)
+	(pt 7112 624)
+)
+(connector
+	(text "gnd" (rect 7050 648 7067 665)(font "Intel Clear" ))
+	(pt 7040 664)
+	(pt 7112 664)
+)
+(connector
+	(text "LEDR[10]" (rect 7170 408 7214 425)(font "Intel Clear" ))
+	(pt 7240 424)
+	(pt 7160 424)
+)
+(connector
+	(text "LEDR[11]" (rect 7170 448 7214 465)(font "Intel Clear" ))
+	(pt 7240 464)
+	(pt 7160 464)
+)
+(connector
+	(text "LEDR[12]" (rect 7170 488 7214 505)(font "Intel Clear" ))
+	(pt 7240 504)
+	(pt 7160 504)
+)
+(connector
+	(text "LEDR[13]" (rect 7170 528 7214 545)(font "Intel Clear" ))
+	(pt 7240 544)
+	(pt 7160 544)
+)
+(connector
+	(text "LEDR[14]" (rect 7170 568 7214 585)(font "Intel Clear" ))
+	(pt 7240 584)
+	(pt 7160 584)
+)
+(connector
+	(text "LEDR[15]" (rect 7170 608 7214 625)(font "Intel Clear" ))
+	(pt 7240 624)
+	(pt 7160 624)
+)
+(connector
+	(text "LEDR[16]" (rect 7170 648 7214 665)(font "Intel Clear" ))
+	(pt 7240 664)
+	(pt 7160 664)
+)
+(connector
+	(text "gnd" (rect 7050 688 7067 705)(font "Intel Clear" ))
+	(pt 7040 704)
+	(pt 7112 704)
+)
+(connector
+	(text "LEDR[17]" (rect 7170 688 7214 705)(font "Intel Clear" ))
+	(pt 7240 704)
+	(pt 7160 704)
+)
+(connector
+	(text "LEDG[7]" (rect 6850 528 6888 545)(font "Intel Clear" ))
+	(pt 6920 544)
+	(pt 6840 544)
+)
+(connector
+	(text "LEDG[6]" (rect 6850 488 6888 505)(font "Intel Clear" ))
+	(pt 6920 504)
+	(pt 6840 504)
+)
+(connector
+	(text "LEDG[5]" (rect 6850 448 6888 465)(font "Intel Clear" ))
+	(pt 6920 464)
+	(pt 6840 464)
+)
+(connector
+	(text "LEDG[4]" (rect 6850 408 6888 425)(font "Intel Clear" ))
+	(pt 6920 424)
+	(pt 6840 424)
+)
+(connector
+	(text "LEDG[3]" (rect 6850 368 6888 385)(font "Intel Clear" ))
+	(pt 6920 384)
+	(pt 6840 384)
+)
+(connector
+	(text "LEDG[2]" (rect 6850 328 6888 345)(font "Intel Clear" ))
+	(pt 6920 344)
+	(pt 6840 344)
+)
+(connector
+	(text "LEDG[1]" (rect 6850 288 6888 305)(font "Intel Clear" ))
+	(pt 6920 304)
+	(pt 6840 304)
+)
+(connector
+	(text "LEDG[0]" (rect 6850 248 6888 265)(font "Intel Clear" ))
+	(pt 6920 264)
+	(pt 6840 264)
+)
+(connector
+	(text "CLR_FVAL" (rect 7354 288 7409 300)(font "Arial" ))
+	(pt 7344 304)
+	(pt 7424 304)
+)
+(connector
+	(text "CLR_LVAL" (rect 7354 248 7408 260)(font "Arial" ))
+	(pt 7344 264)
+	(pt 7424 264)
+)
+(connector
+	(text "CLR_DVAL" (rect 7354 328 7410 340)(font "Arial" ))
+	(pt 7424 344)
+	(pt 7344 344)
+)
+(connector
+	(text "EX_IO[3]" (rect 7482 368 7525 380)(font "Arial" ))
+	(pt 7472 384)
+	(pt 7552 384)
+)
+(connector
+	(text "gnd" (rect 7370 368 7387 385)(font "Intel Clear" ))
+	(pt 7360 384)
+	(pt 7424 384)
+)
+(connector
+	(text "RESET_N" (rect 6586 16 6635 28)(font "Arial" ))
+	(pt 6576 32)
+	(pt 6672 32)
+)
+(connector
+	(text "vga_disp_ena" (rect 6912 32 6978 49)(font "Intel Clear" ))
+	(pt 7024 48)
+	(pt 6856 48)
+)
+(connector
+	(pt 6856 16)
+	(pt 6864 16)
+)
+(connector
+	(pt 6864 16)
+	(pt 6864 8)
+)
+(connector
+	(pt 6864 8)
+	(pt 6880 8)
+)
+(connector
+	(pt 6864 32)
+	(pt 6864 24)
+)
+(connector
+	(pt 6856 32)
+	(pt 6864 32)
+)
+(connector
+	(pt 6864 24)
+	(pt 6880 24)
+)
+(connector
+	(pt 6648 -24)
+	(pt 6648 16)
+)
+(connector
+	(text "VGA_CONTROLLER_X[31..0]" (rect 6898 48 7044 60)(font "Arial" ))
+	(pt 6856 64)
+	(pt 7088 64)
+	(bus)
+)
+(connector
+	(pt 7088 48)
+	(pt 7088 64)
+	(bus)
+)
+(connector
+	(text "VGA_CONTROLLER_Y[31..0]" (rect 6898 64 7046 76)(font "Arial" ))
+	(pt 6856 80)
+	(pt 7096 80)
+	(bus)
+)
+(connector
+	(pt 7096 80)
+	(pt 7096 64)
+	(bus)
+)
+(connector
+	(pt 7096 64)
+	(pt 7176 64)
+	(bus)
+)
+(connector
+	(pt 7088 48)
+	(pt 7176 48)
+	(bus)
+)
+(connector
+	(pt 6648 -24)
+	(pt 6864 -24)
+)
+(connector
+	(text "gnd" (rect 6730 368 6747 385)(font "Intel Clear" ))
+	(pt 6720 384)
+	(pt 6792 384)
+)
+(connector
+	(text "gnd" (rect 6730 328 6747 345)(font "Intel Clear" ))
+	(pt 6720 344)
+	(pt 6792 344)
+)
+(connector
+	(text "gnd" (rect 6730 288 6747 305)(font "Intel Clear" ))
+	(pt 6720 304)
+	(pt 6792 304)
+)
+(connector
+	(text "vga_pixel_clk" (rect 6578 0 6645 12)(font "Arial" ))
+	(pt 6576 16)
+	(pt 6648 16)
+)
+(connector
+	(pt 6648 16)
+	(pt 6672 16)
+)
+(connector
+	(text "HEX0[0..6]" (rect 7954 248 8007 260)(font "Arial" ))
+	(pt 7944 264)
+	(pt 8040 264)
+	(bus)
+)
+(connector
+	(text "gnd" (rect 7370 408 7387 425)(font "Intel Clear" ))
+	(pt 7360 424)
+	(pt 7424 424)
+)
+(connector
+	(text "SLRB_data_out[7..0]" (rect 4978 328 5075 345)(font "Intel Clear" ))
+	(pt 4968 344)
+	(pt 5312 344)
+	(bus)
+)
+(connector
+	(pt 5240 392)
+	(pt 5240 376)
+	(bus)
+)
+(connector
+	(text "SLRB_data_out_x_pos[9..0]" (rect 4978 376 5108 393)(font "Intel Clear" ))
+	(pt 4968 392)
+	(pt 5240 392)
+	(bus)
+)
+(connector
+	(pt 5240 376)
+	(pt 5312 376)
+	(bus)
+)
+(connector
+	(text "SLRB_data_out_y_pos[8..0]" (rect 4978 392 5110 409)(font "Intel Clear" ))
+	(pt 4968 408)
+	(pt 5248 408)
+	(bus)
+)
+(connector
+	(pt 5248 408)
+	(pt 5248 392)
+	(bus)
+)
+(connector
+	(pt 5248 392)
+	(pt 5312 392)
+	(bus)
+)
+(connector
+	(text "vga_disp_ena" (rect 5592 328 5658 345)(font "Intel Clear" ))
+	(pt 5592 344)
+	(pt 5656 344)
+)
+(connector
+	(text "vga_disp_ena" (rect 5594 376 5660 393)(font "Intel Clear" ))
+	(pt 5592 392)
+	(pt 5656 392)
+)
+(connector
+	(text "vga_disp_ena" (rect 5594 424 5660 441)(font "Intel Clear" ))
+	(pt 5592 440)
+	(pt 5656 440)
+)
+(connector
+	(pt 5656 328)
+	(pt 5648 328)
+	(bus)
+)
+(connector
+	(pt 5576 424)
+	(pt 5656 424)
+	(bus)
+)
+(connector
+	(pt 5576 424)
+	(pt 5576 344)
+	(bus)
+)
+(connector
+	(pt 5648 328)
+	(pt 5648 312)
+	(bus)
+)
+(connector
+	(pt 5584 376)
+	(pt 5656 376)
+	(bus)
+)
+(connector
+	(pt 5584 376)
+	(pt 5584 328)
+	(bus)
+)
+(connector
+	(pt 5648 312)
+	(pt 5544 312)
+	(bus)
+)
+(connector
+	(pt 5584 328)
+	(pt 5544 328)
+	(bus)
+)
+(connector
+	(pt 5576 344)
+	(pt 5544 344)
+	(bus)
+)
+(connector
+	(text "RESET" (rect 5258 312 5288 329)(font "Intel Clear" ))
+	(pt 5248 328)
+	(pt 5312 328)
+)
+(connector
+	(text "clk_pll" (rect 5258 296 5291 313)(font "Intel Clear" ))
+	(pt 5312 312)
+	(pt 5248 312)
 )
 (connector
 	(text "SLRB_data_valid" (rect 4978 344 5060 361)(font "Intel Clear" ))
@@ -5951,53 +6093,17 @@ refer to the applicable agreement for further details.
 	(pt 4968 360)
 )
 (connector
-	(text "SLRB_data_out_x_pos[9..0]" (rect 4978 376 5108 393)(font "Intel Clear" ))
-	(pt 5112 392)
-	(pt 4968 392)
-	(bus)
+	(pt 5208 376)
+	(pt 5208 360)
 )
 (connector
-	(text "gnd" (rect 7226 384 7243 401)(font "Intel Clear" ))
-	(pt 7320 400)
-	(pt 7216 400)
-	(bus)
+	(text "SLRB_data_rdy" (rect 4978 360 5052 377)(font "Intel Clear" ))
+	(pt 4968 376)
+	(pt 5208 376)
 )
 (connector
-	(pt 7256 464)
-	(pt 7328 464)
-	(bus)
-)
-(connector
-	(pt 7256 464)
-	(pt 7256 416)
-	(bus)
-)
-(connector
-	(text "gnd" (rect 7226 400 7243 417)(font "Intel Clear" ))
-	(pt 7256 416)
-	(pt 7216 416)
-	(bus)
-)
-(connector
-	(text "gnd" (rect 7226 416 7243 433)(font "Intel Clear" ))
-	(pt 7248 432)
-	(pt 7216 432)
-	(bus)
-)
-(connector
-	(text "gnd" (rect 7858 368 7875 385)(font "Intel Clear" ))
-	(pt 7848 384)
-	(pt 7920 384)
-)
-(connector
-	(text "gnd" (rect 7858 328 7875 345)(font "Intel Clear" ))
-	(pt 7848 344)
-	(pt 7920 344)
-)
-(connector
-	(text "gnd" (rect 7858 288 7875 305)(font "Intel Clear" ))
-	(pt 7848 304)
-	(pt 7920 304)
+	(pt 5208 360)
+	(pt 5312 360)
 )
 (junction (pt 520 640))
 (junction (pt 4032 192))
@@ -6011,7 +6117,7 @@ refer to the applicable agreement for further details.
 (junction (pt 2272 464))
 (junction (pt 2272 480))
 (junction (pt 2272 496))
-(junction (pt 7776 16))
+(junction (pt 6648 16))
 (text "Compute Signals for SINGLE_LINE_READ_BUFFER: rd_line_in, wr_en" (rect 4584 536 4987 555)(font "Intel Clear" (font_size 8)))
 (text "Generate 25MHz clock for vga and 100MHz for SDRAM" (rect 872 -208 1187 -194)(font "Arial" (font_size 8)))
 (text "INPUTS and some OUTPUTS" (rect 240 -136 413 -117)(font "Intel Clear" (font_size 8)))
@@ -6022,10 +6128,10 @@ refer to the applicable agreement for further details.
 (text "choice to read data from sdram_controller_latency 1 or dram" (rect 3888 80 4249 99)(font "Intel Clear" (font_size 8)))
 (text "buffer data to output a whole frame via vga " (rect 4592 -248 4853 -229)(font "Intel Clear" (font_size 8)))
 (text "buffer data of a single frameline to output them via VGA" (rect 4592 224 4925 243)(font "Intel Clear" (font_size 8)))
-(text "drive green LEDs" (rect 7880 224 7980 243)(font "Intel Clear" (font_size 8)))
-(text "drive red LEDs" (rect 8224 224 8311 243)(font "Intel Clear" (font_size 8)))
-(text "drive EX_IOs" (rect 8528 224 8603 243)(font "Intel Clear" (font_size 8)))
-(text "drive 7-segment-display" (rect 9112 208 9258 227)(font "Intel Clear" (font_size 8)))
-(text "VGA-Output of a frame or  a single frameline" (rect 8160 -168 8424 -149)(font "Intel Clear" (font_size 8)))
+(text "drive green LEDs" (rect 6752 224 6852 243)(font "Intel Clear" (font_size 8)))
+(text "drive red LEDs" (rect 7096 224 7183 243)(font "Intel Clear" (font_size 8)))
+(text "drive EX_IOs" (rect 7400 224 7475 243)(font "Intel Clear" (font_size 8)))
+(text "drive 7-segment-display" (rect 7984 208 8130 227)(font "Intel Clear" (font_size 8)))
+(text "VGA-Output of a frame or  a single frameline" (rect 7032 -168 7296 -149)(font "Intel Clear" (font_size 8)))
 (text "controll access to memory" (rect 2416 136 2569 155)(font "Intel Clear" (font_size 8)))
 (text "sdram-mac.bdf" (rect 696 -136 786 -117)(font "Intel Clear" (font_size 8)))
