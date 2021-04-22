@@ -3,12 +3,12 @@
 
 ## To Do List
 ### Prio 1:
-[ ] Bisherige Doku besser und einfacher verständlich machen(dafür lesen, wiedegeben und unverständliches weiter erläutern)  
+[ ] Bisherigen Stand in Blöcken erklären -> Siehe bestehende PowerPoint 
 [ ] Anleitung für die Einrichtung des Projektes erstellen  
-[ ] Softwarestand pflegen und einheitlich zugänglich machen -> GIT Repo    
-[ ] letzte Version Perske und Version Herbst finden und zugänglich machen  
+[x] Softwarestand pflegen und einheitlich zugänglich machen -> GIT Repo    
+[x] letzte Version Perske und Version Herbst finden und zugänglich machen  
 [ ] Eleminierung/Unterscheidung der Revisionen. Festlegung auf eine Revision -> Vermutlich sdram-mac  
-[ ] Reduzierung Warnings -> Vorher x aktuell 26
+[x] Reduzierung Warnings -> Vorher x aktuell 0
 
 ### Prio 2:
 [ ] Robuste Erkennung ein dimensionale Erkennung eines Punktes oder Linie  
