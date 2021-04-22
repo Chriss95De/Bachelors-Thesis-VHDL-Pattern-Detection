@@ -103,7 +103,7 @@ port (
 	-- Debugging signals
 	dbg_rd_state				: out unsigned(7 downto 0); 				-- Current rd_state
 	dbg_wr_state				: out unsigned(7 downto 0); 				-- Current wr_state
-	dbg_err_code				: out std_logic_vector(15 downto 0);	 	-- Some debug information
+	dbg_err_code				: out std_logic_vector(6 downto 0);	 	-- Some debug information
 	dbg_rcv						: out unsigned(15 downto 0); 
 	dbg_req						: out unsigned(15 downto 0)
 	

@@ -55,7 +55,7 @@ port (
 	-- signal output for debugging
 	dbg_rd_state				: out unsigned(7 downto 0);				-- current read state
 	dbg_wr_state				: out unsigned(7 downto 0);				-- current write state
-	dbg_err_code				: out std_logic_vector(15 downto 0);	-- some debug info
+	dbg_err_code				: out std_logic_vector(4 downto 0);	-- some debug info
 	dbg_rcv						: out unsigned(15 downto 0);	
 	dbg_req						: out unsigned(15 downto 0)	
 	);

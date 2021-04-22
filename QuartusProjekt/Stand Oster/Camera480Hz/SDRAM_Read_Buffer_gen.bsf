@@ -152,8 +152,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 344 160)
 		(output)
-		(text "dbg_err_code[15..0]" (rect 0 0 80 12)(font "Arial" ))
-		(text "dbg_err_code[15..0]" (rect 243 155 323 167)(font "Arial" ))
+		(text "dbg_err_code[6..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "dbg_err_code[6..0]" (rect 247 155 323 167)(font "Arial" ))
 		(line (pt 344 160)(pt 328 160)(line_width 3))
 	)
 	(port
