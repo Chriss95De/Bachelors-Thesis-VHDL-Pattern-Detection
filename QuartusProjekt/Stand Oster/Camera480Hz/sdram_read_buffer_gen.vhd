@@ -218,10 +218,7 @@ architecture a of SDRAM_Read_Buffer_gen is
 	signal wr_active_buffer 	: t_active_buffer;
 	signal wr_next_buffer 		: t_active_buffer;	
 	
-	signal out_line_sync_ff		: std_logic; 	-- to detect falling edge
 	signal out_disp_ena_ff		: std_logic; 	-- to detect falling edge
-	
-	signal output_byte_n			: integer;	
 	
 	signal out_data_ff			: std_logic_vector(7 downto 0);	-- Current output data
 	
@@ -231,14 +228,9 @@ architecture a of SDRAM_Read_Buffer_gen is
 	type t_wr_line_buffer is array (0 to 7) of std_logic_vector(7 downto 0);
 	signal wr_line_buffer	: t_wr_line_buffer;	
 	signal wr_line_buffer_pos	: integer; 	-- Next byte position on the line buffer
-	signal wr_line_buffer_req	: integer; 	-- Requested words from the FIFO
-	signal wr_line_buffer_rec	: integer; 	-- Received words from the FIFO
 	signal wr_line_buffer_cnt	: integer; 	-- Received words from the FIFO
 	
 	
-	-- Debug Signal
-	
-	signal dbg_cnt		: unsigned(16 downto 0);
 	
 begin
 
@@ -301,7 +293,6 @@ begin
 		wr_next_buffer 	<= 0;		-- Start with buffer 0
 		out_data_ff <= (others => '0');
 		out_data_valid <= '0';
-		output_byte_n <= 0;
 		out_disp_ena_ff <= '0';
 		
 		
@@ -324,8 +315,6 @@ begin
 			wr_line_buffer(I) 	<= (others => '0');
 		end loop;
 		wr_line_buffer_pos	<= 0;
-		wr_line_buffer_req	<= 0;
-		wr_line_buffer_rec	<= 0;
 		wr_line_buffer_cnt	<= 0;
 	
 		
@@ -352,9 +341,6 @@ begin
 			
 		end loop;
 		
-		
-		-- Line sync FF to detect falling edge
-		out_line_sync_ff <= out_line_sync;
 	
 		-- Preset values
 		
@@ -391,12 +377,8 @@ begin
 				
 				
 				-- Start buffering data from FIFO
-				output_byte_n	<= 0;
 				wr_line_buffer_pos	<= 0;
-				wr_line_buffer_req	<= 0;
-				wr_line_buffer_rec	<= 0;
 				wr_line_buffer_cnt	<= 0;
-				
 				
 			
 				wr_state <= WR_BUF_REQ_DATA_1;	
@@ -681,8 +663,6 @@ begin
 			-- Reset read address	
 			rd_next_addr_x <= (others => '0');	
 			--rd_next_addr_y <= (others => '0');	
-			
-			dbg_cnt <= (others => '0');	
 			
 			-- Init number of requested and received words
 			sdram_rd_req_n <= to_unsigned(0,16);

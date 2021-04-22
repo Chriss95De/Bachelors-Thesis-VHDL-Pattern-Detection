@@ -121,7 +121,6 @@ architecture a of SINGLE_LINE_READ_BUFFER is
 	type wr_state_type is (WR_WAITBUFFER_STATE, WR_BUF_REQ_DATA_1,WR_BUF_REQ_DATA_2,WR_BUF_DATA_1,WR_BUF_DATA_2, WR_WAIT_ENA, WR_DATA_STATE, WR_WAITRESET_STATE);
 	signal wr_state					: wr_state_type;	
 	signal wr_en_ff					: std_logic;
-	signal output_byte_n				: integer;	
 	signal data_out_ff				: std_logic_vector(7 downto 0);	-- Current output data
 	signal data_out_pos_y_ff		: unsigned(ADDR_Y_WIDTH-1 downto 0);
 	signal data_out_pos_x_ff		: unsigned(ADDR_X_WIDTH-1 downto 0);
@@ -226,7 +225,6 @@ begin
 		data_out_pos_y_ff <= (others => '0');
 		data_out_ff <= (others => '0');
 		data_out_valid <= '0';
-		output_byte_n <= 0;
 		wr_en_ff <= '0';
 
 		buffer_reset <= '0';
@@ -269,7 +267,6 @@ begin
 			dbg_wr_state <= to_unsigned(1,8);
 			if buffer_valid_ff2 = '1' then	-- next line is ready to write
 				-- Start buffering data from FIFO
-				output_byte_n	<= 0;
 				wr_line_buffer_pos	<= 0;
 		
 				wr_state <= WR_BUF_REQ_DATA_1;	
