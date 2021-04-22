@@ -50,7 +50,6 @@ port (
 	-- Debugging signals
 	dbg_rd_state				: out unsigned(7 downto 0); 				-- Current rd_state
 	dbg_wr_state				: out unsigned(7 downto 0); 				-- Current wr_state
---gi 2021-04-22 dbg_err_code				: out std_logic_vector(15 downto 0);	-- Some debug information
 	dbg_rd						: out unsigned(7 downto 0);	 			-- Some debug information
 	dbg_wr						: out unsigned(7 downto 0)	 				-- Some debug information
 		
@@ -164,10 +163,10 @@ architecture a of SDRAM_Write_Buffer_gen is
 	signal wr_addr				: std_logic_vector(ADDR_WIDTH-1 downto 0);
 	
 	-- Save last sent data to resend if a waitstate occurs
-	type t_wr_buffer_data is array (0 to 7) of std_logic_vector(DATA_BYTES*8-1 downto 0); 
-	type t_wr_buffer_addr is array (0 to 7) of std_logic_vector(ADDR_WIDTH-1 DOWNTO 0);
-	type t_wr_buffer_addr_x is array (0 to 7) of unsigned(ADDR_X_WIDTH-1 DOWNTO 0);
-	type t_wr_buffer_addr_y is array (0 to 7) of unsigned(ADDR_Y_WIDTH-1 DOWNTO 0);
+	type t_wr_buffer_data is array (0 to 2) of std_logic_vector(DATA_BYTES*8-1 downto 0);
+	type t_wr_buffer_addr is array (0 to 2) of std_logic_vector(ADDR_WIDTH-1 DOWNTO 0); 
+	type t_wr_buffer_addr_x is array (0 to 2) of unsigned(ADDR_X_WIDTH-1 DOWNTO 0);
+	type t_wr_buffer_addr_y is array (0 to 2) of unsigned(ADDR_Y_WIDTH-1 DOWNTO 0);
 	signal wr_data_buffer	: t_wr_buffer_data;
 	signal wr_addr_buffer	: t_wr_buffer_addr;
 	signal wr_addr_x_buffer	: t_wr_buffer_addr_x;
@@ -221,6 +220,7 @@ dcfifo_gen: for I in 0 to (LINE_BUFFER_N-1) generate
 		aclr						=> buffer_aclr(I),
 		wrempty					=> buffer_wrempty(I),
 --rdempty					=> buffer_rdempty(I),	
+      rdempty					=> open,	
 		q							=> buffer_q(I)
 	);
 
@@ -267,14 +267,13 @@ begin
 		wr_addr_y 			<= (others => '0');		
 		wr_active 			<= '0';
 		wr_req 				<= '0';
+
+		wr_data_buffer 	<= (others => (others => '0'));
+		wr_addr_buffer 	<= (others => (others => '0'));
+		wr_addr_x_buffer 	<= (others => (others => '0'));
+		wr_addr_y_buffer 	<= (others => (others => '0'));
 		
-		for I in 0 to 7 loop	
-			wr_data_buffer(I) 	<= (others => '0');
-			wr_addr_buffer(I) 	<= (others => '0');
-			wr_addr_x_buffer(I)	<= (others => '0');
-			wr_addr_y_buffer(I) 	<= (others => '0');
-		end loop;
-		
+	
 		for I in 0 to LINE_BUFFER_N-1 loop	
 			buffer_reset(I) <= '0';
 			buffer_valid_ff1(I) <= '0';
@@ -581,7 +580,6 @@ begin
 		rd_state <= RD_WAITDATA_STATE;
 		rd_active_buffer <= 0;				-- Start with buffer 0
 		cam_data_valid_ff <= '0';
---		cam_line_active_ff <= '0';
 		
 		
 		for I in 0 to LINE_BUFFER_N-1 loop	
@@ -620,8 +618,6 @@ begin
 		
 		-- FF to detect rising edge of cam_data_valid
 		cam_data_valid_ff <= cam_data_valid;
-		-- FF to detect rising edge of cam_line_active
---		cam_line_active_ff <= cam_line_active;
 	
 
 		-- CAM read state machine
