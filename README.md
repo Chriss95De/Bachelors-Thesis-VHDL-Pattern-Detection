@@ -9,7 +9,7 @@
 [x] letzte Version Perske und Version Herbst finden und zugänglich machen  
 [x] Eleminierung/Unterscheidung der Revisionen. Festlegung auf eine Revision  
 [x] Reduzierung Warnings Stand Herbst -> Vorher x aktuell 0  
-[_] Reduzierung Warnings Stand Perske -> Vorher x aktuell 0  
+[_] Reduzierung Warnings Stand Perske -> Vorher 40 aktuell 40
 
 ### Prio 2:
 [ ] Robuste Erkennung ein dimensionale Erkennung eines Punktes oder Linie  
