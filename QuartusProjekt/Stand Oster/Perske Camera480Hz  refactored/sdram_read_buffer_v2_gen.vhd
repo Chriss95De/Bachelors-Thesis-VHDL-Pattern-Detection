@@ -162,12 +162,8 @@ architecture a of SDRAM_Read_Buffer_v2_gen is
 	signal buffer_wrempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- write state machine empty signal
 	signal buffer_rdempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read state machine empty signal
 	signal buffer_q			: t_buffer_data;											-- Data from buffer
-	
-	-- line number for current buffer data
-		
-	type t_buffer_line is array (0 to LINE_BUFFER_N-1) of unsigned(ADDR_Y_WIDTH-1 downto 0);
-	signal buffer_line			: t_buffer_line;	-- contains line number of the current buffer data
 
+	
 	-- buffer valid handshake signals
 	
 	signal buffer_valid		: std_logic_vector(LINE_BUFFER_N-1 downto 0);		-- Synchronized with cam_clk
@@ -178,9 +174,6 @@ architecture a of SDRAM_Read_Buffer_v2_gen is
 	signal buffer_reset_ff1	: std_logic_vector(LINE_BUFFER_N-1 downto 0);		-- Synchronized with cam_clk
 	signal buffer_reset_ff2	: std_logic_vector(LINE_BUFFER_N-1 downto 0);		-- Synchronized with cam_clk
 	
-	
-
-
 	
 	-- signals for the read data state machine
 	
@@ -638,7 +631,6 @@ begin
 			buffer_valid(I) <= '0';
 			buffer_reset_ff1(I) <= '0';
 			buffer_reset_ff2(I) <= '0';
-			buffer_line(I) <= (others => '0');
 			
 			-- Reset FIFO
 			buffer_data(I) <= (others => '0');
