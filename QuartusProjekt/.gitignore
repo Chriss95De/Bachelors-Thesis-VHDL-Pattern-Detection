@@ -41,7 +41,7 @@
 *.pin
 *.pof
 *.ptf.*
-*.qar
+#*.qar need archived files
 *.qarlog
 *.qws
 *.rpt
