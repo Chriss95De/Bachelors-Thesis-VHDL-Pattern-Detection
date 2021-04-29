@@ -80,8 +80,6 @@ port (
 	sdram_data					: in std_logic_vector(DATA_BYTES_IN*8-1 downto 0);	-- data from SDRAM
 	sdram_data_val				: in std_logic;							-- Indicates valid data from SDRAM
 	sdram_wait					: in std_logic;							-- SDRAM is busy	
-	sdram_addr_x				: out unsigned(ADDR_X_WIDTH-1 downto 0);			-- Current x position to read
-	sdram_addr_y				: out unsigned(ADDR_Y_WIDTH-1 downto 0); 			-- Current y position to read
 	sdram_addr					: out std_logic_vector(ADDR_WIDTH-1 downto 0);			-- Current memory position to read
 	sdram_rd						: out std_logic;							-- SDRAM read command
 	
@@ -112,7 +110,7 @@ port (
 	-- Debugging signals
 	dbg_rd_state				: out unsigned(7 downto 0); 				-- Current rd_state
 	dbg_wr_state				: out unsigned(7 downto 0); 				-- Current wr_state
-	dbg_err_code				: out std_logic_vector(15 downto 0);	 	-- Some debug information
+	dbg_err_code				: out std_logic_vector(6 downto 0);	 	-- Some debug information
 	dbg_rcv						: out unsigned(15 downto 0); 
 	dbg_req						: out unsigned(15 downto 0)
 	
@@ -233,8 +231,6 @@ architecture a of SDRAM_Read_Buffer_v2_gen is
 	signal line_read_active_ff		: std_logic; 	-- to detect falling edge
 	signal data_ena_ff		: std_logic; 	-- to detect falling edge
 	
-	signal output_byte_n			: integer;	
-	
 	signal data_ff			: std_logic_vector(7 downto 0);	-- Current output data
 	
 	
@@ -243,14 +239,6 @@ architecture a of SDRAM_Read_Buffer_v2_gen is
 	type t_wr_line_buffer is array (0 to 7) of std_logic_vector(7 downto 0);
 	signal wr_line_buffer	: t_wr_line_buffer;	
 	signal wr_line_buffer_pos	: integer; 	-- Next byte position on the line buffer
-	signal wr_line_buffer_req	: integer; 	-- Requested words from the FIFO
-	signal wr_line_buffer_rec	: integer; 	-- Received words from the FIFO
-	signal wr_line_buffer_cnt	: integer; 	-- Received words from the FIFO
-	
-	
-	-- Debug Signal
-	
-	signal dbg_cnt		: unsigned(16 downto 0);
 	
 begin
 
@@ -313,14 +301,11 @@ begin
 		wr_next_buffer 	<= 0;		-- Start with buffer 0
 		data_ff <= (others => '0');
 		data_val <= '0';
-		output_byte_n <= 0;
 		data_ena_ff <= '0';
 		
 		data_act <= '0';
 		data_act_ff1 <= '0';
 		data_act_ff2 <= '0';
-		
-		
 		
 		for I in 0 to LINE_BUFFER_N-1 loop	
 			buffer_reset(I) <= '0';
@@ -329,24 +314,15 @@ begin
 			buffer_rdreq(I) <= '0';
 		end loop;	
 		
-		
-		
-		
-		
-		
 		for I in 0 to 7 loop	
 			wr_line_buffer(I) 	<= (others => '0');
 		end loop;
-		wr_line_buffer_pos	<= 0;
-		wr_line_buffer_req	<= 0;
-		wr_line_buffer_rec	<= 0;
-		wr_line_buffer_cnt	<= 0;
-	
 		
-		
+		wr_line_buffer_pos	<= 0;		
 		
 	elsif rising_edge(data_clk) then
 	
+		
 		dbg_wr_state <= to_unsigned(0,8);
 		
 		
@@ -411,13 +387,6 @@ begin
 				else
 					wr_next_buffer <= wr_next_buffer + 1;
 				end if;
-				
-				
-				-- Start buffering data from FIFO
-				output_byte_n	<= 0;
-				wr_line_buffer_req	<= 0;
-				wr_line_buffer_rec	<= 0;
-				wr_line_buffer_cnt	<= 0;
 				
 				-- Data can only be read in 4byte packages from the sram
 				-- So the first byte is always an x-position divisible by 4
@@ -617,8 +586,6 @@ begin
 		-- Reset
 		rd_state <= RD_WAITFRAME_STATE;
 		sdram_addr <= (others => '0');
-		sdram_addr_x <= (others => '0');
-		sdram_addr_y <= (others => '0');
 		sdram_rd <= '0';
 		rd_active <= '0';
 		rd_req <= '0';
@@ -648,6 +615,7 @@ begin
 		sdram_rd_rcv_n <= to_unsigned(0,16);
 		
 	elsif rising_edge(sdram_clk) then
+	
 		dbg_rd_state <= to_unsigned(0,8);
 		
 		
@@ -736,9 +704,7 @@ begin
 			
 			-- Reset read address	
 			rd_next_addr_x <= frame_x;	
-			--rd_next_addr_y <= frame_y;	
-			
-			dbg_cnt <= (others => '0');	
+			--rd_next_addr_y <= frame_y;		
 			
 			-- Init number of requested and received words
 			sdram_rd_req_n <= to_unsigned(0,16);
