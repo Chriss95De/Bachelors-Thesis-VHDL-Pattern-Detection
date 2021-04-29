@@ -1,0 +1,253 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 376 352)
+	(text "SDRAM_PixelBuffer" (rect 5 0 92 12)(font "Arial" ))
+	(text "inst" (rect 8 320 20 332)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "reset" (rect 0 0 20 12)(font "Arial" ))
+		(text "reset" (rect 21 27 41 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Arial" ))
+		(text "clk" (rect 21 43 31 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "buf_data_act" (rect 0 0 53 12)(font "Arial" ))
+		(text "buf_data_act" (rect 21 59 74 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "buf_data_rdy" (rect 0 0 55 12)(font "Arial" ))
+		(text "buf_data_rdy" (rect 21 75 76 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "buf_data[7..0]" (rect 0 0 55 12)(font "Arial" ))
+		(text "buf_data[7..0]" (rect 21 91 76 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "buf_data_val" (rect 0 0 53 12)(font "Arial" ))
+		(text "buf_data_val" (rect 21 107 74 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "pxl_data_req" (rect 0 0 51 12)(font "Arial" ))
+		(text "pxl_data_req" (rect 21 123 72 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "pxl_data_ena" (rect 0 0 53 12)(font "Arial" ))
+		(text "pxl_data_ena" (rect 21 139 74 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "pxl_frame_x[addr_x_width-1..0]" (rect 0 0 126 12)(font "Arial" ))
+		(text "pxl_frame_x[addr_x_width-1..0]" (rect 21 155 147 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "pxl_frame_w[addr_x_width-1..0]" (rect 0 0 127 12)(font "Arial" ))
+		(text "pxl_frame_w[addr_x_width-1..0]" (rect 21 171 148 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "pxl_frame_y[addr_y_width-1..0]" (rect 0 0 128 12)(font "Arial" ))
+		(text "pxl_frame_y[addr_y_width-1..0]" (rect 21 187 149 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "pxl_frame_h[addr_y_width-1..0]" (rect 0 0 127 12)(font "Arial" ))
+		(text "pxl_frame_h[addr_y_width-1..0]" (rect 21 203 148 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 3))
+	)
+	(port
+		(pt 360 32)
+		(output)
+		(text "buf_data_req" (rect 0 0 54 12)(font "Arial" ))
+		(text "buf_data_req" (rect 285 27 339 39)(font "Arial" ))
+		(line (pt 360 32)(pt 344 32)(line_width 1))
+	)
+	(port
+		(pt 360 48)
+		(output)
+		(text "buf_data_ena" (rect 0 0 55 12)(font "Arial" ))
+		(text "buf_data_ena" (rect 284 43 339 55)(font "Arial" ))
+		(line (pt 360 48)(pt 344 48)(line_width 1))
+	)
+	(port
+		(pt 360 64)
+		(output)
+		(text "buf_frame_x[addr_x_width-1..0]" (rect 0 0 128 12)(font "Arial" ))
+		(text "buf_frame_x[addr_x_width-1..0]" (rect 211 59 339 71)(font "Arial" ))
+		(line (pt 360 64)(pt 344 64)(line_width 3))
+	)
+	(port
+		(pt 360 80)
+		(output)
+		(text "buf_frame_w[addr_x_width-1..0]" (rect 0 0 129 12)(font "Arial" ))
+		(text "buf_frame_w[addr_x_width-1..0]" (rect 210 75 339 87)(font "Arial" ))
+		(line (pt 360 80)(pt 344 80)(line_width 3))
+	)
+	(port
+		(pt 360 96)
+		(output)
+		(text "buf_frame_y[addr_y_width-1..0]" (rect 0 0 130 12)(font "Arial" ))
+		(text "buf_frame_y[addr_y_width-1..0]" (rect 209 91 339 103)(font "Arial" ))
+		(line (pt 360 96)(pt 344 96)(line_width 3))
+	)
+	(port
+		(pt 360 112)
+		(output)
+		(text "buf_frame_h[addr_y_width-1..0]" (rect 0 0 129 12)(font "Arial" ))
+		(text "buf_frame_h[addr_y_width-1..0]" (rect 210 107 339 119)(font "Arial" ))
+		(line (pt 360 112)(pt 344 112)(line_width 3))
+	)
+	(port
+		(pt 360 128)
+		(output)
+		(text "pxl_data_act" (rect 0 0 50 12)(font "Arial" ))
+		(text "pxl_data_act" (rect 289 123 339 135)(font "Arial" ))
+		(line (pt 360 128)(pt 344 128)(line_width 1))
+	)
+	(port
+		(pt 360 144)
+		(output)
+		(text "pxl_data_l1[39..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "pxl_data_l1[39..0]" (rect 271 139 339 151)(font "Arial" ))
+		(line (pt 360 144)(pt 344 144)(line_width 3))
+	)
+	(port
+		(pt 360 160)
+		(output)
+		(text "pxl_data_l2[39..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "pxl_data_l2[39..0]" (rect 270 155 339 167)(font "Arial" ))
+		(line (pt 360 160)(pt 344 160)(line_width 3))
+	)
+	(port
+		(pt 360 176)
+		(output)
+		(text "pxl_data_l3[39..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "pxl_data_l3[39..0]" (rect 270 171 339 183)(font "Arial" ))
+		(line (pt 360 176)(pt 344 176)(line_width 3))
+	)
+	(port
+		(pt 360 192)
+		(output)
+		(text "pxl_data_l4[39..0]" (rect 0 0 70 12)(font "Arial" ))
+		(text "pxl_data_l4[39..0]" (rect 269 187 339 199)(font "Arial" ))
+		(line (pt 360 192)(pt 344 192)(line_width 3))
+	)
+	(port
+		(pt 360 208)
+		(output)
+		(text "pxl_data_l5[39..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "pxl_data_l5[39..0]" (rect 270 203 339 215)(font "Arial" ))
+		(line (pt 360 208)(pt 344 208)(line_width 3))
+	)
+	(port
+		(pt 360 224)
+		(output)
+		(text "pxl_data_val" (rect 0 0 50 12)(font "Arial" ))
+		(text "pxl_data_val" (rect 289 219 339 231)(font "Arial" ))
+		(line (pt 360 224)(pt 344 224)(line_width 1))
+	)
+	(port
+		(pt 360 240)
+		(output)
+		(text "pxl_center_x[addr_x_width-1..0]" (rect 0 0 126 12)(font "Arial" ))
+		(text "pxl_center_x[addr_x_width-1..0]" (rect 213 235 339 247)(font "Arial" ))
+		(line (pt 360 240)(pt 344 240)(line_width 3))
+	)
+	(port
+		(pt 360 256)
+		(output)
+		(text "pxl_center_y[addr_y_width-1..0]" (rect 0 0 128 12)(font "Arial" ))
+		(text "pxl_center_y[addr_y_width-1..0]" (rect 211 251 339 263)(font "Arial" ))
+		(line (pt 360 256)(pt 344 256)(line_width 3))
+	)
+	(port
+		(pt 360 272)
+		(output)
+		(text "dbg_state[7..0]" (rect 0 0 59 12)(font "Arial" ))
+		(text "dbg_state[7..0]" (rect 280 267 339 279)(font "Arial" ))
+		(line (pt 360 272)(pt 344 272)(line_width 3))
+	)
+	(port
+		(pt 360 288)
+		(output)
+		(text "dbg_err_code[15..0]" (rect 0 0 80 12)(font "Arial" ))
+		(text "dbg_err_code[15..0]" (rect 259 283 339 295)(font "Arial" ))
+		(line (pt 360 288)(pt 344 288)(line_width 3))
+	)
+	(parameter
+		"RES_WIDTH"
+		"640"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RES_HEIGHT"
+		"480"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ADDR_X_WIDTH"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ADDR_Y_WIDTH"
+		"9"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 344 320)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 376 -64 476 16))
+)
