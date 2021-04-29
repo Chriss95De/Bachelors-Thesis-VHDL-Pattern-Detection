@@ -4506,7 +4506,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 6024 2480 6072 2512)
+	(rect 6024 2496 6072 2528)
 	(text "WIRE" (rect 1 0 24 10)(font "Arial" (font_size 6)))
 	(text "inst86" (rect 3 21 31 38)(font "Intel Clear" ))
 	(port
@@ -4530,7 +4530,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 6024 2504 6072 2536)
+	(rect 6024 2536 6072 2568)
 	(text "WIRE" (rect 1 0 24 10)(font "Arial" (font_size 6)))
 	(text "inst87" (rect 3 21 31 38)(font "Intel Clear" ))
 	(port
@@ -4554,7 +4554,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 6016 2560 6048 2592)
+	(rect 6016 2592 6048 2624)
 	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
 	(text "inst95" (rect 3 21 31 38)(font "Intel Clear" )(invisible))
 	(port
@@ -7318,31 +7318,6 @@ refer to the applicable agreement for further details.
 	(pt 5728 2312)
 )
 (connector
-	(text "seg_hex[24]" (rect 6072 2456 6129 2473)(font "Intel Clear" ))
-	(pt 6144 2472)
-	(pt 6072 2472)
-)
-(connector
-	(pt 5976 2240)
-	(pt 5976 2520)
-)
-(connector
-	(text "seg_hex[25]" (rect 6072 2480 6129 2497)(font "Intel Clear" ))
-	(pt 6144 2496)
-	(pt 6072 2496)
-)
-(connector
-	(text "seg_hex[26]" (rect 6072 2504 6129 2521)(font "Intel Clear" ))
-	(pt 6144 2520)
-	(pt 6072 2520)
-)
-(connector
-	(text "seg_hex[31..27]" (rect 6074 2544 6148 2561)(font "Intel Clear" ))
-	(pt 6032 2560)
-	(pt 6144 2560)
-	(bus)
-)
-(connector
 	(text "dbg0[23..0]" (rect 5538 1960 5591 1977)(font "Intel Clear" ))
 	(pt 5600 1976)
 	(pt 5528 1976)
@@ -7391,14 +7366,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 5888 2104)
-	(pt 5888 2376)
-)
-(connector
-	(pt 5888 2376)
-	(pt 5888 2496)
-)
-(connector
 	(pt 5728 2040)
 	(pt 5728 2176)
 )
@@ -7422,24 +7389,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 5728 2472)
 	(pt 6024 2472)
-)
-(connector
-	(text "SW[16]" (rect 5538 2480 5573 2497)(font "Intel Clear" ))
-	(pt 5528 2496)
-	(pt 5888 2496)
-)
-(connector
-	(pt 5888 2496)
-	(pt 6024 2496)
-)
-(connector
-	(text "SW[17]" (rect 5538 2504 5573 2521)(font "Intel Clear" ))
-	(pt 5528 2520)
-	(pt 5976 2520)
-)
-(connector
-	(pt 5976 2520)
-	(pt 6024 2520)
 )
 (connector
 	(text "GND,GND,GND,VCC,GND,GND,GND,GND,GND,GND" (rect 4002 408 4235 425)(font "Intel Clear" ))
@@ -8196,6 +8145,57 @@ refer to the applicable agreement for further details.
 	(pt 7560 784)
 	(bus)
 )
+(connector
+	(text "seg_hex[31..27]" (rect 6074 2576 6148 2593)(font "Intel Clear" ))
+	(pt 6032 2592)
+	(pt 6144 2592)
+	(bus)
+)
+(connector
+	(text "seg_hex[26]" (rect 6080 2536 6137 2553)(font "Intel Clear" ))
+	(pt 6072 2552)
+	(pt 6144 2552)
+)
+(connector
+	(text "seg_hex[25]" (rect 6080 2496 6137 2513)(font "Intel Clear" ))
+	(pt 6072 2512)
+	(pt 6144 2512)
+)
+(connector
+	(pt 5976 2240)
+	(pt 5976 2552)
+)
+(connector
+	(pt 5888 2104)
+	(pt 5888 2376)
+)
+(connector
+	(pt 5888 2376)
+	(pt 5888 2512)
+)
+(connector
+	(text "SW[16]" (rect 5538 2496 5573 2513)(font "Intel Clear" ))
+	(pt 5528 2512)
+	(pt 5888 2512)
+)
+(connector
+	(pt 5888 2512)
+	(pt 6024 2512)
+)
+(connector
+	(text "SW[17]" (rect 5538 2536 5573 2553)(font "Intel Clear" ))
+	(pt 5528 2552)
+	(pt 5976 2552)
+)
+(connector
+	(pt 5976 2552)
+	(pt 6024 2552)
+)
+(connector
+	(text "seg_hex[24]" (rect 6080 2456 6137 2473)(font "Intel Clear" ))
+	(pt 6072 2472)
+	(pt 6152 2472)
+)
 (junction (pt 640 1168))
 (junction (pt 2784 408))
 (junction (pt 2784 424))
@@ -8211,8 +8211,6 @@ refer to the applicable agreement for further details.
 (junction (pt 5728 2312))
 (junction (pt 5728 2448))
 (junction (pt 5728 2472))
-(junction (pt 5888 2496))
-(junction (pt 5976 2520))
 (junction (pt 6488 352))
 (junction (pt 6488 400))
 (junction (pt 7936 1112))
@@ -8221,6 +8219,8 @@ refer to the applicable agreement for further details.
 (junction (pt 7920 1200))
 (junction (pt 7240 936))
 (junction (pt 7240 1080))
+(junction (pt 5976 2552))
+(junction (pt 5888 2512))
 (text "Generate 25.175Mhz clock" (rect 240 -1088 392 -1074)(font "Arial" (font_size 8)))
 (text "MAC Data input" (rect 2552 -80 2645 -61)(font "Intel Clear" (font_size 8)))
 (text "MAC Data Output" (rect 3376 112 3479 131)(font "Intel Clear" (font_size 8)))
