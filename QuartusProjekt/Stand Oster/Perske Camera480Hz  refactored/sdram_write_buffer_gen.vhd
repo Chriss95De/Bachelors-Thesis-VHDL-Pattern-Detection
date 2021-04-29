@@ -102,7 +102,7 @@ architecture a of SDRAM_Write_Buffer_gen is
 	signal buffer_rdreq		: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read request
 	signal buffer_aclr		: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- async clear
 	signal buffer_wrempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- write state machine empty signal
-	signal buffer_rdempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read state machine empty signal
+	--signal buffer_rdempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read state machine empty signal
 	signal buffer_q			: t_buffer_data;											-- Data from buffer
 	
 	-- line number for current buffer data
@@ -219,7 +219,7 @@ dcfifo_gen: for I in 0 to (LINE_BUFFER_N-1) generate
 		rdreq						=> buffer_rdreq(I),
 		aclr						=> buffer_aclr(I),
 		wrempty					=> buffer_wrempty(I),
-		rdempty					=> buffer_rdempty(I),	
+		--rdempty					=> buffer_rdempty(I),	
 		q							=> buffer_q(I)
 	);
 
