@@ -14,7 +14,7 @@
 ### Prio 2:
 [ ] Robuste Erkennung ein dimensionale Erkennung eines Punktes oder Linie  
 [ ] Aufbau von verschiedenen Testszenarien(Testparameter: Umgebungslicht, Geschwindigkeit und Farbwahl)  
-[ ] Implementierung Erkennung anhand Bayer Pattern / RGB Farbwahl  
+[ ] Implementierung Erkennung ein Channel anhand Bayer Pattern / RGB Farbwahl  
 
 ### Prio 3:
 [ ] Erkennung mehrer Objekte  
