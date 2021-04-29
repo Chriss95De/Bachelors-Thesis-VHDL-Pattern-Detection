@@ -1,2 +1,0 @@
-Created on:Dienstag, Oktober 08, 2019
-Based on:sdram-mac
