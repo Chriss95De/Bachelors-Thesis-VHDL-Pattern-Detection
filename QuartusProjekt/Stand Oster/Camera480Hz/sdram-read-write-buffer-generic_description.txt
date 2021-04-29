@@ -1,2 +1,0 @@
-Created on:Montag, Dezember 10, 2018
-Based on:sdram-read-buffer-fifo-test
