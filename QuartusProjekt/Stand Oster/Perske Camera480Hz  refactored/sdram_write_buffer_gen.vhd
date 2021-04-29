@@ -102,7 +102,6 @@ architecture a of SDRAM_Write_Buffer_gen is
 	signal buffer_rdreq		: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read request
 	signal buffer_aclr		: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- async clear
 	signal buffer_wrempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- write state machine empty signal
-	--signal buffer_rdempty	: std_logic_vector(LINE_BUFFER_N-1 downto 0);	-- read state machine empty signal
 	signal buffer_q			: t_buffer_data;											-- Data from buffer
 	
 	-- line number for current buffer data
@@ -186,9 +185,6 @@ architecture a of SDRAM_Write_Buffer_gen is
 	signal rd_active_buffer 	: t_active_buffer;
 	
 	signal cam_data_valid_ff	: std_logic; 	-- to detect rising edge
-	signal cam_line_active_ff	: std_logic; 	-- to detect rising edge
-	
-	
 	
 begin
 
@@ -219,7 +215,6 @@ dcfifo_gen: for I in 0 to (LINE_BUFFER_N-1) generate
 		rdreq						=> buffer_rdreq(I),
 		aclr						=> buffer_aclr(I),
 		wrempty					=> buffer_wrempty(I),
-		--rdempty					=> buffer_rdempty(I),	
 		q							=> buffer_q(I)
 	);
 
@@ -578,8 +573,6 @@ begin
 		rd_state <= RD_WAITDATA_STATE;
 		rd_active_buffer <= 0;				-- Start with buffer 0
 		cam_data_valid_ff <= '0';
-		cam_line_active_ff <= '0';
-		
 		
 		for I in 0 to LINE_BUFFER_N-1 loop	
 			buffer_valid(I) <= '0';
@@ -617,9 +610,6 @@ begin
 		
 		-- FF to detect rising edge of cam_data_valid
 		cam_data_valid_ff <= cam_data_valid;
-		-- FF to detect rising edge of cam_line_active
-		cam_line_active_ff <= cam_line_active;
-	
 
 		-- CAM read state machine
 		case rd_state is

@@ -39,7 +39,6 @@ port (
 	pxl_data_req				: in std_logic;							-- If data_act is not set, request frame data from Pixel Buffer
 	pxl_data_ena				: in std_logic;							-- If data_rdy is set, read out the next data byte
 	pxl_data_act				: out std_logic;							-- Pixel Buffer is busy reading out data
-	pxl_data_rdy				: out std_logic;							-- Pixel Buffer has buffered enough data
 	pxl_data_l1					: out std_logic_vector(5 * 8 - 1 downto 0);	-- Pixel data line 1 *** First pixel at 7..0, Highest pixel at 39..32
 	pxl_data_l2					: out std_logic_vector(5 * 8 - 1 downto 0);	-- Pixel data line 2
 	pxl_data_l3					: out std_logic_vector(5 * 8 - 1 downto 0);	-- Pixel data line 3
@@ -138,8 +137,6 @@ architecture a of SDRAM_PixelBuffer is
 	signal buffer_rdreq_B	: std_logic_vector(3 downto 0);	-- read request
 	signal buffer_aclr_A		: std_logic_vector(3 downto 0);	-- async clear
 	signal buffer_aclr_B		: std_logic_vector(3 downto 0);	-- async clear
-	signal buffer_empty_A	: std_logic_vector(3 downto 0);
-	signal buffer_empty_B	: std_logic_vector(3 downto 0);
 	signal buffer_q_A			: t_buffer_data;
 	signal buffer_q_B			: t_buffer_data;
 	
@@ -240,7 +237,6 @@ architecture a of SDRAM_PixelBuffer is
 	signal active_buffer 	: t_active_buffer;
 	signal pxl_ena_ff			: std_logic; 	-- to detect edge
 	signal pxl_req_ff			: std_logic; 	-- to detect edge
-	signal buf_data_val_ff	: std_logic;	-- to detect edge
 	signal i						: integer; 	-- Counter for initialization
 	signal req_n				: integer; 	-- Counter for initialization
 	signal rcv_n				: integer; 	-- Counter for initialization
@@ -352,7 +348,6 @@ scfifo_gen: for I in 0 to 3 generate
 		rdreq						=> buffer_rdreq_A(I),
 		aclr						=> buffer_aclr_A(I),
 		sclr						=> '0',
-		empty						=> buffer_empty_A(I),
 		q							=> buffer_q_A(I)
 	);
 	
@@ -375,7 +370,6 @@ scfifo_gen: for I in 0 to 3 generate
 		rdreq						=> buffer_rdreq_B(I),
 		aclr						=> buffer_aclr_B(I),
 		sclr						=> '0',
-		empty						=> buffer_empty_B(I),
 		q							=> buffer_q_B(I)
 	);
 
@@ -420,13 +414,11 @@ begin
 		buf_data_req 	<= '0';
 		buf_data_ena 	<= '0';
 		pxl_data_act 	<= '0';
-		pxl_data_rdy 	<= '0';
 		pxl_data_val 	<= '0';		
 		state 			<= ST_WAITREQ;		
 		active_buffer 	<= BUFFER_NONE;
 		pxl_ena_ff 		<= '0';
 		pxl_req_ff 		<= '0';	
-		buf_data_val_ff<= '0';	
 		i					<= 0;	
 		req_n				<= 0;	
 		rcv_n				<= 0;	
@@ -469,9 +461,7 @@ dbg_err_code(15 downto 8) <= buf_data;
 	
 		-- Detect Rising edges on data_req and data_ena
 		pxl_req_ff <= pxl_data_req;
-		pxl_ena_ff <= pxl_data_ena;
-		buf_data_val_ff <= buf_data_val;		
-	
+		pxl_ena_ff <= pxl_data_ena;		
 	
 		-- Preset values
 		pxl_data_act <= '0';	
