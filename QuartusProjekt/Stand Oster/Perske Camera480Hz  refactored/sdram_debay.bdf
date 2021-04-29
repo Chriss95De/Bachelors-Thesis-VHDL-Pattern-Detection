@@ -2673,23 +2673,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 2352 136 2384 168)
-	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
-	(text "inst65" (rect 3 21 31 38)(font "Intel Clear" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 23 12)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16))
-		(line (pt 16 16)(pt 24 8))
-		(line (pt 8 8)(pt 24 8))
-	)
-)
-(symbol
 	(rect 3400 168 3448 200)
 	(text "WIRE" (rect 1 0 24 10)(font "Arial" (font_size 6)))
 	(text "inst41" (rect 3 21 31 38)(font "Intel Clear" ))
@@ -6480,11 +6463,6 @@ refer to the applicable agreement for further details.
 	(text "mac_adr1[24..17]" (rect 2378 360 2460 377)(font "Intel Clear" ))
 	(pt 2440 376)
 	(pt 2368 376)
-	(bus)
-)
-(connector
-	(pt 2440 136)
-	(pt 2368 136)
 	(bus)
 )
 (connector

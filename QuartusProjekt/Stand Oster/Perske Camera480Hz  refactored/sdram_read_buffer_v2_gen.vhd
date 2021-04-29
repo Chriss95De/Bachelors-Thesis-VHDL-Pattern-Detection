@@ -167,8 +167,6 @@ architecture a of SDRAM_Read_Buffer_v2_gen is
 		
 	type t_buffer_line is array (0 to LINE_BUFFER_N-1) of unsigned(ADDR_Y_WIDTH-1 downto 0);
 	signal buffer_line			: t_buffer_line;	-- contains line number of the current buffer data
-	signal buffer_line_ff1		: t_buffer_line;	-- synchronize line data from read state machine to calculate SDRAM address
-	signal buffer_line_ff2		: t_buffer_line;	-- synchronize line data from read state machine to calculate SDRAM address
 
 	-- buffer valid handshake signals
 	
@@ -336,9 +334,6 @@ begin
 			buffer_valid_ff1(I) <= '0';
 			buffer_valid_ff2(I) <= '0';		
 			buffer_rdreq(I) <= '0';
-			
-			buffer_line_ff1(I) <= (others => '0');		
-			buffer_line_ff2(I) <= (others => '0');	
 		end loop;	
 		
 		
@@ -383,10 +378,6 @@ begin
 			-- Handshake to reset bufferI_valid
 			buffer_valid_ff1(I) <= buffer_valid(I);
 			buffer_valid_ff2(I) <= buffer_valid_ff1(I);
-			
-			-- synchronize line number from read data state machine
-			buffer_line_ff1(I) <= buffer_line(I);
-			buffer_line_ff2(I) <= buffer_line_ff1(I);
 				
 			-- Preset signals			
 			buffer_rdreq(I) <= '0';
