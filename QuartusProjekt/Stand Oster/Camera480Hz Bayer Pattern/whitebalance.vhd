@@ -163,15 +163,23 @@ architecture a of WhiteBalance is
 		end if;
 	end function;
 begin
-
-y_l1(23 downto 16) <= lookup(x_l1(23 downto 16), amp);
-y_l1(15 downto 8)  <= lookup(x_l1(15 downto 8), amp);
-y_l1(7 downto 0)   <= lookup(x_l1(7 downto 0), amp);
-y_l2(23 downto 16) <= lookup(x_l2(23 downto 16), amp);
-y_l2(15 downto 8)  <= lookup(x_l2(15 downto 8), amp);
-y_l2(7 downto 0)   <= lookup(x_l2(7 downto 0), amp);
-y_l3(23 downto 16) <= lookup(x_l3(23 downto 16), amp);
-y_l3(15 downto 8)  <= lookup(x_l3(15 downto 8), amp);
-y_l3(7 downto 0)   <= lookup(x_l3(7 downto 0), amp);
-
+	
+process(en, x_l1, x_l2, x_l3, amp)
+begin
+	if en = '1' then
+		y_l1(23 downto 16) <= lookup(x_l1(23 downto 16), amp);
+		y_l1(15 downto 8)  <= lookup(x_l1(15 downto 8), amp);
+		y_l1(7 downto 0)   <= lookup(x_l1(7 downto 0), amp);
+		y_l2(23 downto 16) <= lookup(x_l2(23 downto 16), amp);
+		y_l2(15 downto 8)  <= lookup(x_l2(15 downto 8), amp);
+		y_l2(7 downto 0)   <= lookup(x_l2(7 downto 0), amp);
+		y_l3(23 downto 16) <= lookup(x_l3(23 downto 16), amp);
+		y_l3(15 downto 8)  <= lookup(x_l3(15 downto 8), amp);
+		y_l3(7 downto 0)   <= lookup(x_l3(7 downto 0), amp);
+	else
+		y_l1 <= x_l1;
+		y_l2 <= x_l2;
+		y_l3 <= x_l3;
+	end if;
+end process;
 end architecture a;

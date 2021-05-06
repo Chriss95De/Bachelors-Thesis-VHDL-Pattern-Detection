@@ -8,7 +8,7 @@ library altera_mf;
 use altera_mf.altera_mf_components.all;
 
 
-entity Convolution is
+
 generic (
 	Kernel_00	: integer := -1;
 	Kernel_10	: integer := -2;
@@ -36,16 +36,11 @@ port (
 	B_l1					: in std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 1
 	B_l2					: in std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 2
 	B_l3					: in std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 3
-	-- Grayscale
-	H_l1					: in std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 1
-	H_l2					: in std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 2
-	H_l3					: in std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 3
 	
 	--Output
 	R						: out std_logic_vector(7 downto 0);
 	G						: out std_logic_vector(7 downto 0);
-	B						: out std_logic_vector(7 downto 0);
-	H						: out std_logic_vector(7 downto 0)
+	B						: out std_logic_vector(7 downto 0)
 	 
 	); 
 end entity Convolution;
@@ -90,8 +85,5 @@ with en select G <=
 with en select B <=
 	convolute(B_l1,B_l2,B_l3)  when '1',
 	B_l2(15 downto 8)  			when others;
-with en select H <=
-	convolute(H_l1,H_l2,H_l3)  when '1',
-	H_l2(15 downto 8)  			when others;
 
 end architecture a;

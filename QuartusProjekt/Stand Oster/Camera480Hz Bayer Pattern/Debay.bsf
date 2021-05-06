@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 288 256)
+	(rect 16 16 288 224)
 	(text "Debay" (rect 5 0 32 12)(font "Arial" ))
-	(text "inst" (rect 8 224 20 236)(font "Arial" ))
+	(text "inst" (rect 8 192 20 204)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -142,27 +142,6 @@ refer to the applicable agreement for further details.
 		(text "B_l3[23..0]" (rect 209 155 251 167)(font "Arial" ))
 		(line (pt 272 160)(pt 256 160)(line_width 3))
 	)
-	(port
-		(pt 272 176)
-		(output)
-		(text "H_l1[23..0]" (rect 0 0 42 12)(font "Arial" ))
-		(text "H_l1[23..0]" (rect 209 171 251 183)(font "Arial" ))
-		(line (pt 272 176)(pt 256 176)(line_width 3))
-	)
-	(port
-		(pt 272 192)
-		(output)
-		(text "H_l2[23..0]" (rect 0 0 43 12)(font "Arial" ))
-		(text "H_l2[23..0]" (rect 208 187 251 199)(font "Arial" ))
-		(line (pt 272 192)(pt 256 192)(line_width 3))
-	)
-	(port
-		(pt 272 208)
-		(output)
-		(text "H_l3[23..0]" (rect 0 0 43 12)(font "Arial" ))
-		(text "H_l3[23..0]" (rect 208 203 251 215)(font "Arial" ))
-		(line (pt 272 208)(pt 256 208)(line_width 3))
-	)
 	(parameter
 		"ADDR_X_WIDTH"
 		"10"
@@ -174,7 +153,7 @@ refer to the applicable agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 256 224)(line_width 1))
+		(rectangle (rect 16 16 256 192)(line_width 1))
 	)
 	(annotation_block (parameter)(rect 288 -64 388 16))
 )

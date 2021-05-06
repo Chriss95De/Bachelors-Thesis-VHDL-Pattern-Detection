@@ -75,7 +75,11 @@ port (
 	-- Blue
 	B_l1					: out std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 1 *** First pixel at 7..0, Highest pixel at 39..32
 	B_l2					: out std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 2
-	B_l3					: out std_logic_vector(3 * 8 - 1 downto 0)	-- Pixel data line 3
+	B_l3					: out std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 3
+	-- Grayscale
+	H_l1					: out std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 1 *** First pixel at 7..0, Highest pixel at 39..32
+	H_l2					: out std_logic_vector(3 * 8 - 1 downto 0);	-- Pixel data line 2
+	H_l3					: out std_logic_vector(3 * 8 - 1 downto 0)	-- Pixel data line 3
 	 
 	); 
 end entity Debay;
@@ -84,12 +88,11 @@ end entity Debay;
 architecture a of Debay is	
 	signal XYE		: std_logic_vector(2 downto 0);
 	
-	-- l1 : C V C
-	-- l2 : H M H
-	-- l3 : C V C
+	-- l1 : C V
+	-- l2 : H M
 	
 	-- Get average of C values
-	function get_c(l1,l2,l3 : in std_logic_vector(3 * 8 - 1 downto 0)) return std_logic_vector is
+	function get_c(l1,l2 : in std_logic_vector(3 * 8 - 1 downto 0)) return std_logic_vector is
 		variable sum	: unsigned(9 downto 0);
 	begin
 		sum := 	resize(unsigned(l1(7 downto 0)), 10)+
@@ -129,14 +132,68 @@ architecture a of Debay is
 	begin
 		return l2(15 downto 8);
 	end function;
+	
+	-- Get avg value
+	function get_avg(a,b: in std_logic_vector(7 downto 0)) return std_logic_vector(7 downto 0) is
+	variable sum	: unsigned(8 downto 0);
+	begin
+		sum := 	resize(unsigned(a, 9)+
+					resize(unsigned(b, 9);
+		return std_logic_vector(resize(shift_right(sum, 1),8));
+	end function;
 begin
 
-XYE(0) <= pxl_center_x(0);
+XYE(0) <= pxl_center_x(0); --fist bit shows if even or uneven number
 XYE(1) <= pxl_center_y(0);
 XYE(2) <= en;
 
--- Line 1
+--notice order: for example "100" -> EYX 
+if(XYE == "100") then --x=0 y=0 
+--  GBGBG	-> pxl_data_l1
+--  RGRGR	-> pxl_data_l2
+--  GBGBG	-> pxl_data_l3
+--  RGRGR	-> pxl_data_l4
+--  GBGBG	-> pxl_data_l5
 
+--red
+R_l1(7 downto 0) 		<= pxl_data_l2(7 downto 0);
+R_l1(15 downto 8) 	<= pxl_data_l2(23 downto 16);
+R_l1(23 downto 16)	<= pxl_data_l2(39 downto 32);
+
+R_l2(7 downto 0) 		<= get_avg( pxl_data_l2(7 downto 0), pxl_data_l4(7 downto 0) );
+R_l2(15 downto 8) 	<= get_avg( pxl_data_l2(23 downto 16), pxl_data_l4(23 downto 16) );
+R_l2(23 downto 16) 	<= get_avg( pxl_data_l2(39 downto 32), pxl_data_l4(39 downto 32) );
+
+R_l3(7 downto 0) 		<= pxl_data_l4(7 downto 0);
+R_l3(15 downto 8) 	<= pxl_data_l4(23 downto 16);
+R_l3(23 downto 16)	<= pxl_data_l4(39 downto 32);
+--green
+G_l1(7 downto 0) 		<= get_avg( pxl_data_l1(7 downto 0), pxl_data_l2(15 downto 8);
+G_l1(15 downto 8) 	<= get_avg( pxl_data_l1(23 downto 16), 
+G_l1(23 downto 16)	<= 
+
+G_l2(7 downto 0) 		<= 
+G_l2(15 downto 8) 	<= 
+G_l2(23 downto 16) 	<= 
+
+G_l3(7 downto 0) 		<= 
+G_l3(15 downto 8) 	<= 
+G_l3(23 downto 16)	<= 
+--blue
+
+
+else if(XYE == "101") then --x=1 y=0
+
+else if(XYE == "110") then --x=0 y=1
+
+else if(XYE == "111") then --x=1 y=1
+
+
+end if;
+
+
+-- Line 1
+/*
 with XYE select R_l1(7 downto 0) <=                                                      -- EYX
 	get_h(pxl_data_l1(23 downto 0),pxl_data_l2(23 downto 0),pxl_data_l3(23 downto 0))  when "100",
 	get_c(pxl_data_l1(23 downto 0),pxl_data_l2(23 downto 0),pxl_data_l3(23 downto 0))  when "110",
@@ -312,5 +369,5 @@ with XYE select B_l3(23 downto 16) <=
 	get_h(pxl_data_l3(39 downto 16),pxl_data_l4(39 downto 16),pxl_data_l5(39 downto 16))  when "111",
 	get_m(pxl_data_l3(39 downto 16),pxl_data_l4(39 downto 16),pxl_data_l5(39 downto 16))  when others;
 
-
+*/
 end architecture a;
