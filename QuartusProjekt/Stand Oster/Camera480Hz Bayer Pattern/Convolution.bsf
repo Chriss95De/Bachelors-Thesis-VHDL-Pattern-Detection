@@ -116,47 +116,47 @@ refer to the applicable agreement for further details.
 	)
 	(parameter
 		"Kernel_00"
-		"-1"
+		"0"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"Kernel_10"
-		"-2"
+		"1"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"Kernel_20"
-		"-1"
+		"0"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"Kernel_01"
-		"-2"
+		"1"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"Kernel_11"
-		"12"
+		"-4"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"Kernel_21"
-		"-2"
+		"1"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"Kernel_02"
-		"-1"
+		"0"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"Kernel_12"
-		"-2"
+		"1"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"Kernel_22"
-		"-1"
+		"0"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

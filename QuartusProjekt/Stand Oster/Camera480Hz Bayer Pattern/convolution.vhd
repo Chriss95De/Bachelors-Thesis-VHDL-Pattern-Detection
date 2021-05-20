@@ -8,7 +8,7 @@ library altera_mf;
 use altera_mf.altera_mf_components.all;
 
 
-
+entity Convolution is 
 generic (
 	Kernel_00	: integer := -1;
 	Kernel_10	: integer := -2;
