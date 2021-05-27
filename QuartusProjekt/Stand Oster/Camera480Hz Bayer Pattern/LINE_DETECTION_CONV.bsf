@@ -142,12 +142,17 @@ refer to the applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"THRESHOLD"
-		"100"
+		"80"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"RES_WIDTH"
 		"640"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RES_HEIGHT"
+		"480"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
