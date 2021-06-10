@@ -159,7 +159,7 @@ process (reset, clk) is
 		greyscale_x 	:= get_avg(r_ff1, g_ff1, b_ff1);
 		
 		cur_pxl_pos_x <= pxl_x_ff1;
-		cur_pxl_pos_x <= pxl_y_ff1;
+		cur_pxl_pos_y <= pxl_y_ff1;
 		
 		
 		-- conv = f(x+1) - f(x) -> c_ff2 - c_ff1

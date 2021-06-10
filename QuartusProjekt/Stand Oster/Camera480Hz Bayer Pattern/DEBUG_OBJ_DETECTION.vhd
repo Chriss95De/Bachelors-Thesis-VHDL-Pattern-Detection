@@ -16,10 +16,9 @@ port (
 	-- current center position
 	pxl_center_x		: in unsigned(ADDR_X_WIDTH-1 downto 0);
 	pxl_center_y		: in unsigned(ADDR_Y_WIDTH-1 downto 0);
-	
-	det_obj_x_pos_beg		: in unsigned (9 downto 0);										
-	det_obj_x_pos_mid		: in unsigned (9 downto 0);
-	det_obj_x_pos_end		: in unsigned (9 downto 0);
+									
+	det_obj_x_pos		: in unsigned(ADDR_X_WIDTH-1 downto 0);
+	det_obj_y_pos		: in unsigned(ADDR_Y_WIDTH-1 downto 0);
 	
 	-- color in
 	R				: in std_logic_vector(7 downto 0);
@@ -43,15 +42,15 @@ begin
 	
 	--colored line begining
 	R_out 
-	<= (others => '0') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos_beg) or unsigned(pxl_center_x) = unsigned(det_obj_x_pos_end)) and enable = '1'
+	<= (others => '0') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos) or unsigned(pxl_center_y) = unsigned(det_obj_y_pos)) and enable = '1'
 	else R;
 	
 	G_out 
-	<= (others => '1') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos_beg) or unsigned(pxl_center_x) = unsigned(det_obj_x_pos_end)) and enable = '1'
+	<= (others => '1') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos) or unsigned(pxl_center_y) = unsigned(det_obj_y_pos)) and enable = '1'
 	else G;
 	
 	B_out 
-	<= (others => '0') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos_beg) or unsigned(pxl_center_x) = unsigned(det_obj_x_pos_end)) and enable = '1'
+	<= (others => '0') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos) or unsigned(pxl_center_y) = unsigned(det_obj_y_pos)) and enable = '1'
 	else B;
 		
 	
