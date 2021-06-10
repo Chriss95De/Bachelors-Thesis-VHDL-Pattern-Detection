@@ -29,7 +29,9 @@ port (
 	-- color out
 	R_out			: out std_logic_vector(7 downto 0);
 	G_out			: out std_logic_vector(7 downto 0);
-	B_out			: out std_logic_vector(7 downto 0)
+	B_out			: out std_logic_vector(7 downto 0);
+	
+	enable		: in std_logic
 	 
 	); 
 end entity DEBUG_OBJ_DETECTION;
@@ -38,15 +40,20 @@ end entity DEBUG_OBJ_DETECTION;
 architecture a of DEBUG_OBJ_DETECTION is	
 begin
 
+	
 	--colored line begining
-	R_out <= (others => '0') when unsigned(pxl_center_x) = unsigned(det_obj_x_pos_beg) or unsigned(pxl_center_x) = unsigned(det_obj_x_pos_end) 
+	R_out 
+	<= (others => '0') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos_beg) or unsigned(pxl_center_x) = unsigned(det_obj_x_pos_end)) and enable = '1'
 	else R;
 	
-	G_out <= (others => '1') when unsigned(pxl_center_x) = unsigned(det_obj_x_pos_beg) or unsigned(pxl_center_x) = unsigned(det_obj_x_pos_end) 
+	G_out 
+	<= (others => '1') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos_beg) or unsigned(pxl_center_x) = unsigned(det_obj_x_pos_end)) and enable = '1'
 	else G;
 	
-	B_out <= (others => '0') when unsigned(pxl_center_x) = unsigned(det_obj_x_pos_beg) or unsigned(pxl_center_x) = unsigned(det_obj_x_pos_end) 
+	B_out 
+	<= (others => '0') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos_beg) or unsigned(pxl_center_x) = unsigned(det_obj_x_pos_end)) and enable = '1'
 	else B;
+		
 	
 	
 end a;

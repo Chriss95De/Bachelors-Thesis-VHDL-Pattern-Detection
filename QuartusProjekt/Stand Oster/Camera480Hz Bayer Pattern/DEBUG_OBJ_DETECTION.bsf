@@ -20,9 +20,9 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 296 192)
+	(rect 16 16 296 224)
 	(text "DEBUG_OBJ_DETECTION" (rect 5 0 125 12)(font "Arial" ))
-	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(text "inst" (rect 8 192 20 204)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -80,6 +80,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 144)(pt 16 144)(line_width 3))
 	)
 	(port
+		(pt 0 160)
+		(input)
+		(text "enable" (rect 0 0 24 12)(font "Arial" ))
+		(text "enable" (rect 21 155 45 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
 		(pt 280 32)
 		(output)
 		(text "R_out[7..0]" (rect 0 0 46 12)(font "Arial" ))
@@ -111,7 +118,7 @@ refer to the applicable agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 264 160)(line_width 1))
+		(rectangle (rect 16 16 264 192)(line_width 1))
 	)
 	(annotation_block (parameter)(rect 296 -64 396 16))
 )
