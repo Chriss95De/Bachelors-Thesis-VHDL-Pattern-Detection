@@ -5685,143 +5685,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 6600 1296 6960 1472)
-	(text "LINE_DETECTION_CONV" (rect 5 0 137 12)(font "Arial" ))
-	(text "inst28" (rect 8 160 37 172)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reset" (rect 0 0 24 12)(font "Arial" ))
-		(text "reset" (rect 21 43 45 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pxl_pos_x[addr_x_width-1..0]" (rect 0 0 142 12)(font "Arial" ))
-		(text "pxl_pos_x[addr_x_width-1..0]" (rect 21 59 163 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "pxl_pos_y[addr_y_width-1..0]" (rect 0 0 145 12)(font "Arial" ))
-		(text "pxl_pos_y[addr_y_width-1..0]" (rect 21 75 166 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "R[7..0]" (rect 0 0 34 12)(font "Arial" ))
-		(text "R[7..0]" (rect 21 91 55 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "G[7..0]" (rect 0 0 34 12)(font "Arial" ))
-		(text "G[7..0]" (rect 21 107 55 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "B[7..0]" (rect 0 0 33 12)(font "Arial" ))
-		(text "B[7..0]" (rect 21 123 54 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
-		(pt 360 32)
-		(output)
-		(text "det_obj_x_pos_beg[9..0]" (rect 0 0 120 12)(font "Arial" ))
-		(text "det_obj_x_pos_beg[9..0]" (rect 238 27 339 39)(font "Arial" ))
-		(line (pt 360 32)(pt 344 32)(line_width 3))
-	)
-	(port
-		(pt 360 48)
-		(output)
-		(text "det_obj_x_pos_end[9..0]" (rect 0 0 120 12)(font "Arial" ))
-		(text "det_obj_x_pos_end[9..0]" (rect 238 43 339 55)(font "Arial" ))
-		(line (pt 360 48)(pt 344 48)(line_width 3))
-	)
-	(port
-		(pt 360 64)
-		(output)
-		(text "det_obj_conv[7..0]" (rect 0 0 92 12)(font "Arial" ))
-		(text "det_obj_conv[7..0]" (rect 262 59 339 71)(font "Arial" ))
-		(line (pt 360 64)(pt 344 64)(line_width 3))
-	)
-	(port
-		(pt 360 80)
-		(output)
-		(text "det_obj_found" (rect 0 0 69 12)(font "Arial" ))
-		(text "det_obj_found" (rect 281 75 339 87)(font "Arial" ))
-		(line (pt 360 80)(pt 344 80))
-	)
-	(port
-		(pt 360 96)
-		(output)
-		(text "cur_pxl_pos_x[addr_x_width-1..0]" (rect 0 0 164 12)(font "Arial" ))
-		(text "cur_pxl_pos_x[addr_x_width-1..0]" (rect 201 91 339 103)(font "Arial" ))
-		(line (pt 360 96)(pt 344 96)(line_width 3))
-	)
-	(port
-		(pt 360 112)
-		(output)
-		(text "cur_pxl_pos_y[addr_y_width-1..0]" (rect 0 0 166 12)(font "Arial" ))
-		(text "cur_pxl_pos_y[addr_y_width-1..0]" (rect 199 107 339 119)(font "Arial" ))
-		(line (pt 360 112)(pt 344 112)(line_width 3))
-	)
-	(port
-		(pt 360 128)
-		(output)
-		(text "debug_out[9..0]" (rect 0 0 76 12)(font "Arial" ))
-		(text "debug_out[9..0]" (rect 275 123 339 135)(font "Arial" ))
-		(line (pt 360 128)(pt 344 128)(line_width 3))
-	)
-	(parameter
-		"NUMBERS_OF_OBJECTS"
-		"3"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"THRESHOLD"
-		"50"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RES_WIDTH"
-		"640"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RES_HEIGHT"
-		"480"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"ADDR_X_WIDTH"
-		"10"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"ADDR_Y_WIDTH"
-		"9"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 344 160))
-	)
-	(annotation_block (parameter)(rect 6656 1160 6904 1280))
-)
-(symbol
 	(rect 6032 1376 6064 1408)
 	(text "GND" (rect 6 8 16 29)(font "Arial" (font_size 6))(vertical))
 	(text "inst114" (rect -6 3 11 37)(font "Intel Clear" )(vertical)(invisible))
@@ -5838,108 +5701,6 @@ refer to the applicable agreement for further details.
 		(line (pt 24 8)(pt 24 24))
 	)
 	(rotate270)
-)
-(symbol
-	(rect 7160 1264 7544 1440)
-	(text "OBJECT_DETECTION" (rect 5 0 115 12)(font "Arial" ))
-	(text "inst73" (rect 8 160 37 172)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reset" (rect 0 0 24 12)(font "Arial" ))
-		(text "reset" (rect 21 43 45 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "det_obj_x_pos_beg[addr_x_width-1..0]" (rect 0 0 187 12)(font "Arial" ))
-		(text "det_obj_x_pos_beg[addr_x_width-1..0]" (rect 21 59 208 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "det_obj_x_pos_end[addr_x_width-1..0]" (rect 0 0 187 12)(font "Arial" ))
-		(text "det_obj_x_pos_end[addr_x_width-1..0]" (rect 21 75 208 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "det_obj_found" (rect 0 0 69 12)(font "Arial" ))
-		(text "det_obj_found" (rect 21 91 90 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "cur_pos_x[addr_x_width-1..0]" (rect 0 0 143 12)(font "Arial" ))
-		(text "cur_pos_x[addr_x_width-1..0]" (rect 21 107 164 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "cur_pos_y[addr_y_width-1..0]" (rect 0 0 146 12)(font "Arial" ))
-		(text "cur_pos_y[addr_y_width-1..0]" (rect 21 123 167 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
-		(pt 384 32)
-		(output)
-		(text "obj_center_x[addr_x_width-1..0]" (rect 0 0 155 12)(font "Arial" ))
-		(text "obj_center_x[addr_x_width-1..0]" (rect 232 27 363 39)(font "Arial" ))
-		(line (pt 384 32)(pt 368 32)(line_width 3))
-	)
-	(port
-		(pt 384 48)
-		(output)
-		(text "obj_center_y[addr_y_width-1..0]" (rect 0 0 158 12)(font "Arial" ))
-		(text "obj_center_y[addr_y_width-1..0]" (rect 230 43 363 55)(font "Arial" ))
-		(line (pt 384 48)(pt 368 48)(line_width 3))
-	)
-	(parameter
-		"MAX_DIFF"
-		"20"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RES_WIDTH"
-		"640"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RES_HEIGHT"
-		"480"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"ADDR_X_WIDTH"
-		"10"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"ADDR_Y_WIDTH"
-		"9"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"THRESHOLD"
-		"80"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 368 160))
-	)
-	(annotation_block (parameter)(rect 7512 1144 7720 1264))
 )
 (symbol
 	(rect 6976 272 7256 448)
@@ -6005,21 +5766,21 @@ refer to the applicable agreement for further details.
 		(pt 280 32)
 		(output)
 		(text "R_out[7..0]" (rect 0 0 55 12)(font "Arial" ))
-		(text "R_out[7..0]" (rect 213 27 259 39)(font "Arial" ))
+		(text "R_out[7..0]" (rect 213 27 268 39)(font "Arial" ))
 		(line (pt 280 32)(pt 264 32)(line_width 3))
 	)
 	(port
 		(pt 280 48)
 		(output)
 		(text "G_out[7..0]" (rect 0 0 55 12)(font "Arial" ))
-		(text "G_out[7..0]" (rect 213 43 259 55)(font "Arial" ))
+		(text "G_out[7..0]" (rect 213 43 268 55)(font "Arial" ))
 		(line (pt 280 48)(pt 264 48)(line_width 3))
 	)
 	(port
 		(pt 280 64)
 		(output)
 		(text "B_out[7..0]" (rect 0 0 54 12)(font "Arial" ))
-		(text "B_out[7..0]" (rect 214 59 259 71)(font "Arial" ))
+		(text "B_out[7..0]" (rect 214 59 268 71)(font "Arial" ))
 		(line (pt 280 64)(pt 264 64)(line_width 3))
 	)
 	(parameter
@@ -6036,6 +5797,276 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 264 160))
 	)
 	(annotation_block (parameter)(rect 7256 208 7464 272))
+)
+(symbol
+	(rect 6600 1296 6960 1472)
+	(text "LINE_DETECTION_CONV" (rect 5 0 137 12)(font "Arial" ))
+	(text "inst28" (rect 8 160 37 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "pxl_pos_x[addr_x_width-1..0]" (rect 0 0 142 12)(font "Arial" ))
+		(text "pxl_pos_x[addr_x_width-1..0]" (rect 21 59 163 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "pxl_pos_y[addr_y_width-1..0]" (rect 0 0 145 12)(font "Arial" ))
+		(text "pxl_pos_y[addr_y_width-1..0]" (rect 21 75 166 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "R[7..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "R[7..0]" (rect 21 91 55 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "G[7..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "G[7..0]" (rect 21 107 55 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "B[7..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "B[7..0]" (rect 21 123 54 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 360 32)
+		(output)
+		(text "det_obj_x_pos_beg[9..0]" (rect 0 0 120 12)(font "Arial" ))
+		(text "det_obj_x_pos_beg[9..0]" (rect 238 27 358 39)(font "Arial" ))
+		(line (pt 360 32)(pt 344 32)(line_width 3))
+	)
+	(port
+		(pt 360 48)
+		(output)
+		(text "det_obj_x_pos_end[9..0]" (rect 0 0 120 12)(font "Arial" ))
+		(text "det_obj_x_pos_end[9..0]" (rect 238 43 358 55)(font "Arial" ))
+		(line (pt 360 48)(pt 344 48)(line_width 3))
+	)
+	(port
+		(pt 360 64)
+		(output)
+		(text "det_obj_conv[7..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "det_obj_conv[7..0]" (rect 262 59 354 71)(font "Arial" ))
+		(line (pt 360 64)(pt 344 64)(line_width 3))
+	)
+	(port
+		(pt 360 80)
+		(output)
+		(text "det_obj_found" (rect 0 0 69 12)(font "Arial" ))
+		(text "det_obj_found" (rect 281 75 350 87)(font "Arial" ))
+		(line (pt 360 80)(pt 344 80))
+	)
+	(port
+		(pt 360 96)
+		(output)
+		(text "cur_pxl_pos_x[addr_x_width-1..0]" (rect 0 0 164 12)(font "Arial" ))
+		(text "cur_pxl_pos_x[addr_x_width-1..0]" (rect 201 91 365 103)(font "Arial" ))
+		(line (pt 360 96)(pt 344 96)(line_width 3))
+	)
+	(port
+		(pt 360 112)
+		(output)
+		(text "cur_pxl_pos_y[addr_y_width-1..0]" (rect 0 0 166 12)(font "Arial" ))
+		(text "cur_pxl_pos_y[addr_y_width-1..0]" (rect 199 107 365 119)(font "Arial" ))
+		(line (pt 360 112)(pt 344 112)(line_width 3))
+	)
+	(port
+		(pt 360 128)
+		(output)
+		(text "debug_out[9..0]" (rect 0 0 76 12)(font "Arial" ))
+		(text "debug_out[9..0]" (rect 275 123 351 135)(font "Arial" ))
+		(line (pt 360 128)(pt 344 128)(line_width 3))
+	)
+	(parameter
+		"NUMBERS_OF_OBJECTS"
+		"3"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"THRESHOLD"
+		"50"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RES_WIDTH"
+		"640"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RES_HEIGHT"
+		"480"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ADDR_X_WIDTH"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ADDR_Y_WIDTH"
+		"9"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 344 160))
+	)
+	(annotation_block (parameter)(rect 6656 1160 6904 1280))
+)
+(symbol
+	(rect 7160 1264 7552 1440)
+	(text "OBJECT_DETECTION" (rect 5 0 115 12)(font "Arial" ))
+	(text "inst73" (rect 8 160 37 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "det_obj_x_pos_beg[addr_x_width-1..0]" (rect 0 0 187 12)(font "Arial" ))
+		(text "det_obj_x_pos_beg[addr_x_width-1..0]" (rect 21 59 208 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "det_obj_x_pos_end[addr_x_width-1..0]" (rect 0 0 187 12)(font "Arial" ))
+		(text "det_obj_x_pos_end[addr_x_width-1..0]" (rect 21 75 208 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "det_obj_found" (rect 0 0 69 12)(font "Arial" ))
+		(text "det_obj_found" (rect 21 91 90 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "cur_pos_x[addr_x_width-1..0]" (rect 0 0 143 12)(font "Arial" ))
+		(text "cur_pos_x[addr_x_width-1..0]" (rect 21 107 164 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "cur_pos_y[addr_y_width-1..0]" (rect 0 0 146 12)(font "Arial" ))
+		(text "cur_pos_y[addr_y_width-1..0]" (rect 21 123 167 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 392 32)
+		(output)
+		(text "obj_center_x[addr_x_width-1..0]" (rect 0 0 155 12)(font "Arial" ))
+		(text "obj_center_x[addr_x_width-1..0]" (rect 240 27 395 39)(font "Arial" ))
+		(line (pt 392 32)(pt 376 32)(line_width 3))
+	)
+	(port
+		(pt 392 48)
+		(output)
+		(text "obj_center_y[addr_y_width-1..0]" (rect 0 0 158 12)(font "Arial" ))
+		(text "obj_center_y[addr_y_width-1..0]" (rect 238 43 396 55)(font "Arial" ))
+		(line (pt 392 48)(pt 376 48)(line_width 3))
+	)
+	(port
+		(pt 392 64)
+		(output)
+		(text "line_count_deb[addr_y_width-1..0]" (rect 0 0 167 12)(font "Arial" ))
+		(text "line_count_deb[addr_y_width-1..0]" (rect 230 59 397 71)(font "Arial" ))
+		(line (pt 392 64)(pt 376 64)(line_width 3))
+	)
+	(parameter
+		"MAX_DIFF"
+		"20"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RES_WIDTH"
+		"640"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RES_HEIGHT"
+		"480"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ADDR_X_WIDTH"
+		"10"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"ADDR_Y_WIDTH"
+		"9"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"THRESHOLD"
+		"80"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 376 160))
+	)
+	(annotation_block (parameter)(rect 7512 1144 7720 1264))
+)
+(symbol
+	(rect 7232 1560 7280 1592)
+	(text "WIRE" (rect 1 0 24 10)(font "Arial" (font_size 6)))
+	(text "inst84" (rect 3 21 31 38)(font "Intel Clear" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 14 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
+		(line (pt 32 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 14 7)(pt 32 16))
+		(line (pt 14 25)(pt 14 7))
+		(line (pt 14 25)(pt 32 16))
+	)
 )
 (connector
 	(pt -16 264)
@@ -8793,12 +8824,6 @@ refer to the applicable agreement for further details.
 	(pt 6168 1392)
 )
 (connector
-	(text "seg_hex[9..0]" (rect 6986 1408 7048 1425)(font "Intel Clear" ))
-	(pt 6960 1424)
-	(pt 7088 1424)
-	(bus)
-)
-(connector
 	(pt 6800 360)
 	(pt 6800 368)
 	(bus)
@@ -8933,15 +8958,27 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "obj_x[9..0]" (rect 7554 1280 7602 1297)(font "Intel Clear" ))
-	(pt 7544 1296)
-	(pt 7712 1296)
+	(text "obj_x[9..0]" (rect 7122 1560 7170 1577)(font "Intel Clear" ))
+	(pt 7232 1576)
+	(pt 7104 1576)
 	(bus)
 )
 (connector
-	(text "obj_y[8..0]" (rect 7554 1296 7603 1313)(font "Intel Clear" ))
-	(pt 7544 1312)
-	(pt 7704 1312)
+	(text "seg_hex[9..0]" (rect 7298 1560 7360 1577)(font "Intel Clear" ))
+	(pt 7280 1576)
+	(pt 7400 1576)
+	(bus)
+)
+(connector
+	(text "obj_y[8..0]" (rect 7666 1296 7715 1313)(font "Intel Clear" ))
+	(pt 7552 1312)
+	(pt 7816 1312)
+	(bus)
+)
+(connector
+	(text "obj_x[9..0]" (rect 7658 1280 7706 1297)(font "Intel Clear" ))
+	(pt 7552 1296)
+	(pt 7816 1296)
 	(bus)
 )
 (connector
@@ -8951,9 +8988,9 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "obj_y[8..0]" (rect 6922 336 6971 353)(font "Intel Clear" ))
+	(text "obj_y[8..0]" (rect 6914 336 6963 353)(font "Intel Clear" ))
 	(pt 6976 352)
-	(pt 6912 352)
+	(pt 6904 352)
 	(bus)
 )
 (junction (pt 640 1168))

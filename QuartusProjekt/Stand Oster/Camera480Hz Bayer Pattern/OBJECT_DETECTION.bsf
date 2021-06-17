@@ -20,7 +20,7 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 400 192)
+	(rect 16 16 408 192)
 	(text "OBJECT_DETECTION" (rect 5 0 105 12)(font "Arial" ))
 	(text "inst" (rect 8 160 20 172)(font "Arial" ))
 	(port
@@ -73,22 +73,39 @@ refer to the applicable agreement for further details.
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
-		(pt 384 32)
+		(pt 392 32)
 		(output)
 		(text "obj_center_x[addr_x_width-1..0]" (rect 0 0 126 12)(font "Arial" ))
-		(text "obj_center_x[addr_x_width-1..0]" (rect 237 27 363 39)(font "Arial" ))
-		(line (pt 384 32)(pt 368 32)(line_width 3))
+		(text "obj_center_x[addr_x_width-1..0]" (rect 245 27 371 39)(font "Arial" ))
+		(line (pt 392 32)(pt 376 32)(line_width 3))
 	)
 	(port
-		(pt 384 48)
+		(pt 392 48)
 		(output)
 		(text "obj_center_y[addr_y_width-1..0]" (rect 0 0 128 12)(font "Arial" ))
-		(text "obj_center_y[addr_y_width-1..0]" (rect 235 43 363 55)(font "Arial" ))
-		(line (pt 384 48)(pt 368 48)(line_width 3))
+		(text "obj_center_y[addr_y_width-1..0]" (rect 243 43 371 55)(font "Arial" ))
+		(line (pt 392 48)(pt 376 48)(line_width 3))
+	)
+	(port
+		(pt 392 64)
+		(output)
+		(text "line_count_deb[addr_y_width-1..0]" (rect 0 0 134 12)(font "Arial" ))
+		(text "line_count_deb[addr_y_width-1..0]" (rect 237 59 371 71)(font "Arial" ))
+		(line (pt 392 64)(pt 376 64)(line_width 3))
 	)
 	(parameter
 		"MAX_DIFF"
 		"20"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"OBJECT_MIN_HEIGHT"
+		"20"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"OBJECT_MAX_Y_DIFF"
+		"3"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
@@ -112,7 +129,7 @@ refer to the applicable agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 368 160)(line_width 1))
+		(rectangle (rect 16 16 376 160)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 400 -64 500 16))
+	(annotation_block (parameter)(rect 408 -64 508 16))
 )

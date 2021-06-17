@@ -18,8 +18,7 @@ use altera_mf.altera_mf_components.all;
 
 entity LINE_DETECTION_CONV is 
 generic (
-	NUMBERS_OF_OBJECTS	: POSITIVE := 3;		-- number of lines / objects, that can be detected
-	THRESHOLD				: POSITIVE := 80;	-- threshold for object-detection
+	THRESHOLD				: POSITIVE := 100;	-- threshold for object-detection
 	RES_WIDTH				: POSITIVE := 640;		-- Resolution x
 	RES_HEIGHT				: POSITIVE := 480;		-- Resolution y
 

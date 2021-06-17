@@ -52,7 +52,20 @@ begin
 	B_out 
 	<= (others => '0') when (unsigned(pxl_center_x) = unsigned(det_obj_x_pos) or unsigned(pxl_center_y) = unsigned(det_obj_y_pos)) and enable = '1'
 	else B;
-		
+	
+	/*TEST
+	R_out 
+	<= (others => '0') when (unsigned(pxl_center_x) = "100000000" or unsigned(pxl_center_y) ="100000000") and enable = '1'
+	else R;
+	
+	G_out 
+	<= (others => '1') when (unsigned(pxl_center_x) = "100000000" or unsigned(pxl_center_y) = "100000000") and enable = '1'
+	else G;
+	
+	B_out 
+	<= (others => '0') when (unsigned(pxl_center_x) = "100000000" or unsigned(pxl_center_y) = "100000000") and enable = '1'
+	else B;
+	*/
 	
 	
 end a;
