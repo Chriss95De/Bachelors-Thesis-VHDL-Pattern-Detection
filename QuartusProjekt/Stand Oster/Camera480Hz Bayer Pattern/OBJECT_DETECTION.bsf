@@ -95,12 +95,12 @@ refer to the applicable agreement for further details.
 	)
 	(parameter
 		"MAX_DIFF"
-		"20"
+		"5"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"OBJECT_MIN_HEIGHT"
-		"20"
+		"30"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter

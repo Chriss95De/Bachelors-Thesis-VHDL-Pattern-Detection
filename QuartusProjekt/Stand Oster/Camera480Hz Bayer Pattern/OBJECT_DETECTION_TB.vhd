@@ -64,17 +64,19 @@ reset <= '1', '0' after 5 ns; -- erzeugt Resetsignal: --__
 
 process is
 begin
-  
+
   --first line
   wait for 20 ns;
   det_obj_x_pos_beg <= to_unsigned(200, det_obj_x_pos_beg'length);
   det_obj_x_pos_end <= to_unsigned(250, det_obj_x_pos_end'length);
+
+  wait for 20 ns;
   det_obj_found <= '1';
   
   cur_pos_x <= to_unsigned(250, cur_pos_x'length);
   cur_pos_y <= to_unsigned(50, cur_pos_y'length);
   
-  wait for 10 ns;
+  wait for 20 ns;
   cur_pos_x <= cur_pos_x + 1;
   det_obj_found <= '0';
   wait for 10 ns;
@@ -91,7 +93,7 @@ begin
   wait for 40 ns;
   det_obj_found <= '1';
   
-  wait for 10 ns;
+  wait for 20 ns;
   cur_pos_x <= cur_pos_x + 1;
   det_obj_found <= '0';
   wait for 10 ns;
@@ -107,7 +109,7 @@ begin
   wait for 40 ns;
   det_obj_found <= '1';
   
-  wait for 10 ns;
+  wait for 20 ns;
   cur_pos_x <= cur_pos_x + 1;
   det_obj_found <= '0';
   wait for 10 ns;
@@ -123,7 +125,7 @@ begin
   cur_pos_y <= cur_pos_y + 1; --increase line   
   det_obj_found <= '1';  
   
-  wait for 10 ns;
+  wait for 20 ns;
   det_obj_found <= '0';  
   wait;
   

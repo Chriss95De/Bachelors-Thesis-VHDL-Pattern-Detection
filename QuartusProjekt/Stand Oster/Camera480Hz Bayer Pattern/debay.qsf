@@ -622,4 +622,3 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 # -----------------------
 set_global_assignment -name VHDL_FILE POSITION_MINDIFF_OUT.vhd
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SLD_FILE "db/Analyze Object_auto_stripped.stp"
