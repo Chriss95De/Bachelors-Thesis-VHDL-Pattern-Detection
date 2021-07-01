@@ -173,7 +173,7 @@ process (reset, clk) is
 			cur_pxl_pos_y <= pxl_y_ff1;
 			
 			
-			-- conv = f(x+1) - f(x) -> c_ff2 - c_ff1
+			-- conv = f(x+1) - f(x) -> c_ff2 - c_ff0
 			conv_result_var := std_to_sig_resize(greyscale_x_p1, 10)  -  std_to_sig_resize(greyscale_x, 10); --convultion according to Gonzalez
 			conv_result_r	 := std_to_sig_resize(r_ff2, 10)  -  std_to_sig_resize(R, 10);
 			conv_result_g	 := std_to_sig_resize(g_ff2, 10)  -  std_to_sig_resize(G, 10);

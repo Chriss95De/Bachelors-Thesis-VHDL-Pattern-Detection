@@ -75,11 +75,13 @@ process (reset, clk) is
 	elsif rising_edge(clk) then	
 		--assing values
 		det_obj_found_ff1 <= det_obj_found;
+		
 		pxl_x_ff1 <= cur_pos_x;
 		pxl_y_ff1 <= cur_pos_y;
 		
 		last_det_obj_x_beg <= last_det_obj_x_beg;
 		last_det_obj_x_end <= last_det_obj_x_end;
+		
 		line_count <= line_count;
 		line_count_deb <= line_count_deb;
 		
@@ -89,7 +91,7 @@ process (reset, clk) is
 		last_found_y <= last_found_y;
 		
 		--rest the output data at the beginning of the frame
-		if cur_pos_x = 0 and cur_pos_y = 0 then
+		if to_integer(cur_pos_x) = 0 and to_integer(cur_pos_y) = 0 then
 			obj_center_x <= (others => '0');
 			obj_center_y <= (others => '0');
 			line_count <= (others => '0');
@@ -129,7 +131,6 @@ process (reset, clk) is
 				line_count <= line_count + 1;
 			end if;
 			*/
-			
 			line_count <= line_count + 1;
 			
 		end if;
@@ -140,13 +141,8 @@ process (reset, clk) is
 		
 		--check if object has the correct height to count as object, filter
 		if line_count >= OBJECT_MIN_HEIGHT then
-			obj_center_x <= last_det_obj_x_beg;
-			obj_center_y <= last_found_y - line_count;	
-			--obj_center_x <= to_unsigned(100, obj_center_x'length);
-			--obj_center_y <= to_unsigned(100, obj_center_y'length);
-		else
-			--obj_center_x <= (others => '0');
-			--obj_center_y <= (others => '0');
+			obj_center_x <= last_det_obj_x_beg + shift_right(unsigned(last_det_obj_x_end - last_det_obj_x_beg), 1);
+			obj_center_y <= last_found_y;	
 		end if;
 		
 	end if;
