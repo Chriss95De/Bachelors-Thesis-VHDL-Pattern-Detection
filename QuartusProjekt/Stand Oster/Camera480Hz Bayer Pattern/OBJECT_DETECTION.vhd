@@ -140,10 +140,10 @@ process (reset, clk) is
 		
 		--check if object has the correct height to count as object, filter
 		if line_count >= OBJECT_MIN_HEIGHT then
-			--obj_center_x <= last_det_obj_x_beg;
-			--obj_center_y <= last_found_y - line_count;	
-			obj_center_x <= to_unsigned(100, obj_center_x'length);
-			obj_center_y <= to_unsigned(100, obj_center_y'length);
+			obj_center_x <= last_det_obj_x_beg;
+			obj_center_y <= last_found_y - line_count;	
+			--obj_center_x <= to_unsigned(100, obj_center_x'length);
+			--obj_center_y <= to_unsigned(100, obj_center_y'length);
 		else
 			--obj_center_x <= (others => '0');
 			--obj_center_y <= (others => '0');

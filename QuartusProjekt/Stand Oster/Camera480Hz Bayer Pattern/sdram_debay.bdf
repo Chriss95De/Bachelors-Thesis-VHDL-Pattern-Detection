@@ -9024,12 +9024,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "seg_hex[7..0]" (rect 6970 1408 7032 1425)(font "Intel Clear" ))
-	(pt 6952 1424)
-	(pt 7032 1424)
-	(bus)
-)
-(connector
 	(pt 6368 1640)
 	(pt 6392 1640)
 	(bus)
@@ -9058,6 +9052,12 @@ refer to the applicable agreement for further details.
 	(text "pxl_data_val" (rect 6506 1440 6568 1457)(font "Intel Clear" ))
 	(pt 6592 1456)
 	(pt 6496 1456)
+)
+(connector
+	(text "seg_hex[8..0]" (rect 7570 1312 7632 1329)(font "Intel Clear" ))
+	(pt 7552 1328)
+	(pt 7632 1328)
+	(bus)
 )
 (junction (pt 640 1168))
 (junction (pt 2784 408))

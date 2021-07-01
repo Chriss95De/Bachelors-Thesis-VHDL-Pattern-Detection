@@ -143,7 +143,9 @@ process (reset, clk) is
 		
 	elsif rising_edge(clk) then
 
-		if pixel_data_valid then
+		det_obj_found <= '0'; --reset so only active one clk 
+	
+		if pixel_data_valid = '1' then
 			--ff
 			r_ff1 <= R;
 			g_ff1 <= G;
@@ -173,13 +175,11 @@ process (reset, clk) is
 			
 			-- conv = f(x+1) - f(x) -> c_ff2 - c_ff1
 			conv_result_var := std_to_sig_resize(greyscale_x_p1, 10)  -  std_to_sig_resize(greyscale_x, 10); --convultion according to Gonzalez
-			conv_result_r	 := std_to_sig_resize(r_ff2, 10)  -  std_to_sig_resize(r_ff1, 10);
-			conv_result_g	 := std_to_sig_resize(g_ff2, 10)  -  std_to_sig_resize(g_ff1, 10);
-			conv_result_b	 := std_to_sig_resize(b_ff2, 10)  -  std_to_sig_resize(b_ff1, 10);
+			conv_result_r	 := std_to_sig_resize(r_ff2, 10)  -  std_to_sig_resize(R, 10);
+			conv_result_g	 := std_to_sig_resize(g_ff2, 10)  -  std_to_sig_resize(G, 10);
+			conv_result_b	 := std_to_sig_resize(b_ff2, 10)  -  std_to_sig_resize(B, 10);
 			
 			det_obj_conv <= greyscale_x;
-			
-			det_obj_found <= '0';
 			
 			if debug_out < R then
 				debug_out <= R;
