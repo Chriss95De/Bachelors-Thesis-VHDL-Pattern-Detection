@@ -1,0 +1,10 @@
+1.Einleitung
+
+2.Einführung in die verwendeten Werkzeuge(Bildverarbeitung)
+
+3.Übersicht des aktuellen Zustand
+3.1 Erklärung Datenfluss von Kameraeingang bis VGA Ausgang
+
+4.Übersicht den jetzigen Zustand
+4.1 Endprodukt/Bilder des bisher Erreichten
+4.2 Erklärung der neuen Module im Detail

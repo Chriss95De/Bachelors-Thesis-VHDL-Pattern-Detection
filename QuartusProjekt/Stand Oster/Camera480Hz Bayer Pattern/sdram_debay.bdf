@@ -808,7 +808,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 72 -648 296 -504)
+	(rect 544 64 768 208)
 	(text "cameralink_tapping_base" (rect 5 0 128 12)(font "Arial" ))
 	(text "inst5" (rect 8 128 31 140)(font "Arial" ))
 	(port
@@ -873,7 +873,7 @@ refer to the applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 208 128))
 	)
-	(annotation_block (parameter)(rect 112 -696 296 -648))
+	(annotation_block (parameter)(rect 544 -152 728 -104))
 )
 (symbol
 	(rect -104 928 80 1008)
@@ -6164,39 +6164,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "CLR_FVAL" (rect 306 -616 361 -604)(font "Arial" ))
-	(pt 296 -600)
-	(pt 376 -600)
-)
-(connector
-	(text "CLR_LVAL" (rect 306 -632 360 -620)(font "Arial" ))
-	(pt 296 -616)
-	(pt 376 -616)
-)
-(connector
-	(text "CLR_DVAL" (rect 306 -600 362 -588)(font "Arial" ))
-	(pt 376 -584)
-	(pt 296 -584)
-)
-(connector
-	(text "CLRRX_BASE[0..27]" (rect -104 -632 -2 -620)(font "Arial" ))
-	(pt 72 -616)
-	(pt -112 -616)
-	(bus)
-)
-(connector
-	(text "TAP2[0..7]" (rect 306 -568 357 -556)(font "Arial" ))
-	(pt 296 -552)
-	(pt 376 -552)
-	(bus)
-)
-(connector
-	(text "TAP1[0..7]" (rect 306 -584 357 -572)(font "Arial" ))
-	(pt 296 -568)
-	(pt 376 -568)
-	(bus)
-)
-(connector
 	(text "CLK50MHz" (rect 2 80 56 92)(font "Arial" ))
 	(pt -8 96)
 	(pt 88 96)
@@ -9060,9 +9027,42 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "clk_pll" (rect 3898 256 3928 268)(font "Arial" ))
-	(pt 4048 272)
-	(pt 3888 272)
+	(text "clk_pll" (rect 3978 264 4008 276)(font "Arial" ))
+	(pt 3984 280)
+	(pt 4152 280)
+)
+(connector
+	(text "CLR_FVAL" (rect 778 96 833 108)(font "Arial" ))
+	(pt 768 112)
+	(pt 848 112)
+)
+(connector
+	(text "CLR_LVAL" (rect 778 80 832 92)(font "Arial" ))
+	(pt 768 96)
+	(pt 848 96)
+)
+(connector
+	(text "TAP2[0..7]" (rect 778 144 829 156)(font "Arial" ))
+	(pt 768 160)
+	(pt 848 160)
+	(bus)
+)
+(connector
+	(text "TAP1[0..7]" (rect 778 128 829 140)(font "Arial" ))
+	(pt 768 144)
+	(pt 848 144)
+	(bus)
+)
+(connector
+	(text "CLR_DVAL" (rect 778 112 834 124)(font "Arial" ))
+	(pt 768 128)
+	(pt 848 128)
+)
+(connector
+	(text "CLRRX_BASE[0..27]" (rect 456 80 558 92)(font "Arial" ))
+	(pt 544 96)
+	(pt 448 96)
+	(bus)
 )
 (junction (pt 640 1168))
 (junction (pt 2784 408))
@@ -9097,4 +9097,5 @@ refer to the applicable agreement for further details.
 (text "Camera" (rect 2376 8 2422 27)(font "Intel Clear" (font_size 8)))
 (text "VGA" (rect 2384 272 2409 291)(font "Intel Clear" (font_size 8)))
 (text "Image processing" (rect 2360 528 2462 547)(font "Intel Clear" (font_size 8)))
+(text "SDRAM" (rect 2960 -120 3004 -101)(font "Intel Clear" (font_size 8)))
 (rectangle (rect 2328 -96 3672 1648))
