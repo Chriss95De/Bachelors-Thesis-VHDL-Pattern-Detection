@@ -1704,7 +1704,7 @@ refer to the applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 256 160))
 	)
-	(annotation_block (parameter)(rect 888 584 1096 704))
+	(annotation_block (parameter)(rect 888 584 1128 744))
 )
 (symbol
 	(rect 2704 1088 2736 1120)
@@ -2479,7 +2479,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 2352 376 2384 408)
+	(rect 2336 392 2368 424)
 	(text "GND" (rect 8 16 29 26)(font "Arial" (font_size 6)))
 	(text "inst64" (rect 3 21 31 38)(font "Intel Clear" )(invisible))
 	(port
@@ -6906,12 +6906,6 @@ refer to the applicable agreement for further details.
 	(pt 2568 320)
 )
 (connector
-	(text "mac_adr1[24..17]" (rect 2378 360 2460 377)(font "Intel Clear" ))
-	(pt 2440 376)
-	(pt 2368 376)
-	(bus)
-)
-(connector
 	(text "mac_rd[1]" (rect 2664 304 2712 321)(font "Intel Clear" ))
 	(pt 2616 320)
 	(pt 2712 320)
@@ -9062,6 +9056,12 @@ refer to the applicable agreement for further details.
 	(text "CLRRX_BASE[0..27]" (rect 456 80 558 92)(font "Arial" ))
 	(pt 544 96)
 	(pt 448 96)
+	(bus)
+)
+(connector
+	(text "mac_adr1[24..17]" (rect 2362 376 2444 393)(font "Intel Clear" ))
+	(pt 2424 392)
+	(pt 2352 392)
 	(bus)
 )
 (junction (pt 640 1168))
