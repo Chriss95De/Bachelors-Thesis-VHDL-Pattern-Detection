@@ -6,7 +6,7 @@ use ieee.numeric_std.all;
 entity LINE_DETECTION_CONV_TB is
 generic (
 		NUMBERS_OF_OBJECTS	: POSITIVE := 3;		-- number of lines / objects, that can be detected
-		THRESHOLD				: POSITIVE := 80;	-- threshold for object-detection
+		--THRESHOLD				: POSITIVE := 80;	-- threshold for object-detection
 		RES_WIDTH				: POSITIVE := 640;		-- Resolution x
 		RES_HEIGHT				: POSITIVE := 480;		-- Resolution y
 
@@ -33,6 +33,10 @@ architecture a of LINE_DETECTION_CONV_TB is
 		R				: in std_logic_vector(7 downto 0);
 		G				: in std_logic_vector(7 downto 0);
 		B				: in std_logic_vector(7 downto 0);
+		
+		threshold 	: in unsigned(7 downto 0);
+		
+		pixel_data_valid : in std_logic;
 	
 		--Output
 		det_obj_x_pos_beg		: out unsigned (9 downto 0);											
@@ -43,7 +47,7 @@ architecture a of LINE_DETECTION_CONV_TB is
 		cur_pxl_pos_x			: out unsigned(ADDR_X_WIDTH-1 downto 0);
 		cur_pxl_pos_y			: out unsigned(ADDR_Y_WIDTH-1 downto 0);
 
-		debug_out 				: out unsigned (9 downto 0)
+		debug_out 				: out std_logic_vector (7 downto 0)
     );
   end component;
 
@@ -53,6 +57,10 @@ architecture a of LINE_DETECTION_CONV_TB is
   signal pxl_pos_x 								: unsigned(9 downto 0) := (others => '0');
   signal pxl_pos_y								: unsigned(8 downto 0) := (others => '0');
   signal R, G, B 										: std_logic_vector(7 downto 0) := (others => '0');
+  
+  signal threshold								: unsigned(7 downto 0) := "01010000";
+  
+  signal pixel_data_valid						: std_logic := '1';
 
   -- output											
   signal det_obj_x_pos_beg, det_obj_x_pos_end						: unsigned (9 downto 0);
@@ -62,7 +70,7 @@ architecture a of LINE_DETECTION_CONV_TB is
   signal cur_pxl_pos_x														: unsigned(ADDR_X_WIDTH-1 downto 0);
   signal cur_pxl_pos_y														: unsigned(ADDR_Y_WIDTH-1 downto 0);
   
-  signal debug_out 															: unsigned (9 downto 0);
+  signal debug_out 															: std_logic_vector (7 downto 0);
  
 begin
 
@@ -140,6 +148,10 @@ end process;
 		R => R,
 		G => G,
 		B => B,
+		
+		threshold => threshold,
+		
+		pixel_data_valid => pixel_data_valid,
 		
 		--out
 		det_obj_x_pos_beg => det_obj_x_pos_beg,
