@@ -3,7 +3,7 @@
 
 ## To Do List
 ### Prio 1:
-[ ] Bisherigen Stand in Blöcken erklären -> Siehe bestehende PowerPoint 
+[x] Bisherigen Stand in Blöcken erklären -> Siehe bestehende PowerPoint 
 [ ] Anleitung für die Einrichtung des Projektes erstellen  
 [x] Softwarestand pflegen und einheitlich zugänglich machen -> GIT Repo    
 [x] letzte Version Perske und Version Herbst finden und zugänglich machen  
@@ -14,7 +14,7 @@
 ### Prio 2:
 [ ] Robuste Erkennung ein dimensionale Erkennung eines Punktes oder Linie  
 [ ] Aufbau von verschiedenen Testszenarien(Testparameter: Umgebungslicht, Geschwindigkeit und Farbwahl)  
-[ ] Implementierung Erkennung ein Channel anhand Bayer Pattern / RGB Farbwahl  
+[x] Implementierung Erkennung ein Channel anhand Bayer Pattern / RGB Farbwahl  
 
 ### Prio 3:
 [ ] Erkennung mehrer Objekte  
