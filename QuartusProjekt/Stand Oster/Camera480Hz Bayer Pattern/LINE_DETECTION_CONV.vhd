@@ -71,16 +71,9 @@ architecture a of LINE_DETECTION_CONV is
 	signal r_ff1 			: std_logic_vector (7 downto 0);
 	signal g_ff1 			: std_logic_vector (7 downto 0);		
 	signal b_ff1 			: std_logic_vector (7 downto 0);
-
-	signal r_ff2 			: std_logic_vector (7 downto 0);
-	signal g_ff2 			: std_logic_vector (7 downto 0);		
-	signal b_ff2 			: std_logic_vector (7 downto 0);	
 	
 	signal pxl_x_ff1 				: unsigned (ADDR_X_WIDTH-1 downto 0);
 	signal pxl_y_ff1				: unsigned (ADDR_Y_WIDTH-1 downto 0);
-	
-	signal pxl_x_ff2 				: unsigned (ADDR_X_WIDTH-1 downto 0);
-	signal pxl_y_ff2				: unsigned (ADDR_Y_WIDTH-1 downto 0);
 	
 	signal pxl_center_x_ff1		: unsigned (ADDR_X_WIDTH-1 downto 0);
 	signal pxl_center_y_ff1		: unsigned (ADDR_Y_WIDTH-1 downto 0);
@@ -108,11 +101,6 @@ architecture a of LINE_DETECTION_CONV is
 begin
 process (reset, clk) is
 	variable conv_result_var	: signed (9 downto 0);
-	variable conv_result_r	: signed (9 downto 0);
-	variable conv_result_g	: signed (9 downto 0);
-	variable conv_result_b	: signed (9 downto 0);
-	variable greyscale_x : std_logic_vector (7 downto 0);
-	variable greyscale_x_p1 : std_logic_vector (7 downto 0);
 	begin
 	if reset = '1' then	-- reset all values
 		detection_state		<= detect_start_of_line_state;
@@ -121,15 +109,8 @@ process (reset, clk) is
 		g_ff1				<= (others => '0');
 		b_ff1				<= (others => '0');
 		
-		r_ff2				<= (others => '0');
-		g_ff2				<= (others => '0');
-		b_ff2				<= (others => '0');
-		
 		pxl_x_ff1		<= (others => '0');
 		pxl_y_ff1		<= (others => '0');
-		
-		pxl_x_ff2		<= (others => '0');
-		pxl_y_ff2		<= (others => '0');
 		
 		det_obj_x_pos_beg 	<= (others => '0');
 		det_obj_x_pos_end 	<= (others => '0');
@@ -139,7 +120,6 @@ process (reset, clk) is
 		
 		det_obj_found <= '0';
 		
-		conv_result_r := (others => '0');
 		
 	elsif rising_edge(clk) then
 
@@ -151,35 +131,14 @@ process (reset, clk) is
 			g_ff1 <= G;
 			b_ff1 <= B;
 			
-			r_ff2 <= r_ff1;
-			g_ff2 <= g_ff1;
-			b_ff2 <= b_ff1;
-			
 			pxl_x_ff1 <= pxl_pos_x;
 			pxl_y_ff1 <= pxl_pos_y;
-			
-			pxl_x_ff2 <= pxl_x_ff1;
-			pxl_y_ff2 <= pxl_y_ff1;
 			
 			det_obj_x_pos_beg <= det_obj_x_pos_beg;
 			det_obj_x_pos_end <= det_obj_x_pos_end;
 			
-			--debug_out <= THRESHOLD;
-				
-			greyscale_x_p1 := get_avg(r_ff2, g_ff2, b_ff2);
-			greyscale_x 	:= get_avg(r_ff1, g_ff1, b_ff1);
-			
 			cur_pxl_pos_x <= pxl_x_ff1;
 			cur_pxl_pos_y <= pxl_y_ff1;
-			
-			
-			-- conv = f(x+1) - f(x) -> c_ff2 - c_ff0
-			conv_result_var := std_to_sig_resize(greyscale_x_p1, 10)  -  std_to_sig_resize(greyscale_x, 10); --convultion according to Gonzalez
-			conv_result_r	 := std_to_sig_resize(r_ff2, 10)  -  std_to_sig_resize(R, 10);
-			conv_result_g	 := std_to_sig_resize(g_ff2, 10)  -  std_to_sig_resize(G, 10);
-			conv_result_b	 := std_to_sig_resize(b_ff2, 10)  -  std_to_sig_resize(B, 10);
-			
-			det_obj_conv <= greyscale_x;
 			
 			if debug_out < R then
 				debug_out <= R;
@@ -191,12 +150,12 @@ process (reset, clk) is
 				when detect_start_of_line_state => 
 					--R channel
 					--check if r channel differs from one to the next pixel
-					if conv_result_r <= -to_integer(THRESHOLD)  then
+					if to_integer(unsigned(r_ff1)) >= +to_integer(THRESHOLD)  then
 							det_obj_x_pos_beg <= pxl_x_ff1;
 							detection_state	<= detect_end_of_line_state;
 					end if;
 				when detect_end_of_line_state => 
-					if conv_result_r >= +to_integer(THRESHOLD) then --real end found
+					if to_integer(unsigned(r_ff1)) >= +to_integer(THRESHOLD) then --real end found
 							det_obj_x_pos_end <= pxl_x_ff1;
 							det_obj_found <= '1'; --one clock cycle active!!!
 							detection_state <= rest_state;

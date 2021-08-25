@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 -- leere entity
-entity LINE_DETECTION_CONV_TB is
+entity LINE_DETECTION_TB is
 generic (
 		NUMBERS_OF_OBJECTS	: POSITIVE := 3;		-- number of lines / objects, that can be detected
 		--THRESHOLD				: POSITIVE := 80;	-- threshold for object-detection
@@ -14,12 +14,12 @@ generic (
 		ADDR_Y_WIDTH				: POSITIVE:= 9 	-- Width of the y address line
 		
 		);
-end entity LINE_DETECTION_CONV_TB;
+end entity LINE_DETECTION_TB;
 
-architecture a of LINE_DETECTION_CONV_TB is
+architecture a of LINE_DETECTION_TB is
 
   -- Moduldeklaration
-  component LINE_DETECTION_CONV is
+  component LINE_DETECTION is
     port (
 	 
 		clk				: in std_logic;							-- clock
@@ -135,7 +135,7 @@ begin
 end process;
   
   -- Modulinstatziierung
-  dut : LINE_DETECTION_CONV
+  dut : LINE_DETECTION
     port map (
 		--in
       clk       => clk,
