@@ -1,2 +1,0 @@
-Created on:Donnerstag, Februar 07, 2019
-Based on:sdram-read-write-buffer-generic
