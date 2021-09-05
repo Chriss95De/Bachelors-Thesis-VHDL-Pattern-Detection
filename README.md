@@ -1,22 +1,17 @@
 # Studienarbeit
-## FPGA + 480FPS Kamera
 
-## To Do List
-### Prio 1:
-[x] Bisherigen Stand in Blöcken erklären -> Siehe bestehende PowerPoint 
-[X] Anleitung für die Einrichtung des Projektes erstellen  
-[x] Softwarestand pflegen und einheitlich zugänglich machen -> GIT Repo    
-[x] letzte Version Perske und Version Herbst finden und zugänglich machen  
-[x] Eleminierung/Unterscheidung der Revisionen. Festlegung auf eine Revision  
-[x] Reduzierung Warnings Stand Herbst -> Vorher x aktuell 0  
-[x] Reduzierung Warnings Stand Perske -> Vorher 40 aktuell 12
-
-### Prio 2:
-[X] Robuste Erkennung ein dimensionale Erkennung eines Punktes oder Linie  
-[ ] Aufbau von verschiedenen Testszenarien(Testparameter: Umgebungslicht, Geschwindigkeit und Farbwahl)  
-[x] Implementierung Erkennung ein Channel anhand Bayer Pattern / RGB Farbwahl  
-
-### Prio 3:
-[ ] Erkennung mehrer Objekte  
-[ ] Umwandlung Blockschaltbild in VHDL Code  
+# Kurzzusammenfassung
+In dieser Studienarbeit wird das Thema Bildverarbeitung in einem FPGA behandelt. Dabei werden
+Kamerabilder von einem FPGA-Board aufgenommen, gespeichert, weiterverarbeitet und
+interpretiert, um Informationen aus dem Bild zu extrahieren. Diese Ausarbeitung ist eine
+Weiterentwicklung auf Basis eines bestehenden Projektes. Aufbauend auf bereits vorhandenen
+Funktionen, der Speicherung von Kamerabildern und deren Ausgabe über VGA auf einen Monitor.
+Ziel war es, die bestehenden Projektstände zu reviewen und mithilfe der vorhandenen Funktionen
+eine zweidimensionale Objekterkennung zu implementieren. Dabei werden Erkenntnisse aus einer
+vorherigen Studienarbeit verwendet und auf dieser weiter aufgebaut.
+Zusätzlich soll diese Ausarbeitung dem Leser einen guten Überblick darüber bieten, was bereits
+existierte und wie die Funktionsweise der verschiedenen Teile sind.
+Für die Umsetzung wurde die Hardwarebeschreibungssprache „Very High Speed Integrated Circuit
+(VHDL) „verwendet und neue Module implementiert, mit denen es möglich ist, ein Objekt im
+zweidimensionalen Raum in seiner Position zu bestimmen.
 
