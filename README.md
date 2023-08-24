@@ -1,17 +1,5 @@
-# Studienarbeit
+# Bachelor Thesis, Christian Oster
 
-# Kurzzusammenfassung
-In dieser Studienarbeit wird das Thema Bildverarbeitung in einem FPGA behandelt. Dabei werden
-Kamerabilder von einem FPGA-Board aufgenommen, gespeichert, weiterverarbeitet und
-interpretiert, um Informationen aus dem Bild zu extrahieren. Diese Ausarbeitung ist eine
-Weiterentwicklung auf Basis eines bestehenden Projektes. Aufbauend auf bereits vorhandenen
-Funktionen, der Speicherung von Kamerabildern und deren Ausgabe über VGA auf einen Monitor.
-Ziel war es, die bestehenden Projektstände zu reviewen und mithilfe der vorhandenen Funktionen
-eine zweidimensionale Objekterkennung zu implementieren. Dabei werden Erkenntnisse aus einer
-vorherigen Studienarbeit verwendet und auf dieser weiter aufgebaut.
-Zusätzlich soll diese Ausarbeitung dem Leser einen guten Überblick darüber bieten, was bereits
-existierte und wie die Funktionsweise der verschiedenen Teile sind.
-Für die Umsetzung wurde die Hardwarebeschreibungssprache „Very High Speed Integrated Circuit
-(VHDL) „verwendet und neue Module implementiert, mit denen es möglich ist, ein Objekt im
-zweidimensionalen Raum in seiner Position zu bestimmen.
+# Summary
 
+This study work addresses the topic of image processing in an FPGA. Camera images are captured, stored, processed, and interpreted on an FPGA board to extract information from the image. This paper represents a further development based on an existing project, building upon pre-existing functionalities such as storing camera images and displaying them via VGA on a monitor. The objective was to review the current project status and utilize the existing functionalities to implement a two-dimensional object recognition system. Insights from a previous academic study were leveraged and expanded upon. Additionally, this paper aims to provide the reader with a comprehensive overview of what already existed and how the different components function. The hardware description language "Very High Speed Integrated Circuit (VHDL)" was employed for the implementation, incorporating new modules that enable the determination of an object's position in a two-dimensional space.
